@@ -10,62 +10,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <style>
-    
-      *{
-          box-sizing: border-box;
-          padding: 0;
-          margin: 0;}
-      
-          body {
-            min-height: 100%;
-          }
-      
-          html {
-            height: 100%;
-          }
-      
-          .grid-container>* {
-            border-radius: 10px;
-            padding: 10px;
-      
-          }
-          .pie{
- 
- background: #84BF68;
-   border-radius:0 0 15px 15px;
-   padding: 10px;
-   text-align:center;
- 
- }
-      
-          
-      /*Telefono */ .grid-container {
-          display: grid;
-          gap: 10px;
-          grid-template-areas:"sidebar";}
-      
-          /* Para tablet */
-          @media (min-width: 600px) {
-            .grid-container {
-              grid-template-columns: 200px auto;
-              grid-template-rows: 100px 50px auto 100px;
-              grid-template-areas:
-                "sidebar sidebar";
-            }
-          }
-      
-          /* Escritorio */
-          @media (min-width: 900px) {
-            .grid-container {
-              grid-template-columns: 200px auto;
-              grid-template-rows: 100px 50px auto 100px;
-              grid-template-areas:
-                "sidebar sidebar sidebar";
-            }
-          }
-        </style>
-  </head>
+</head>
 
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -84,10 +29,10 @@
             <a class="nav-link active" aria-current="page" href="./nosotros.html">Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./index.html">Contacto</a>
+            <a class="nav-link" aria-current="page" href="#">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./index.html">Productos</a>
+            <a class="nav-link" aria-current="page" href="#">Productos</a>
           </li>
         </ul>
         <button class="btn btn-outline-success" type="submit"><i class='bx bx-user'></i></button>
@@ -95,170 +40,225 @@
       </div>
     </div>
   </nav>
-  <p>El proyecto llamado "Elotes Gutiérrez" esta construida con HTML, CSS y Bootstrap. Elotes Gutiérrez es una página
-    web
-    dedicada a brindar una experiencia única de compra de elotes en línea. El objetivo es satisfacer los antojos de sus
-    clientes al ofrecer elotes frescos, deliciosos y preparados con los mejores ingredientes, directamente desde las
-    tradiciones culinarias mexicanas.
-  </p>
-  <section>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
+
+  <div class="aboutUs">
+    <p>El proyecto llamado "Elotes Gutiérrez" esta desarrollado con HTML, CSS y Bootstrap. Elotes
+      Gutiérrez
+      es una página
+      web
+      dedicada a brindar una experiencia única de compra de elotes en línea. El objetivo es satisfacer los antojos de
+      sus
+      clientes al ofrecer elotes frescos, deliciosos y preparados con los mejores ingredientes, directamente desde las
+      tradiciones culinarias mexicanas.
+    </p>
+  </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 card-container">
+
+      <!--TARJETA DE ITZEL-->
+      <div class="col tarjeta">
         <div class="card h-100">
-          <img src="../src/img/itzel-guadalupe.png " class="card-img-top" alt="Integrante Itzel Guadalupe" width="200" height="500">
+          <img src="../src/img/itzel-guadalupe.png " class="card-img-top" alt="Integrante Itzel Guadalupe">
           <div class="card-body">
             <h5 class="card-title">Itzel Guadalupe Péres Soto</h5>
             <p class="card-text">Desarrolladora Java FullStack Java - Team member</p>
           </div>
-          <div class="pie">
-            <a href="https://github.com/itzelgps">Más Información</a>
-           </div>
+
+          <div class="card-socials">
+            <a href="https://www.linkedin.com/in/perezitzel/" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/itzelgps" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-github'></i></a>
+          </div>
         </div>
       </div>
+
+      <!--TARJETA DE ELENA-->
       <div class="col">
         <div class="card h-100">
-          <img src="../src/img/Elena-Cards.jpeg" class="card-img-top" alt="Integrante Elena" width="200" height="500">
+          <img src="../src/img/Elena-Cards.jpeg" class="card-img-top" alt="Integrante Elena">
           <div class="card-body">
-            <h5 class="card-title">Elena Romero  </h5>
+            <h1 class="card-title">Elena Romero </h1>
             <p class="card-text">Desarrolladora Java Jr.</p>
           </div>
-          <div class="pie">
-            <a href="https://github.com/elenallaro">Más Información</a>
-         </div>
+          <div class="pie card-socials">
+            <a href="https://www.linkedin.com/in/elena-romero-lara-3ba7ab284/" target="_blank"
+              rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/elenallaro" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-github'></i></a>
+          </div>
+
         </div>
       </div>
+
+      <!--TARJETA DE PAMELA-->
       <div class="col">
         <div class="card h-100">
-          <img src="../src/img/Pamela-Cards.jpeg" class="card-img-top" alt="Integrante Pamela" width="200" height="500">
+          <img src="../src/img/Pamela-Cards.jpeg" class="card-img-top" alt="Integrante Pamela">
           <div class="card-body">
-            <h5 class="card-title">Pamela Juárez Santiago</h5>
-            <p class="card-text">Desarrolladora web Jr. Soluciones proactivas para problemas de desarrollo en programación.</p>
+            <h1 class="card-title">Pamela Juárez Santiago</h1>
+            <p class="card-text">Desarrolladora web Jr. Soluciones proactivas para problemas de desarrollo en
+              programación.</p>
           </div>
-          <div class="pie">
-            <a href="https://github.com/pabrejusa">Más Información</a>
-         </div>
-        </div>
-      </div>
-      <div class="col">
-      <div class="card h-100">
-        <img src="../src/img/CrisC.jpeg" class="card-img-top" alt="Integrante Elena" width="200" height="500">
-        <div class="card-body">
-          <h5 class="card-title">Cristopher Arturo Pacheco Pérez  </h5>
-          <p class="card-text">Ingeniero en sistemas computacionales, el cual desarrolla con programación tanto front end como back end.</p>
-        </div>
-        <div class="pie">
-          <a href="https://github.com/CristopherA1">Más Información</a>
-       </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../src/img/MichC.png" class="card-img-top" alt="Integrante Elena" width="200" height="500">
-        <div class="card-body">
-          <h5 class="card-title">Michell Iván Cázares Martínez</h5>
-          <p class="card-text">Creativo, orientado a resultados y siempre buscando aprender y crecer profesionalmente.</p>
-        </div>
-        <div class="pie">
-          <a href="https://github.com/Michell-Cazares">Más Información</a>
-  *     </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../src/img/S.soto.jpg" class="card-img-top" alt="Integrante Elena" width="200" height="500">
-        <div class="card-body">
-          <h5 class="card-title">Silvia Susana Soto Chávez</h5>
-          <p class="card-text">Analítica, resuelvo problemas eficientemente y propongo soluciones óptimas.</p>
-        </div>
-        <div class="pie">
-          <a href="https://github.com/Susana-Soto">Más Información</a>
-       </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../src/img/GinaC.jpeg" class="card-img-top" alt="Integrante Elena" width="200" height="500">
-        <div class="card-body">
-          <h5 class="card-title">Gina Belén Molina Gutiérrez </h5>
-          <p class="card-text">Aplicar mis conocimientos mediante la participación activa en innovación en las tareas a realizar en software.</p>
-        </div>
-        <div class="pie">
-          <a href="https://github.com/ginaGBMG">Más Información</a>
-       </div>
-      </div>
-    </div>
-  </div>
 
+          <div class="card-socials">
+            <a href="https://www.linkedin.com/in/michellcazares/" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/pabrejusa" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-github'></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--TARJETA DE CRIS-->
+      <div class="col">
+        <div class="card h-100">
+          <img src="../src/img/CrisC.jpeg" class="card-img-top" alt="Integrante Elena">
+          <div class="card-body">
+            <h5 class="card-title">Cristopher Arturo Pacheco Pérez </h5>
+            <p class="card-text">Ingeniero en sistemas computacionales, el cual desarrolla con programación tanto front
+              end como back end.</p>
+          </div>
+
+          <div class="card-socials">
+            <a href="https://www.linkedin.com/in/michellcazares/" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/CristopherA1" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-github'></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--TARJETA DE MICHELL-->
+      <div class="col">
+        <div class="card h-100">
+          <img src="../src/img/MichC.png" class="card-img-top" alt="Integrante Elena">
+          <div class="card-body">
+            <h5 class="card-title">Michell Iván Cázares Martínez</h5>
+            <p class="card-text">Creativo, orientado a resultados y siempre buscando aprender y crecer profesionalmente.
+            </p>
+          </div>
+          <div class="card-socials">
+            <a href="https://www.linkedin.com/in/michellcazares/" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/Michell-Cazares" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-github'></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--TARJETA DE SUSANA-->
+      <div class="col">
+        <div class="card h-100">
+          <img src="../src/img/S.soto.jpg" class="card-img-top" alt="Integrante Elena">
+          <div class="card-body">
+            <h5 class="card-title">Silvia Susana Soto Chávez</h5>
+            <p class="card-text">Analítica, resuelvo problemas eficientemente y propongo soluciones óptimas.</p>
+          </div>
+
+          <div class="card-socials">
+            <a href="https://www.linkedin.com/in/susana-soto-9806a819b/" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/Susana-Soto" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-github'></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--TARJETA DE GINA-->
+      <div class="col">
+        <div class="card h-100">
+          <img src="../src/img/GinaC.jpeg" class="card-img-top" alt="Integrante Elena">
+          <div class="card-body">
+            <h5 class="card-title">Gina Belén Molina Gutiérrez </h5>
+            <p class="card-text">Aplicar mis conocimientos mediante la participación activa en innovación en las tareas
+              a realizar en software.</p>
+          </div>
+          <div class="card-socials">
+            <a href="https://www.linkedin.com/in/gina-belen-molina-gutierrez-295a85280/" target="_blank"
+              rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/ginaGBMG" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-github'></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!--Inicia footer-->
-<br><br><br><br>
   <div class="container">
     <footer class="py-5 color1">
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-    
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      </div>
+      <div class="row">
+        <div class="col-4 col-md-2 mb-3">
+          <h5>Patrocinadores</h5>
+          <ul class="nav flex-column">
+            <li><img src="src/img/la-fina.png" width="40px" alt="logo-la-fina"></img></li>
+            <li><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Isologo_de_La_Coste%C3%B1a%C2%AE.svg/2560px-Isologo_de_La_Coste%C3%B1a%C2%AE.svg.png"
+                width="40px" alt="logo-la-costena"></img></li>
+            <li><img src="https://seeklogo.com/images/M/McCormick-logo-144428A8DB-seeklogo.com.png" width="40px"
+                alt="logo-mccormick"></img></li>
+            <li><img src="https://www.labotanera.com/wp-content/uploads/2022/05/part-3.png" width="40px"
+                alt="logo-botanera"></img></li>
+            <li><img src="https://seeklogo.com/images/S/salsa-valentina-logo-660854C893-seeklogo.com.png" width="40px"
+                alt="logo-valentina"></img></li>
+            <li><img src="src/img/sabritas.webp" width="40px" alt="logo-sabritas"></img></li>
+          </ul>
         </div>
-        <div class="row">
-            <div class="col-4 col-md-2 mb-3">
-            <h5>Patrocinadores</h5>
-            <ul class="nav flex-column">
-                <li><img src="src/img/la-fina.png" width="40px" alt="logo-la-fina"></img></li>
-                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Isologo_de_La_Coste%C3%B1a%C2%AE.svg/2560px-Isologo_de_La_Coste%C3%B1a%C2%AE.svg.png" width="40px" alt="logo-la-costena"></img></li>
-                <li><img src="https://seeklogo.com/images/M/McCormick-logo-144428A8DB-seeklogo.com.png" width="40px" alt="logo-mccormick"></img></li>
-                <li><img src="https://www.labotanera.com/wp-content/uploads/2022/05/part-3.png" width="40px" alt="logo-botanera"></img></li>
-                <li><img src="https://seeklogo.com/images/S/salsa-valentina-logo-660854C893-seeklogo.com.png" width="40px" alt="logo-valentina"></img></li>
-                <li><img src="src/img/sabritas.webp" width="40px" alt="logo-sabritas"></img></li>
-            </ul>
-            </div>
-    
-            <div class="col-4 col-md-2 mb-3">
-            <h5>Legales</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacidad</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
-            </ul>
-            </div>
-    
-            <div class="col-4 col-md-2 mb-3">
-            <h5>Miembros</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Programa de lealtad</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Trabajo</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Empleados</a></li>
-            </ul>
-            </div>
-    
-            <div class="col-md-4 offset-md-1 mb-3">
-            <h5>Síguenos</h5>
-            <br>
-            <ul class="list-unstyled d-flex">
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="https://w7.pngwing.com/pngs/190/385/png-transparent-tik-tok-thumbnail.png" width="30px" alt="logo-tiktok"></img></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" width="30px" alt="logo-facebook"></img></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png" width="30px" alt="logo-instagram"></img></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo.png" width="30px" alt="logo-google"></img></a></li>
-            </ul>
-            </div>
+
+        <div class="col-4 col-md-2 mb-3">
+          <h5>Legales</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a>
+            </li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Términos y condiciones</a>
+            </li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacidad</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+          </ul>
         </div>
-    
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>Atendemos los 365 días del año. Reviviendo el sazón mexicano.</p>
-    
+
+        <div class="col-4 col-md-2 mb-3">
+          <h5>Miembros</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Programa de lealtad</a>
+            </li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Trabajo</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Empleados</a></li>
+          </ul>
         </div>
+
+        <div class="col-md-4 offset-md-1 mb-3">
+          <h5>Síguenos</h5>
+          <br>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img
+                  src="https://w7.pngwing.com/pngs/190/385/png-transparent-tik-tok-thumbnail.png" width="30px"
+                  alt="logo-tiktok"></img></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"
+                  width="30px" alt="logo-facebook"></img></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"
+                  width="30px" alt="logo-instagram"></img></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img
+                  src="https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo.png"
+                  width="30px" alt="logo-google"></img></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>Atendemos los 365 días del año. Reviviendo el sazón mexicano.</p>
+      </div>
     </footer>
-</div>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
-<!--Termina footer-->
-
-
-  </section>
+  </div>
+  
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
