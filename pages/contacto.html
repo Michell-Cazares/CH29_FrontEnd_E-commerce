@@ -140,11 +140,11 @@
 
             <!-- CONTENIDO DEL FORMULARIO -->
             <div class="card" style="text-align: center;">
-                <form action="needs-validation" novalidate>
+                <form action="https://formsubmit.co/ginamolinaw@gmail.com" method="POST"novalidate>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="Name" class="input">Nombre</label>
+                                <label for="Name" class="input" name="Name">Nombre</label>
                                 <input type="text" class="form-control" id="txtNombre" placeholder="Nombre" value="" required>
                                 <div class="invalid-feedback">
                                     Nombre inválido
@@ -152,7 +152,7 @@
                                   <div id="alertValidacionesTextoNombre">
                                     <p id="alertNombre"></p>
                                   </div>
-                                <label for="Email" class="input">Correo electóronico</label>
+                                <label for="Email" class="input" name="Email">Correo electóronico</label>
                                 <input type="text" class="form-control" id="txtEmail" placeholder="tucorreo@dominio.com" value="" required>
                                 <div class="invalid-feedback">
                                     Email inválido
@@ -160,7 +160,7 @@
                                   <div id="alertValidacionesTextoEmail">
                                     <p id="alertEmail"></p>
                                   </div>
-                                <label for="Number" class="input">Número telefónico</label>
+                                <label for="Number" class="input" name="Number">Número telefónico</label>
                                 <input type="text" class="form-control" id="txtPhone" placeholder="Número telefónico(10 dígitos)" value="" required>
                                 <div class="invalid-feedback">
                                     Número inválido
@@ -190,7 +190,7 @@
                                   </div>
                                 <br>
                                 <div class="col-md-12 ">
-                                    <label for="Name" class="input">Mensaje</label>
+                                    <label for="Name" class="input" name="input">Mensaje</label>
                                     <textarea type="text" class="form-control" id="txtMensaje" placeholder="Mensaje" value="" required></textarea>
                                     <div class="invalid-feedback">
                                         Mensaje inválido
