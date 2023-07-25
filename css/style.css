@@ -12,33 +12,15 @@ body {
     background-size: cover;
 }
 
-/* =============== NAVBAR ===============*/
-.header {
-    position: fixed;
-    background: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    border-radius: 0px 0px 25px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    box-shadow: inset 1px 10px 10px 1px #FBE053,
-        1px 10px 8px 4px #84BF68;
-
-}
-
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     pointer-events: none;
 }
 
 .navbar a {
     display: inline-block;
-    font-size: 40px;
+    font-size: 20px;
     color: black;
     text-decoration: none;
     font-weight: 500;
@@ -54,7 +36,7 @@ body {
 
 .navbar button {
     display: flex;
-    width: 123px;
+    /* width: 123px; */
     height: 53px;
     padding: 26px;
     justify-content: center;
@@ -66,19 +48,151 @@ body {
     margin-left: 35px;
 }
 
+.navbar-nav {
+  text-align: center;
+}
 
-
-/* HOME CONTENT */
-
-.home {
-    width: 100%;
-    height: 100vh;
+/*Texto de Nosotros*/
+.aboutUs {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 10% 0;
+
+}
+
+.aboutUs p {
+    padding: 3% 8% 3% 8%;
+    font-size: 30px;
+    background: linear-gradient(to left, rgba(132, 191, 104, .8), rgba(251, 224, 83, .8)), url(../src/img/fondoElotesGrisBot.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* CARDS  */
+
+.card-container {
+    padding: 8%;
+}
+
+
+.card-title {
+    display: flex;
+    font-weight: bold;
+    font-size: 25px;
+    justify-content: center;
+    align-content: center;
+    text-shadow: 1px 1px 2px #FBE053,
+        2px 2px 4px #84BF68;
+    filter: blur(0.8px);
+}
+
+.card-body .card-text {
+    display: flex;
+    justify-content: justify;
+    align-items: justify;
+    font-size: 20px;
+}
+
+.card-socials {
+    background: #84BF68;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.card-socials a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #FBE053, #84BF68);
+    border-radius: 50%;
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    margin: 20px 0;
+    z-index: 1;
+}
+
+.card-socials a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FBE053, #84BF68);
+    border-radius: 50%;
+    z-index: -1;
+    transform: .5s ease;
+}
+
+.card-socials a:hover::before {
+    filter: blur(3px);
+}
+
+.card-socials a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #84BF68;
+    border-radius: 50%;
+    transform: scale(0.88);
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.card-socials a:hover::after {
+    transform: scale(0);
 }
 
 .color1 {
-    background-color: rgb(132, 191, 104);
+    background: linear-gradient(45deg, #FBE053, #84BF68);
+    padding-left: 60px;
+    padding-top: 60px;
+    
+}
+
+
+/*Telefono */
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-areas: "sidebar";
+}
+
+/* Para tablet */
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas:
+            "sidebar sidebar";
+    }
+}
+
+/* Escritorio */
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas:
+            "sidebar sidebar sidebar";
+    }
+}
+/*CONTACTO*/
+.container{
+    background-color: #fff;
+}
+.form-control{
+    
+   border-color: #84BF68;
+}
+.btn-primary{
+    background-color: #FBE053;
+    border: #FBE053;
+    color: black;
 }
