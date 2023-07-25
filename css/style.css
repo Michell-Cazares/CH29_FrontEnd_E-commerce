@@ -198,3 +198,16 @@ body {
             "sidebar sidebar sidebar";
     }
 }
+/*CONTACTO*/
+.container{
+    background-color: #fff;
+}
+.form-control{
+    
+   border-color: #84BF68;
+}
+.btn-primary{
+    background-color: #FBE053;
+    border: #FBE053;
+    color: black;
+}
