@@ -13,7 +13,7 @@ body {
 }
 
 /* =============== NAVBAR ===============*/
-.header {
+/* .header {
     position: fixed;
     background: white;
     top: 0;
@@ -28,17 +28,17 @@ body {
     box-shadow: inset 1px 10px 10px 1px #FBE053,
         1px 10px 8px 4px #84BF68;
 
-}
+} */
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     pointer-events: none;
 }
 
 .navbar a {
     display: inline-block;
-    font-size: 40px;
+    font-size: 20px;
     color: black;
     text-decoration: none;
     font-weight: 500;
@@ -54,7 +54,7 @@ body {
 
 .navbar button {
     display: flex;
-    width: 123px;
+    /* width: 123px; */
     height: 53px;
     padding: 26px;
     justify-content: center;
@@ -66,6 +66,9 @@ body {
     margin-left: 35px;
 }
 
+.navbar-nav {
+  text-align: center;
+}
 
 /*Texto de Nosotros*/
 .aboutUs {
