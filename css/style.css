@@ -12,24 +12,6 @@ body {
     background-size: cover;
 }
 
-/* =============== NAVBAR ===============*/
-/* .header {
-    position: fixed;
-    background: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    border-radius: 0px 0px 25px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    box-shadow: inset 1px 10px 10px 1px #FBE053,
-        1px 10px 8px 4px #84BF68;
-
-} */
-
 .logo {
     width: 120px;
     height: 120px;
