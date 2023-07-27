@@ -109,7 +109,7 @@ class NavBar extends HTMLElement {
                   <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                     <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
                       <li class="nav-item mx-2">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
                       </li>
                       <li class="nav-item mx-2">
                         <a class="nav-link" href="./nosotros.html">Nosotros</a>
