@@ -233,7 +233,7 @@ txtMensaje.addEventListener("keyup", function (event) {
 });
 
 
-listAsunto.addEventListener("keyup", function (event) {
+listAsunto.addEventListener("change", function (event) {
   event.preventDefault();
   //quitar alertas
   alertValidacionesListAsunto.innerHTML = "";

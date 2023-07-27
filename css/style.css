@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* COLORES
+Amarillo: #FBE053
+Verde: #84BF68
+Blanco: #fff o white
+*/
+
+/* Esto es por si a un texto quieres agregarle un gradiente en diagonal amarillo-verde
+    
+
+    background: linear-gradient(45deg, #FBE053, #84BF68);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +28,8 @@ body {
 }
 
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     pointer-events: none;
 }
 
@@ -49,7 +64,7 @@ body {
 }
 
 .navbar-nav {
-  text-align: center;
+    text-align: center;
 }
 
 /*Texto de Nosotros*/
@@ -67,6 +82,22 @@ body {
     background-size: cover;
     border-radius: 20px;
     font-weight: 500;
+}
+
+/* FOOTER */
+.pieDePagina i {
+    font-size: 30px;
+}
+
+.pieDePagina .siguenos,
+.legales,
+.miembros,
+.patrocinadores {
+    margin-bottom: 25px;
+}
+
+.pieDePagina li {
+    margin: 3px;
 }
 
 /* CARDS  */
@@ -150,7 +181,7 @@ body {
     background: linear-gradient(45deg, #FBE053, #84BF68);
     padding-left: 60px;
     padding-top: 60px;
-    
+
 }
 
 
@@ -180,20 +211,46 @@ body {
             "sidebar sidebar sidebar";
     }
 }
-/*CONTACTO*/
-.container{
+
+
+/* CONTENEDOR DE LAS PÁGINAS */
+.container {
     background-color: #fff;
+    padding: 100px 0 100px 0;
 }
-.form-control{
-    
-   border-color: #84BF68;
+
+/* TÍTULO DE LOS CONTENEDORES */
+.container .title {
+    margin-bottom: 75px;
+    text-align: center;
 }
-.btn-primary{
+
+
+
+
+/*CONTACTO*/
+.form-control {
+    border-color: #84BF68;
+}
+
+.btn-primary {
     background-color: #FBE053;
     border: #FBE053;
     color: black;
 }
 
-.pieDePagina i{
-    font-size: 30px;
+
+
+/*Tamaño y color de los iconos de la información de Contacto*/
+.contacto-info i {
+    font-size: 50px;
+    background: linear-gradient(45deg, #FBE053, #84BF68);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+/*Alineación de las checkbox de contacto */
+.checkouts {
+    text-align: left;
 }
