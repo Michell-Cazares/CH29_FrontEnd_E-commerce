@@ -1,10 +1,10 @@
 class Footer extends HTMLElement {
-  constructor(){
+  constructor() {
     super();
   }
-    connectedCallback() {
-        this.innerHTML =
-            `
+  connectedCallback() {
+    this.innerHTML =
+      `
             <!--Inicia footer-->
             <footer>
               <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top color1 pieDePagina">
@@ -39,8 +39,8 @@ class Footer extends HTMLElement {
                   <h5>Legales</h5>
                   <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
-                    <li class="nav-item mb-2"><a href="./pages/terminos-y-condiciones.html" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
-                    <li class="nav-item mb-2"><a href="./pages/aviso-de-privacidad.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
+                    <li class="nav-item mb-2"><a href="./terminosCondiciones.html" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
+                    <li class="nav-item mb-2"><a href="./avisoPrivacidad.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
                   </ul>
                 </div>
           
@@ -78,12 +78,12 @@ class Footer extends HTMLElement {
           
             <!--Termina footer-->
         `
-    }
+  }
 }
 class NavBar extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML =
-            `
+  connectedCallback() {
+    this.innerHTML =
+      `
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
               <div class="container-fluid">
@@ -131,7 +131,7 @@ class NavBar extends HTMLElement {
             </nav>
             <!-- Termina Navbar -->
         `
-    }
+  }
 }
 
 customElements.define('app-footer', Footer);
