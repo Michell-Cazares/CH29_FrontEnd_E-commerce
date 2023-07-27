@@ -39,8 +39,8 @@ class Footer extends HTMLElement {
                   <h5>Legales</h5>
                   <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
+                    <li class="nav-item mb-2"><a href="./pages/terminos-y-condiciones.html" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
+                    <li class="nav-item mb-2"><a href="./pages/aviso-de-privacidad.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
                   </ul>
                 </div>
           
@@ -118,7 +118,7 @@ class NavBar extends HTMLElement {
                         <a class="nav-link" href="./contacto.html">Contacto</a>
                       </li>
                       <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">Productos</a>
+                        <a class="nav-link" href="./productos.html">Productos</a>
                       </li>
                     </ul>
                     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
