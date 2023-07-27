@@ -1,4 +1,7 @@
 class Footer extends HTMLElement {
+  constructor(){
+    super();
+  }
     connectedCallback() {
         this.innerHTML =
             `
@@ -109,10 +112,10 @@ class NavBar extends HTMLElement {
                         <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
                       </li>
                       <li class="nav-item mx-2">
-                        <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="./nosotros.html">Nosotros</a>
                       </li>
                       <li class="nav-item mx-2">
-                        <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
                       </li>
                       <li class="nav-item mx-2">
                         <a class="nav-link" href="#">Productos</a>
