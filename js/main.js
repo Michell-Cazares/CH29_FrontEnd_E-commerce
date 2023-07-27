@@ -259,10 +259,6 @@ function removeAllInstances(arr, item) {
 }
 
 
-
-
-
-
 // txtMarca.addEventListener("keypress", function (event) {
 //   if (event.key === "Enter") {
 //     event.preventDefault();
