@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* COLORES
+Amarillo: #FBE053
+Verde: #84BF68
+Blanco: #fff o white
+*/
+
+/* Esto es por si a un texto quieres agregarle un gradiente en diagonal amarillo-verde
+    
+
+    background: linear-gradient(45deg, #FBE053, #84BF68);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -13,12 +28,12 @@ body {
 }
 
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     pointer-events: none;
 }
 
-.navbar a {
+.navbar .nav-link {
     display: inline-block;
     font-size: 20px;
     color: black;
@@ -27,8 +42,8 @@ body {
     margin-left: 35px;
 }
 
-.navbar a.active,
-.navbar a:hover {
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
     background: linear-gradient(45deg, #FBE053, #84BF68);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -36,7 +51,7 @@ body {
 
 .navbar button {
     display: flex;
-    /* width: 123px; */
+    width: 100px;
     height: 53px;
     padding: 26px;
     justify-content: center;
@@ -45,12 +60,18 @@ body {
     border-color: transparent;
     background: #FBE053;
     box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-left: 35px;
+    margin-right: 10px;
+    font-size: 25px;
 }
 
 .navbar-nav {
-  text-align: center;
+    text-align: center;
 }
+
+.navbar .navBarButtons a {
+    text-decoration: none;
+}
+
 
 /*Texto de Nosotros*/
 .aboutUs {
@@ -69,6 +90,21 @@ body {
     font-weight: 500;
 }
 
+/* FOOTER */
+.pieDePagina i {
+    font-size: 30px;
+}
+
+.pieDePagina .siguenos,
+.legales,
+.patrocinadores {
+    margin-bottom: 25px;
+}
+
+.pieDePagina li {
+    margin: 3px;
+}
+
 /* CARDS  */
 
 .card-container {
@@ -82,9 +118,6 @@ body {
     font-size: 25px;
     justify-content: center;
     align-content: center;
-    text-shadow: 1px 1px 2px #FBE053,
-        2px 2px 4px #84BF68;
-    filter: blur(0.8px);
 }
 
 .card-body .card-text {
@@ -153,7 +186,7 @@ body {
     background: linear-gradient(45deg, #FBE053, #84BF68);
     padding-left: 60px;
     padding-top: 60px;
-    
+
 }
 
 
@@ -183,16 +216,43 @@ body {
             "sidebar sidebar sidebar";
     }
 }
-/*CONTACTO*/
-.container{
+
+
+/* CONTENEDOR DE LAS PÁGINAS */
+.container {
     background-color: #fff;
+    padding: 100px 0 100px 0;
 }
-.form-control{
-    
-   border-color: #84BF68;
+
+/* TÍTULO DE LOS CONTENEDORES */
+.container .title {
+    margin-bottom: 75px;
+    text-align: center;
 }
-.btn-primary{
+
+
+
+
+/*CONTACTO*/
+.form-control {
+    border-color: #84BF68;
+}
+
+.btn-primary {
     background-color: #FBE053;
     border: #FBE053;
     color: black;
+}
+
+
+
+/*Tamaño y color de los iconos de la información de Contacto*/
+.contacto-info i {
+    font-size: 50px;
+    color: #84BF68;
+}
+
+/*Alineación de las checkbox de contacto */
+.checkouts {
+    text-align: left;
 }

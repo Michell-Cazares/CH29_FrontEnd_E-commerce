@@ -8,6 +8,8 @@ let listAsunto = document.getElementById("listAsunto");
 let checkrecibirInfo = document.getElementById("checkrecibirInfo");
 let checkPoliticasPriv = document.getElementById("checkPoliticasPriv");
 
+let formContacto = document.getElementById("formContacto");
+
 
 let alertNombre = document.getElementById("alertNombre");
 let alertEmail = document.getElementById("alertEmail");
@@ -17,14 +19,15 @@ let alertCheckPriv = document.getElementById("alertCheckPriv");
 
 
 
-
+//Alertas
 let alertValidacionesTextoNombre = document.getElementById("alertValidacionesTextoNombre");
 let alertValidacionesTextoEmail = document.getElementById("alertValidacionesTextoEmail");
 let alertValidacionesTextoPhone = document.getElementById("alertValidacionesTextoPhone");
 let alertValidacionesTextoMensaje = document.getElementById("alertValidacionesTextoMensaje");
 let alertValidacionesListAsunto = document.getElementById("alertValidacionesListAsunto");
 let alertValidacionesCheckPriv = document.getElementById("alertValidacionesCheckPriv");
-let index = 0;
+
+let index = [];
 
 function validarNombre(nombre) {
   if (nombre.length >= 3 && nombre.length < 100) {
@@ -36,7 +39,11 @@ function validarNombre(nombre) {
 
 //Regex Email
 let regexEmail =
+<<<<<<< HEAD
 /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|.(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+=======
+  /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+>>>>>>> develop
 function validarEmail(email) {
   if (email != "") {
     if (regexEmail.test(email)) {
@@ -59,10 +66,8 @@ function validarMensaje(mensaje) {
 
 let regextel = /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/;
 function validarNumTel(numTel) {
-  console.log(numTel);
   if (numTel != "") {
     if (regextel.test(numTel)) {
-      console.log("true");
       return true;
     } else {
       return false;
@@ -82,8 +87,16 @@ function validarListAsunto(asunto) {
 }
 
 function politicasPrivIsChecked() {
-  console.log(checkPoliticasPriv.checked);
   if (checkPoliticasPriv.checked) {
+    checkPoliticasPriv.value = "Si";
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function recibirInfoIsChecked() {
+  if (checkrecibirInfo.checked) {
     return true;
   } else {
     return false;
@@ -93,108 +106,134 @@ function politicasPrivIsChecked() {
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
   if (!validarNombre(txtNombre.value)) {
-    if (index == 0) {
+    if (!index.includes("nombre")) {
       alertValidacionesTextoNombre.insertAdjacentHTML(
         "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
       alertValidacionesTextoNombre.style.color = "red";
       txtNombre.style.border = "solid thin red";
       isValid = false;
-      index = 1;
+      index.push("nombre");
     }
   }
   if (!validarEmail(txtEmail.value)) {
-    if (index == 0) {
+    if (!index.includes("email")) {
       alertValidacionesTextoEmail.insertAdjacentHTML("afterbegin", `El <strong> Correo </strong> no es correcto. <br/> `);
       alertValidacionesTextoEmail.style.color = "red";
       txtEmail.style.border = "solid thin red";
       isValid = false;
-      index = 1;
+      index.push("email");
     }
 
   }
 
   if (!validarNumTel(txtPhone.value)) {
-    if (index == 0) {
+    if (!index.includes("phone")) {
       alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
       alertValidacionesTextoPhone.style.color = "red";
       txtPhone.style.border = "solid thin red";
       isValid = false;
-      index = 1;
+      index.push("phone");
     }
 
   }
 
   if (!validarListAsunto(listAsunto.value)) {
-    if (index == 0) {
+    if (!index.includes("listAsunto")) {
       alertValidacionesListAsunto.insertAdjacentHTML("afterbegin", `Selecciona un <strong> Asunto </strong> por favor. <br/> `);
       alertValidacionesListAsunto.style.color = "red";
       listAsunto.style.border = "solid thin red";
       isValid = false;
-      index = 1;
+      index.push("listAsunto");
     }
 
   }
 
   if (!validarMensaje(txtMensaje.value)) {
-    if (index == 0) {
+    if (!index.includes("mensaje")) {
       alertValidacionesTextoMensaje.insertAdjacentHTML("afterbegin", `El <strong> Mensaje</strong> no es correcto. <br/> `);
       alertValidacionesTextoMensaje.style.color = "red";
       txtMensaje.style.border = "solid thin red";
       isValid = false;
-      index = 1;
+      index.push("mensaje");
     }
   }
 
   if (!politicasPrivIsChecked()) {
-    if (index == 0) {
+    if (!index.includes("checkPriv")) {
       alertValidacionesCheckPriv.insertAdjacentHTML("afterbegin", `Debe aceptar las <strong>Políticas de Privacidad</strong>. <br/> `);
       alertValidacionesCheckPriv.style.color = "red";
       checkPoliticasPriv.style.border = "solid thin red";
       isValid = false;
-      index = 1;
+      index.push("checkPriv");
     }
-
   }
-
-
+  if (validarEmail(txtEmail.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked()) {
+    if(recibirInfoIsChecked()){
+      checkrecibirInfo.value = "Si";
+    }else{
+      checkrecibirInfo.value = "No";
+    }
+    enviarEmail();
+    checkrecibirInfo.value = "";
+    checkPoliticasPriv.value = "";
+    index = [];
+  }
 });
 
 
-txtNombre.addEventListener("click", function (event) {
+
+function enviarEmail() {
+  const serviceID = 'service_9r31h4b';
+  const templateID = 'template_o4c2eck';
+  emailjs.sendForm(serviceID, templateID, formContacto)
+    .then(() => {
+      alertValidacionesEnviar.insertAdjacentHTML("afterbegin", `<strong>Gracias por comunicarte con nosotros.</strong> <br/> `);
+      alertValidacionesEnviar.style.display = "block";
+      alertValidacionesEnviar.style.color = "green";
+      alertEnviar.style.border = "solid thin green";
+    }, (err) => {
+      alert(JSON.stringify(err));
+    });
+}
+
+
+
+
+txtNombre.addEventListener("keyup", function (event) {
   event.preventDefault();
   //quitar alertas
   alertValidacionesTextoNombre.innerHTML = "";
   alertNombre.style.display = "none";
   txtNombre.style.border = "";
-  index = 0;
+  removeAllInstances(index, "nombre");
 });
 
 
-txtEmail.addEventListener("click", function (event) {
+txtEmail.addEventListener("keyup", function (event) {
   event.preventDefault();
   //quitar alertas
   alertValidacionesTextoEmail.innerHTML = "";
   alertEmail.style.display = "none";
   txtEmail.style.border = "";
-  index = 0;
+  removeAllInstances(index, "email");
 });
 
-txtPhone.addEventListener("click", function (event) {
+txtPhone.addEventListener("keyup", function (event) {
   event.preventDefault();
   //quitar alertas
   alertValidacionesTextoPhone.innerHTML = "";
   alertPhone.style.display = "none";
   txtPhone.style.border = "";
-  index = 0;
+  removeAllInstances(index, "phone");
 });
 
-txtMensaje.addEventListener("click", function (event) {
+txtMensaje.addEventListener("keyup", function (event) {
   event.preventDefault();
   //quitar alertas
   alertValidacionesTextoMensaje.innerHTML = "";
   alertMensaje.style.display = "none";
   txtMensaje.style.border = "";
-  index = 0;
+  removeAllInstances(index, "mensaje");
 });
 
 
@@ -203,7 +242,7 @@ listAsunto.addEventListener("change", function (event) {
   //quitar alertas
   alertValidacionesListAsunto.innerHTML = "";
   listAsunto.style.border = "";
-  index = 0;
+  removeAllInstances(index, "listAsunto");
 });
 
 
@@ -212,10 +251,16 @@ checkPoliticasPriv.addEventListener("change", function (event) {
   //quitar alertas
   alertValidacionesCheckPriv.innerHTML = "";
   checkPoliticasPriv.style.border = "";
-  index = 0;
+  alertCheckPriv.style.display = "none";
+  removeAllInstances(index, "checkPriv");
 });
 
 
+function removeAllInstances(arr, item) {
+  for (var i = arr.length; i--;) {
+    if (arr[i] === item) arr.splice(i, 1);
+  }
+}
 
 
 // txtMarca.addEventListener("keypress", function (event) {
