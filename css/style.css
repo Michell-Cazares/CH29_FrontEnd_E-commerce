@@ -33,7 +33,7 @@ body {
     pointer-events: none;
 }
 
-.navbar a {
+.navbar .nav-link {
     display: inline-block;
     font-size: 20px;
     color: black;
@@ -42,8 +42,8 @@ body {
     margin-left: 35px;
 }
 
-.navbar a.active,
-.navbar a:hover {
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
     background: linear-gradient(45deg, #FBE053, #84BF68);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -51,7 +51,7 @@ body {
 
 .navbar button {
     display: flex;
-    /* width: 123px; */
+    width: 100px;
     height: 53px;
     padding: 26px;
     justify-content: center;
@@ -60,12 +60,18 @@ body {
     border-color: transparent;
     background: #FBE053;
     box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-left: 35px;
+    margin-right: 10px;
+    font-size: 25px;
 }
 
 .navbar-nav {
     text-align: center;
 }
+
+.navbar .navBarButtons a {
+    text-decoration: none;
+}
+
 
 /*Texto de Nosotros*/
 .aboutUs {
@@ -243,10 +249,7 @@ body {
 /*Tamaño y color de los iconos de la información de Contacto*/
 .contacto-info i {
     font-size: 50px;
-    background: linear-gradient(45deg, #FBE053, #84BF68);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-
+    color: #84BF68;
 }
 
 /*Alineación de las checkbox de contacto */

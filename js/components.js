@@ -38,9 +38,9 @@ class Footer extends HTMLElement {
                 <div class="col-4 col-mb-4 legales">
                   <h5>Legales</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
+                    <li class="nav-item mb-2"><a href="./avisoPrivacidad.html" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
                     <li class="nav-item mb-2"><a href="./terminosCondiciones.html" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
-                    <li class="nav-item mb-2"><a href="./avisoPrivacidad.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
+                    <li class="nav-item mb-2"><a href="./login.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
                   </ul>
                 </div>
           
@@ -121,7 +121,7 @@ class NavBar extends HTMLElement {
                         <a class="nav-link" href="./productos.html">Productos</a>
                       </li>
                     </ul>
-                    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 navBarButtons">
                       <a href="./login.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-user'></i></button></a>
                       <a href="./carrito.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-cart'></i></button></a>
                     </div>

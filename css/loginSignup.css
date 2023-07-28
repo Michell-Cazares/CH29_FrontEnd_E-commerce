@@ -23,24 +23,8 @@
   z-index: 2;
 }
 
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.btnlogin {
-  background-color: #FBE053;
-  font-weight: bold;
-}
-
 .colreg {
   color: black;
   font-weight: bold;
+  text-decoration: none;
 }
