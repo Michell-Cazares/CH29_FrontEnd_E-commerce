@@ -109,7 +109,7 @@ class NavBar extends HTMLElement {
                   <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                     <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
                       <li class="nav-item mx-2">
-                        <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                        <a class="nav-link" href="./index.html">Inicio</a>
                       </li>
                       <li class="nav-item mx-2">
                         <a class="nav-link" href="./nosotros.html">Nosotros</a>
@@ -122,8 +122,8 @@ class NavBar extends HTMLElement {
                       </li>
                     </ul>
                     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                      <button class="btn btn-outline-success" type="button"><i class='bx bx-user'></i></button>
-                      <button class="btn btn-outline-success" type="button"><i class='bx bx-cart'></i></button>
+                      <a href="./login.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-user'></i></button></a>
+                      <a href="./carrito.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-cart'></i></button></a>
                     </div>
                   </div>
                 </div>
