@@ -38,12 +38,7 @@ function validarNombre(nombre) {
 }
 
 //Regex Email
-let regexEmail =
-<<<<<<< HEAD
-/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|.(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-=======
-  /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
->>>>>>> develop
+let regexEmail = /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|.(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
 function validarEmail(email) {
   if (email != "") {
     if (regexEmail.test(email)) {
@@ -168,9 +163,9 @@ btnEnviar.addEventListener("click", function (event) {
     }
   }
   if (validarEmail(txtEmail.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked()) {
-    if(recibirInfoIsChecked()){
+    if (recibirInfoIsChecked()) {
       checkrecibirInfo.value = "Si";
-    }else{
+    } else {
       checkrecibirInfo.value = "No";
     }
     enviarEmail();
