@@ -61,7 +61,7 @@ addItem({'name':'Esquite asado preparado chico',
     'price':'25.00'});
 
 addItem({'name':'Esquite asado preparado grande',
-    'img':'./src/img/fotosProductos/esquiteAsadoPreparado.jpg',
+    'img':'./src/img/fotosProductos/esquiteAsadoPreparado.JPG',
     'description':'Esquite asado con chile de arbol, epazote y jalapeño,  preparado con mayonesa, queso, chile, limón y sal.',
     'price':'30.00'});
 
@@ -76,7 +76,7 @@ addItem({'name':'DoriEsquites',
 
 addItem({'name':'Maruchan Esquites',
     'img':'./src/img/fotosProductos/maruchanEsquites.JPG',
-    'description':'Las papitas de su gusto con Maruchan y con esquite, mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste',
+    'description':'Las papitas de su gusto con Maruchan y con esquite, mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste.',
     'price':'70.00'});
 
 addItem({'name':'Maruchan Normal',
