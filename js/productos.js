@@ -20,7 +20,7 @@ function addItem(item){
 //Elotes preparados ==========================================================
 
 addItem({'name':'Elote preparado',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/elotePreparadoTehuacan.jpg',
     'description':'Elote preparado con mayonesa, queso, chile, limón y sal. Elote de grano pequeño (Tehuacán), por temporada.',
     'price':'25.00'});
 
@@ -37,45 +37,45 @@ addItem({'name':'Elote enchilado',
     'price':'25.00'});
 
 addItem({'name':'Elote enchilado',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/eloteEnchiladoCacahuazintle.jpg',
     'description':'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (Cacahuazintle), por temporada.',
     'price':'35.00'});
 
 //Esquite natural =============================================================
 
 addItem({'name':'Esquite natural preparado chico',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/esquiteNaturalPreparado.jpg',
     'description':'Esquite hervido preparado con mayonesa, queso, chile, limón y sal. Vaso chico.',
     'price':'25.00'});
 
 addItem({'name':'Esquite natural preparado grande',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/esquiteNaturalPreparado.jpg',
     'description':'Esquite hervido preparado con mayonesa, queso, chile, limón y sal. Vaso grande.',
     'price':'30.00'});
 
 //Esquite asado =============================================================
 
 addItem({'name':'Esquite asado preparado chico',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/esquiteAsadoPreparado.jpg',
     'description':'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (cacahuazintle), por temporada.',
     'price':'25.00'});
 
 addItem({'name':'Esquite asado preparado grande',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/esquiteAsadoPreparado.jpg',
     'description':'Esquite asado con chile de arbol, epazote y jalapeño,  preparado con mayonesa, queso, chile, limón y sal.',
     'price':'30.00'});
 
 //DoriEsquites =============================================================
 
 addItem({'name':'DoriEsquites',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/doriEsquite.jpg',
     'description':'Las papitas de su gusto, con esquite mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste.',
     'price':'50.00'});
     
 //Maruchan =============================================================
 
 addItem({'name':'Maruchan Esquites',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'./src/img/fotosProductos/maruchanEsquites.jpg',
     'description':'Las papitas de su gusto con Maruchan y con esquite, mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste',
     'price':'70.00'});
 
