@@ -78,6 +78,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: justify;
+    font-size: small;
 
 }
 
@@ -255,4 +257,10 @@ body {
 /*Alineación de las checkbox de contacto */
 .checkouts {
     text-align: left;
+}
+/*Tamaño de fotos de participantes */
+.card-img-top{
+    width: 400px;
+	height: 400px;
+	object-fit: cover;
 }
