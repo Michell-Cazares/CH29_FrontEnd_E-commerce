@@ -56,7 +56,7 @@ addItem({'name':'Esquite natural preparado grande',
 //Esquite asado =============================================================
 
 addItem({'name':'Esquite asado preparado chico',
-    'img':'./src/img/fotosProductos/esquiteAsadoPreparado.jpg',
+    'img':'./src/img/fotosProductos/esquiteAsadoPreparado.JPG',
     'description':'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (cacahuazintle), por temporada.',
     'price':'25.00'});
 
@@ -68,14 +68,14 @@ addItem({'name':'Esquite asado preparado grande',
 //DoriEsquites =============================================================
 
 addItem({'name':'DoriEsquites',
-    'img':'./src/img/fotosProductos/doriEsquite.jpg',
+    'img':'./src/img/fotosProductos/doriEsquite.JPG',
     'description':'Las papitas de su gusto, con esquite mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste.',
     'price':'50.00'});
     
 //Maruchan =============================================================
 
 addItem({'name':'Maruchan Esquites',
-    'img':'./src/img/fotosProductos/maruchanEsquites.jpg',
+    'img':'./src/img/fotosProductos/maruchanEsquites.JPG',
     'description':'Las papitas de su gusto con Maruchan y con esquite, mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste',
     'price':'70.00'});
 
