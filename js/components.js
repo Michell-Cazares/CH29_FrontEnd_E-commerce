@@ -38,9 +38,9 @@ class Footer extends HTMLElement {
                 <div class="col-4 col-mb-4 legales">
                   <h5>Legales</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="./avisoPrivacidad.html" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
-                    <li class="nav-item mb-2"><a href="./terminosCondiciones.html" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
-                    <li class="nav-item mb-2"><a href="./login.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
+                    <li class="nav-item mb-2"><a href="/pages/avisoPrivacidad.html" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
+                    <li class="nav-item mb-2"><a href="/pages/terminosCondiciones.html" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
+                    <li class="nav-item mb-2"><a href="/pages/login.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
                   </ul>
                 </div>
           
@@ -48,7 +48,7 @@ class Footer extends HTMLElement {
                   <h5>Patrocinadores</h5>
                   <ul class="list-unstyled d-flex">
                     <li class="ms-3"><a class="link-body-emphasis" href="http://www.salesdelistmo.com.mx/"  target="_blank" rel="noopener noreferrer"><img
-                          src="./src/img/la-fina.png" width="80px" alt="logo-la-fina"></img> </a></li>
+                          src="/src/img/la-fina.png" width="80px" alt="logo-la-fina"></img> </a></li>
                     <li class="ms-3"><a class="link-body-emphasis" href="https://www.lacostena.com.mx/es/"><img
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Isologo_de_La_Coste%C3%B1a%C2%AE.svg/2560px-Isologo_de_La_Coste%C3%B1a%C2%AE.svg.png"
                           width="80px" alt="logo-la-costena"></img></a></li>
@@ -64,7 +64,7 @@ class Footer extends HTMLElement {
                         <img src="https://seeklogo.com/images/S/salsa-valentina-logo-660854C893-seeklogo.com.png" width="80px"
                           alt="logo-valentina"></a></li>
                     <li class="ms-3"><a class="link-body-emphasis" href="https://sabritas.com.mx/promocion/"  target="_blank" rel="noopener noreferrer">
-                        <img src="./src/img/sabritas.webp" width="80px" alt="logo-sabritas"></a></li>
+                        <img src="/src/img/sabritas.webp" width="80px" alt="logo-sabritas"></a></li>
                   </ul>
                   </ul>
                 </div>
@@ -88,7 +88,7 @@ class NavBar extends HTMLElement {
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
               <div class="container-fluid">
                 <!-- Logo -->
-                <a href="./index.html"><img src="./src/img/logo.png" class="navbar-brand fs-4 logo"
+                <a href="/index.html"><img src="/src/img/logo.png" class="navbar-brand fs-4 logo"
                     alt="logo de Elotes Gutierrez"></a>
                 <!-- Toggle Btn -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -100,7 +100,7 @@ class NavBar extends HTMLElement {
                   aria-labelledby="offcanvasNavbarLabel">
                   <!-- Side Header -->
                   <div class="offcanvas-header">
-                    <a href="./index.html"><img src="./src/img/logo.png" class="navbar-brand fs-4 logo"
+                    <a href="/index.html"><img src="/src/img/logo.png" class="navbar-brand fs-4 logo"
                         alt="logo de Elotes Gutierrez"></a>
                     <button type="button" class="btn btn-outline-success" data-bs-dismiss="offcanvas" aria-label="Close"><i
                         class='bx bx-x'></i></button>
@@ -109,21 +109,21 @@ class NavBar extends HTMLElement {
                   <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                     <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
                       <li class="nav-item mx-2">
-                        <a class="nav-link" href="./index.html">Inicio</a>
+                        <a class="nav-link" href="/index.html">Inicio</a>
                       </li>
                       <li class="nav-item mx-2">
-                        <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="/pages/nosotros.html">Nosotros</a>
                       </li>
                       <li class="nav-item mx-2">
-                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                        <a class="nav-link" href="/pages/contacto.html">Contacto</a>
                       </li>
                       <li class="nav-item mx-2">
-                        <a class="nav-link" href="./productos.html">Productos</a>
+                        <a class="nav-link" href="/pages/productos.html">Productos</a>
                       </li>
                     </ul>
                     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 navBarButtons">
-                      <a href="./login.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-user'></i></button></a>
-                      <a href="./carrito.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-cart'></i></button></a>
+                      <a href="/pages/login.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-user'></i></button></a>
+                      <a href="/pages/carrito.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-cart'></i></button></a>
                     </div>
                   </div>
                 </div>
