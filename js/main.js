@@ -39,7 +39,7 @@ function validarNombre(nombre) {
 
 //Regex Email
 let regexEmail =
-/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+  /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
 function validarEmail(email) {
   if (email != "") {
     if (regexEmail.test(email)) {
@@ -194,42 +194,91 @@ function enviarEmail() {
 
 
 
-
+//Listener para validar el nombre cada vez que el usuario teclee algo en el campo nombre
 txtNombre.addEventListener("keyup", function (event) {
   event.preventDefault();
-  //quitar alertas
-  alertValidacionesTextoNombre.innerHTML = "";
-  alertNombre.style.display = "none";
-  txtNombre.style.border = "";
-  removeAllInstances(index, "nombre");
+  if (!validarNombre(txtNombre.value)) {
+    if (!index.includes("nombre")) {
+      alertValidacionesTextoNombre.insertAdjacentHTML(
+        "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
+      alertValidacionesTextoNombre.style.color = "red";
+      txtNombre.style.border = "solid thin red";
+      isValid = false;
+      index.push("nombre");
+    }
+  }//if nombre no cumple las validaciones
+  else {
+    //quitar alertas
+    alertValidacionesTextoNombre.innerHTML = "";
+    alertNombre.style.display = "none";
+    txtNombre.style.border = "";
+    removeAllInstances(index, "nombre");
+  }
+
 });
 
 
 txtEmail.addEventListener("keyup", function (event) {
   event.preventDefault();
-  //quitar alertas
-  alertValidacionesTextoEmail.innerHTML = "";
-  alertEmail.style.display = "none";
-  txtEmail.style.border = "";
-  removeAllInstances(index, "email");
+  if (!validarEmail(txtEmail.value)) {
+    if (!index.includes("email")) {
+      alertValidacionesTextoEmail.insertAdjacentHTML("afterbegin", `El <strong> Correo </strong> no es correcto. <br/> `);
+      alertValidacionesTextoEmail.style.color = "red";
+      txtEmail.style.border = "solid thin red";
+      isValid = false;
+      index.push("email");
+    }
+  }//if email no cumple las validaciones
+  else {
+    //quitar alertas
+    alertValidacionesTextoEmail.innerHTML = "";
+    alertEmail.style.display = "none";
+    txtEmail.style.border = "";
+    removeAllInstances(index, "email");
+  }
+
 });
 
 txtPhone.addEventListener("keyup", function (event) {
   event.preventDefault();
-  //quitar alertas
-  alertValidacionesTextoPhone.innerHTML = "";
-  alertPhone.style.display = "none";
-  txtPhone.style.border = "";
-  removeAllInstances(index, "phone");
+  if (!validarNumTel(txtPhone.value)) {
+    if (!index.includes("phone")) {
+      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
+      alertValidacionesTextoPhone.style.color = "red";
+      txtPhone.style.border = "solid thin red";
+      isValid = false;
+      index.push("phone");
+    }
+
+  }//if phone no cumple las validaciones 
+  else {
+    //quitar alertas
+    alertValidacionesTextoPhone.innerHTML = "";
+    alertPhone.style.display = "none";
+    txtPhone.style.border = "";
+    removeAllInstances(index, "phone");
+  }
+
 });
 
 txtMensaje.addEventListener("keyup", function (event) {
   event.preventDefault();
+  if (!validarMensaje(txtMensaje.value)) {
+    if (!index.includes("mensaje")) {
+      alertValidacionesTextoMensaje.insertAdjacentHTML("afterbegin", `El <strong> Mensaje</strong> no es correcto. <br/> `);
+      alertValidacionesTextoMensaje.style.color = "red";
+      txtMensaje.style.border = "solid thin red";
+      isValid = false;
+      index.push("mensaje");
+    }
+  }//if mensaje no cumple las validaciones 
+  else{
   //quitar alertas
   alertValidacionesTextoMensaje.innerHTML = "";
   alertMensaje.style.display = "none";
   txtMensaje.style.border = "";
   removeAllInstances(index, "mensaje");
+  }
 });
 
 
@@ -251,7 +300,7 @@ checkPoliticasPriv.addEventListener("change", function (event) {
   removeAllInstances(index, "checkPriv");
 });
 
-
+//Remueve todas las instancias de un objeto dado (item) que se encuentre en el arreglo index
 function removeAllInstances(arr, item) {
   for (var i = arr.length; i--;) {
     if (arr[i] === item) arr.splice(i, 1);
