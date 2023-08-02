@@ -21,7 +21,7 @@ function addItem(item) {
 
 addItem({
     'name': 'Elote preparado',
-    'img': '/src/img/fotosProductos/elotePreparadoTehuacan.jpg',
+    'img': '../src/img/fotosProductos/elotePreparadoTehuacan.jpg',
     'description': 'Elote preparado con mayonesa, queso, chile, limón y sal. Elote de grano pequeño (Tehuacán), por temporada.',
     'price': '25.00'
 });
@@ -44,7 +44,7 @@ addItem({
 
 addItem({
     'name': 'Elote enchilado',
-    'img': '/src/img/fotosProductos/eloteEnchiladoCacahuazintle.jpg',
+    'img': '../src/img/fotosProductos/eloteEnchiladoCacahuazintle.jpg',
     'description': 'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (Cacahuazintle), por temporada.',
     'price': '35.00'
 });
@@ -53,14 +53,14 @@ addItem({
 
 addItem({
     'name': 'Esquite natural preparado chico',
-    'img': '/src/img/fotosProductos/esquiteNaturalPreparado.jpg',
+    'img': '../src/img/fotosProductos/esquiteNaturalPreparado.jpg',
     'description': 'Esquite hervido preparado con mayonesa, queso, chile, limón y sal. Vaso chico.',
     'price': '25.00'
 });
 
 addItem({
     'name': 'Esquite natural preparado grande',
-    'img': '/src/img/fotosProductos/esquiteNaturalPreparado.jpg',
+    'img': '../src/img/fotosProductos/esquiteNaturalPreparado.jpg',
     'description': 'Esquite hervido preparado con mayonesa, queso, chile, limón y sal. Vaso grande.',
     'price': '30.00'
 });
@@ -69,14 +69,14 @@ addItem({
 
 addItem({
     'name': 'Esquite asado preparado chico',
-    'img': '/src/img/fotosProductos/esquiteAsadoPreparado.JPG',
+    'img': '../src/img/fotosProductos/esquiteAsadoPreparado.JPG',
     'description': 'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (cacahuazintle), por temporada.',
     'price': '25.00'
 });
 
 addItem({
     'name': 'Esquite asado preparado grande',
-    'img': '/src/img/fotosProductos/esquiteAsadoPreparado.JPG',
+    'img': '../src/img/fotosProductos/esquiteAsadoPreparado.JPG',
     'description': 'Esquite asado con chile de arbol, epazote y jalapeño,  preparado con mayonesa, queso, chile, limón y sal.',
     'price': '30.00'
 });
@@ -85,7 +85,7 @@ addItem({
 
 addItem({
     'name': 'DoriEsquites',
-    'img': '/src/img/fotosProductos/doriEsquite.JPG',
+    'img': '../src/img/fotosProductos/doriEsquite.JPG',
     'description': 'Las papitas de su gusto, con esquite mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste.',
     'price': '50.00'
 });
@@ -94,7 +94,7 @@ addItem({
 
 addItem({
     'name': 'Maruchan Esquites',
-    'img': '/src/img/fotosProductos/maruchanEsquites.JPG',
+    'img': '../src/img/fotosProductos/maruchanEsquites.JPG',
     'description': 'Las papitas de su gusto con Maruchan y con esquite, mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste.',
     'price': '70.00'
 });
