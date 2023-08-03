@@ -10,6 +10,7 @@
     font-family: 'Montserrat', 'sans-serif';
 }
 
+/* NAVBAR*/
 .logo {
     width: 150px;
     height: 150px;
@@ -55,7 +56,7 @@
     text-decoration: none;
 }
 
-
+/*BODY*/
 body {
     background: url(../src/img/fondoElotesAmarillos.jpg);
     background-size: cover;
