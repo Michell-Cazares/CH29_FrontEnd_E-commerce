@@ -76,25 +76,22 @@ btnAgregar.addEventListener("click", function (event) {
     }
 
     if (!product_img.src || !product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
-        alertValidaImg.insertAdjacentHTML(
-            "afterbegin", ` La <strong> imágen </strong> no es correcta. <br/> `);
-        alertValidaImg.style.color = "red";
-        alertImg.style.border = "solid thin red";
-        index.push("imagen");
+        if (!index.includes("imagen")) {
+            alertValidaImg.insertAdjacentHTML(
+                "afterbegin", ` La <strong> imagen </strong> no es correcta. <br/> `);
+            alertValidaImg.style.color = "red";
+            alertImg.style.border = "solid thin red";
+            index.push("imagen");
+        }
     }
-
     if (!index.includes("nombre") && !index.includes("description") && !index.includes("price") && !index.includes("imagen")) {
         guardarProducto(txtNombreProducto.value, product_img.src, txtDescriptionProducto.value, txtPrecioProducto.value);
         Toast.fire({
             icon: 'success',
             title: '¡El producto se registró con éxito!'
         });
-        index = [];
 
-        alertValidaNombre.innerHTML = "";
-        alertNombre.style.display = "none";
-        txtNombreProducto.style.border = "";
-        removeAllInstances(index, "nombre");
+        limpiarTodo();
 
     }
 
@@ -152,9 +149,6 @@ btnImg.addEventListener("click", function (event) {
     myWidget.open();
 
 }, false);
-
-
-
 
 
 //Listener para validar el nombre cada vez que el usuario teclee algo en el campo nombre
@@ -243,6 +237,25 @@ txtPrecioProducto.addEventListener("change", function (event) {
 
 });
 
+
+product_img.addEventListener("load", function (event) {
+    event.preventDefault();
+    if (!product_img.src || !product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
+        alertValidaImg.insertAdjacentHTML(
+            "afterbegin", ` La <strong> imagen </strong> no es correcta. <br/> `);
+        alertValidaImg.style.color = "red";
+        alertImg.style.border = "solid thin red";
+        index.push("imagen");
+    }//if precio producto no cumple las validaciones 
+    else {
+        //quitar alertas
+        alertValidaImg.innerHTML = "";
+        alertImg.style.display = "none";
+        product_img.style.border = "";
+        removeAllInstances(index, "imagen");
+    }
+});
+
 //Remueve todas las instancias de un objeto dado (item) que se encuentre en el arreglo index
 function removeAllInstances(arr, item) {
     for (var i = arr.length; i--;) {
@@ -252,12 +265,13 @@ function removeAllInstances(arr, item) {
 
 function limpiarTodo() {
     index = [];
-    checkrecibirInfo.checked = false;
-    checkPoliticasPriv.checked = false;
-    txtNombre.value = "";
-    txtEmail.value = "";
-    txtPhone.value = "";
-    txtMensaje.value = "";
-    listAsunto.value = "Asunto";
+    txtNombreProducto.value = "";
+    txtDescriptionProducto.value = "";
+    txtPrecioProducto.value = "";
+    removeAllInstances(index, "nombre");
+    removeAllInstances(index, "description");
+    removeAllInstances(index, "price");
+    removeAllInstances(index, "imagen");
+    product_img.src = "";
 }
 

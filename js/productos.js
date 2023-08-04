@@ -104,13 +104,6 @@ addItem({
     'price': '70.00'
 });
 
-// addItem({
-//     'name': 'Maruchan Normal',
-//     'img': 'https://www.gs1india.org/media/Juice_pack.jpg',
-//     'description': ' La Maruchan con  limón, sal y la salsa que guste.',
-//     'price': '25.00'
-// });
-
 window.addEventListener("load", function (event) {
     event.preventDefault();
     if (this.localStorage.getItem("producto") != null) {

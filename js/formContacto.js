@@ -318,4 +318,10 @@ function limpiarTodo() {
   txtPhone.value = "";
   txtMensaje.value = "";
   listAsunto.value = "Asunto";
+  removeAllInstances(index, "nombre");
+  removeAllInstances(index, "email");
+  removeAllInstances(index, "phone");
+  removeAllInstances(index, "mensaje");
+  removeAllInstances(index, "listAsunto");
+  removeAllInstances(index, "checkPriv");
 }
