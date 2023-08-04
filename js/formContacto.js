@@ -180,7 +180,7 @@ const Toast = Swal.mixin({
   showConfirmButton: false,
   timer: 5000,
   timerProgressBar: true
-})
+});
 
 
 
@@ -192,7 +192,7 @@ function enviarEmail() {
       Toast.fire({
         icon: 'success',
         title: '¡Gracias por comunicarte con nosotros!'
-      })
+      });
     }, (err) => {
       alert(JSON.stringify(err));
     });

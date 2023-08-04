@@ -1,4 +1,4 @@
-.container{
+.container {
     text-align: center;
     background-color: white;
     align-items: center;
@@ -6,17 +6,9 @@
     margin: 30px;
 }
 
-* {
-    font-family: 'Montserrat', 'sans-serif';
-    
-}
 
-.input{
-    margin: 30px;
-    font-size: medium;
-    font-weight:500;
-}
-.title{
+
+.title {
     padding: 20px;
     margin: 20px;
     font-weight: 300;
@@ -31,5 +23,3 @@
     border: #FBE053;
     color: black;
 }
-
-

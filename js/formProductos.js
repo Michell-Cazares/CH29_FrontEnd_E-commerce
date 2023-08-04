@@ -3,8 +3,10 @@ let txtNombreProducto = document.getElementById("txtNombreProducto");
 let txtDescriptionProducto = document.getElementById("txtDescriptionProducto");
 let txtPrecioProducto = document.getElementById("txtPrecioProducto"); // se declara variables
 let btnAgregar = document.getElementById("btnAgregar")
-let btnImg=document.getElementById("btnImagen")
+let btnImg = document.getElementById("btnImg")
 let index = [];
+
+let productos = new Array();
 
 
 //parrafos de las alertas
@@ -26,7 +28,7 @@ function validarNombre(nombre) {
         return false;
     }
 }
-function validarDescriptio(description) {
+function validarDescription(description) {
     if (description.length >= 50 && description.length < 201) {
         return true;
     } else {
@@ -34,7 +36,7 @@ function validarDescriptio(description) {
     }
 }
 function validarPrecio(precio) {
-    if (precio > 0) {
+    if (precio > 0 || precio != "") {
         return true;
     } else {
         return false;
@@ -52,7 +54,7 @@ btnAgregar.addEventListener("click", function (event) {
             index.push("nombre");
         }
     }
-    if (!validarDescriptio(txtDescriptionProducto.value)) {
+    if (!validarDescription(txtDescriptionProducto.value)) {
         if (!index.includes("description")) {
             alertValidaDescription.insertAdjacentHTML(
                 "afterbegin", ` La <strong> Descripción </strong> no es correcta. <br/> `);
@@ -71,23 +73,164 @@ btnAgregar.addEventListener("click", function (event) {
         }
     }
 
-    if (validarNombre(txtNombreProducto.value) && validarDescriptio(txtDescriptionProducto.value) && validarPrecio(txtPrecioProducto.value)) {
-        addItem();
+    if (validarNombre(txtNombreProducto.value) && validarDescription(txtDescriptionProducto.value) && validarPrecio(txtPrecioProducto.value)) {
+        guardarProducto(txtNombreProducto.value, txtDescriptionProducto.value, txtPrecioProducto.value);
+        Toast.fire({
+            icon: 'success',
+            title: '¡El producto se registró con éxito!'
+        });
         index = [];
     }
 
 });
+
+function guardarProducto(name, description, price) {
+    let producto = `{
+        "name": "${name}",
+        "img": "../src/img/fotosProductos/elotePreparadoTehuacan.jpg",
+        "description": "${description}",
+        "price": "${price}"
+    }`
+    productos.push(JSON.parse(producto));
+    localStorage.setItem("producto", JSON.stringify(productos));
+}
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 5000,
+    timerProgressBar: true
+});
+
+
+
+
+
+
 btnImg.addEventListener("click", function (event) {
     event.preventDefault();
     var myWidget = cloudinary.createUploadWidget({
         cloudName: 'my_cloud_name',
-        uploadPreset: 'my_preset'
+        uploadPreset: 'my_preset',
+        multiple: false
     }, (error, result) => {
         if (!error && result && result.event === "success") {
             console.log('Done! Here is the image info: ', result.info);
+            document
+                .getElementById("uploadedimage")
+                .setAttribute("src", result.info.secure_url);
         }
     }
     );
-    
+    myWidget.open();
+}, false);
+
+
+
+
+
+//Listener para validar el nombre cada vez que el usuario teclee algo en el campo nombre
+txtNombreProducto.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (!validarNombre(txtNombreProducto.value)) {
+        if (!index.includes("nombre")) {
+            alertValidaNombre.insertAdjacentHTML(
+                "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
+            alertValidaNombre.style.color = "red";
+            txtNombreProducto.style.border = "solid thin red";
+            index.push("nombre");
+        }
+    }//if nombre del producto no cumple las validaciones
+    else {
+        //quitar alertas
+        alertValidaNombre.innerHTML = "";
+        alertNombre.style.display = "none";
+        txtNombreProducto.style.border = "";
+        removeAllInstances(index, "nombre");
+    }
 
 });
+
+
+txtDescriptionProducto.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (!validarDescription(txtDescriptionProducto.value)) {
+        if (!index.includes("description")) {
+            alertValidaDescription.insertAdjacentHTML(
+                "afterbegin", ` La <strong> Descripción </strong> no es correcta. <br/> `);
+            alertValidaDescription.style.color = "red";
+            txtDescriptionProducto.style.border = "solid thin red";
+            index.push("description");
+        }
+    }//if description no cumple las validaciones
+    else {
+        //quitar alertas
+        alertValidaDescription.innerHTML = "";
+        alertDescrip.style.display = "none";
+        txtDescriptionProducto.style.border = "";
+        removeAllInstances(index, "description");
+    }
+
+});
+
+txtPrecioProducto.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (!validarPrecio(txtPrecioProducto.value)) {
+        if (!index.includes("precio")) {
+            alertValidaPrecioProducto.insertAdjacentHTML(
+                "afterbegin", ` El <strong> Precio </strong> no es correcto. <br/> `);
+            alertValidaPrecioProducto.style.color = "red";
+            txtPrecioProducto.style.border = "solid thin red";
+            index.push("precio");
+        }
+    }//if precio producto no cumple las validaciones 
+    else {
+        //quitar alertas
+        alertValidaPrecioProducto.innerHTML = "";
+        alertPrecio.style.display = "none";
+        txtPrecioProducto.style.border = "";
+        removeAllInstances(index, "precio");
+    }
+
+});
+
+txtPrecioProducto.addEventListener("change", function (event) {
+    event.preventDefault();
+    if (!validarPrecio(txtPrecioProducto.value)) {
+        if (!index.includes("precio")) {
+            alertValidaPrecioProducto.insertAdjacentHTML(
+                "afterbegin", ` El <strong> Precio </strong> no es correcto. <br/> `);
+            alertValidaPrecioProducto.style.color = "red";
+            txtPrecioProducto.style.border = "solid thin red";
+            index.push("precio");
+        }
+    }//if precio producto no cumple las validaciones 
+    else {
+        //quitar alertas
+        alertValidaPrecioProducto.innerHTML = "";
+        alertPrecio.style.display = "none";
+        txtPrecioProducto.style.border = "";
+        removeAllInstances(index, "precio");
+    }
+
+});
+
+//Remueve todas las instancias de un objeto dado (item) que se encuentre en el arreglo index
+function removeAllInstances(arr, item) {
+    for (var i = arr.length; i--;) {
+        if (arr[i] === item) arr.splice(i, 1);
+    }
+}
+
+function limpiarTodo() {
+    index = [];
+    checkrecibirInfo.checked = false;
+    checkPoliticasPriv.checked = false;
+    txtNombre.value = "";
+    txtEmail.value = "";
+    txtPhone.value = "";
+    txtMensaje.value = "";
+    listAsunto.value = "Asunto";
+}
+

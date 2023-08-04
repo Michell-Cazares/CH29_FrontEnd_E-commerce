@@ -4,16 +4,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/formProductos.css">
+
+    <!-- CSS-->
     <link rel="stylesheet" href="../css/style.css">
+    <!-- CSS para formProductos -->
+    <link rel="stylesheet" href="../css/formProductos.css">
+    <!-- Icono para la pestaña del navegador -->
     <link rel="icon" type="image/x-icon" href="../src/img/logo.png">
+    <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Productos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
+        .form-productos {
+            width: 100%;
+            max-width: 700px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+
         .form-control {
             border-color: #84BF68;
+            position: flex;
+            box-sizing: border-box;
+            height: auto;
+            font-size: 16px;
         }
 
         .btn-formProds {
@@ -22,7 +40,7 @@
             color: black;
             padding: 10px 50px 10px 50px;
             margin: 30px;
-            font-weight: 500;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -33,74 +51,76 @@
 
     </app-navbar>
 
-    <!--GRID-->
-    <div class="container">
-        <!--TITLE-->
-        <div class="row title">
-            <div class="col">
-                <h1>Añadir un nuevo producto</h1>
+    <section>
+        <!--GRID-->
+        <div class="container">
+            <!--TITLE-->
+            <div class="row text-center title">
+                <h1>
+                    <strong>Añadir un nuevo producto</strong>
+                </h1>
             </div>
-        </div>
-        <!--INPUTS-->
-        <div class="row">
-            <div class="col input">
-                <label for="txtNombreProducto" class="input">Nombre del producto</label>
-                <input type="text" class="form-control" id="txtNombreProducto" placeholder="Nombre del producto"
-                    name="txtNombreProducto" required>
-                <div class="invalid-feedback">
-                    Nombre inválido
-                </div>
-                <div id="alertValidaNombre">
-                    <p id="alertNombre"></p>
-                </div>
+            <form action="sumbit" class="form-productos">
+                <!--INPUTS-->
+                <div class="row">
+                    <div class="col input">
+                        <label for="txtNombreProducto" class="input">Nombre del producto</label>
+                        <input type="text" class="form-control" id="txtNombreProducto" placeholder="Nombre del producto"
+                            name="txtNombreProducto" required>
+                        <div id="alertValidaNombre">
+                            <p id="alertNombre"></p>
+                        </div>
 
-                <label for="txtDescriptionProducto" class="input">Descripción del producto</label>
-                <input type="text" class="form-control" id="txtDescriptionProducto"
-                    placeholder="Descripción del producto" name="txtDescriptionProducto" required>
-                <div class="invalid-feedback">
-                    Descripción inválida
-                </div>
-                <div id="alertValidaDescription">
-                    <p id="alertDescrip"></p>
-                </div>
+                        <label for="txtPrecioProducto" class="input">Precio del producto</label>
+                        <input type="number" class="form-control" min="1" max="200" id="txtPrecioProducto"
+                            placeholder="Precio del producto" name="txtPrecioProducto" required>
+                        <div id="alertValidaPrecioProducto">
+                            <p id="alertPrecio"></p>
+                        </div>
 
-                <label for="txtPrecioProducto" class="input">Precio del producto</label>
-                <input type="number" class="form-control" min="1" max="200" id="txtPrecioProducto"
-                    placeholder="Precio del producto" name="txtPrecioProducto" required>
-                <div class="invalid-feedback">
-                    Precio inválido
-                </div>
-                <div id="alertValidaPrecioProducto">
-                    <p id="alertPrecio"></p>
-                </div>
+                        <label for="txtDescriptionProducto" class="input">Descripción del producto</label>
+                        <textarea type="text" class="form-control" id="txtDescriptionProducto"
+                            placeholder="Descripción del producto" name="txtDescriptionProducto" required></textarea>
+                        <div id="alertValidaDescription">
+                            <p id="alertDescrip"></p>
+                        </div>
 
-                <button id="btnImg" class="cloudinary-button">Agregar imagen</button>
+                        <button id="btnImg" class="cloudinary-button">Agregar imagen</button>
 
-            </div>
-        </div>
-        <!--BOTÓN-->
-        <div class="row">
-            <div class="col">
-                <div style="text-align: center">
-                    <div id="alertValidacionesEnviar">
-                        <p id="alertEnviar"></p>
                     </div>
-                    <button class="btn btn-primary btn-formProds" type="submit" id="btnAgregar"
-                        value="Send Email">Agregar</button>
                 </div>
-            </div>
+                <!--BOTÓN-->
+                <div class="row">
+                    <div class="col">
+                        <div style="text-align: center">
+                            <div id="alertValidacionesEnviar">
+                                <p id="alertEnviar"></p>
+                            </div>
+                            <button class="btn btn-primary btn-formProds" type="submit" id="btnAgregar"
+                                value="Send Email">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-    </div>
+    </section>
+
     <app-footer>
 
     </app-footer>
-    
-    <!--Script para implementar las validaciones-->
-    <script src="../js/formProductos.js"></script> 
-    <!--Script para implementar Cloudinary para subir un archivo-->
-    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
     <!-- SCRIPT PARA INTEGRAR NAVBAR Y FOOTER -->
     <script src="../js/components.js"></script>
+
+    <!-- SCRIPT PARA IMPLEMENTAR SWEET ALERT-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--Script para implementar las validaciones-->
+    <script src="../js/formProductos.js"></script>
+
+    <!--Script para implementar Cloudinary para subir un archivo-->
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>

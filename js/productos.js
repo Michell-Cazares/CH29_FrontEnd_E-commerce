@@ -1,4 +1,11 @@
 let listaProductos = document.getElementById("listaProductos");
+let name = "";
+let description = "";
+let img = "";
+let price = 0.0;
+
+let productos = [];
+
 //FUNCIÓN PARA AÑADIR UN PRODUCTO CON CARD A LISTA PRODUCTOS
 function addItem(item) {
     listaProductos.insertAdjacentHTML("beforeend", `            
@@ -106,3 +113,24 @@ addItem({
 //     'price': '25.00'
 // });
 
+window.addEventListener("load", function (event) {
+    event.preventDefault();
+
+    if (this.localStorage.getItem("producto") != null) {
+        productos = (JSON.parse(this.localStorage.getItem("producto")));
+    }
+
+    if (this.localStorage.getItem("producto") != null) {
+        productos.forEach((p) => {
+            addItem({
+                'name': p.name,
+                'img': p.img,
+                'description': p.description,
+                'price': p.price
+            });
+        }//foreach
+        );
+
+    }//if resumen
+
+}); // window // load
