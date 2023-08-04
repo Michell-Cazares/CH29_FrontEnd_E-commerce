@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/formProductos.css">
+    <!-- SCRIPT PARA INTEGRAR NAVBAR Y FOOTER -->
+    <script src="../js/components.js"></script>
+    <title>Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .form-control {
+            border-color: #84BF68;
+        }
+
+        .btn-formProds {
+            background-color: #FBE053;
+            border: #FBE053;
+            color: black;
+            padding: 10px 50px 10px 50px;
+            margin: 30px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <app-navbar>
+
+    </app-navbar>
+
+    <!--GRID-->
+    <div class="container">
+        <!--TITLE-->
+        <div class="row title">
+            <div class="col">
+                <h1>Añadir un nuevo producto</h1>
+            </div>
+        </div>
+        <!--INPUTS-->
+        <div class="row">
+            <div class="col input">
+                <label for="txtNombre" class="input">Nombre del producto</label>
+                <input type="text" class="form-control" id="txtNombreProducto" placeholder="Nombre del producto"
+                    name="txtNombre" required>
+                <div class="invalid-feedback">
+                    Nombre inválido
+                </div>
+                <div id="alertValidacionesTextoNombre">
+                    <p id="alertNombre"></p>
+                </div>
+
+                <label for="txtNombre" class="input">Descripción del producto</label>
+                <input type="text" class="form-control" id="txtDescriptionProducto"
+                    placeholder="Descripción del producto" name="txtNombre" required>
+                <div class="invalid-feedback">
+                    Descrición inválida
+                </div>
+                <div id="alertValidacionesTextoNombre">
+                    <p id="alertNombre"></p>
+                </div>
+
+                <label for="txtPhone" class="input">Precio del producto</label>
+                <input type="number" class="form-control" min="1" max="200" id="txtPrecioProducto"
+                    placeholder="Precio del producto" name="txtPhone" required>
+                <div class="invalid-feedback">
+                    Número inválido
+                </div>
+                <div id="alertValidacionesTextoPhone">
+                    <p id="alertPhone"></p>
+                </div>
+
+                <label for="txtNombre" class="input">Añadir imagen del producto</label>
+                <input type="text" class="form-control" id="txtDescriptionProducto"
+                    placeholder="Imagen" name="txtImagen" required>
+                <div class="invalid-feedback">
+                    Descrición inválida
+                </div>
+                <div id="alertValidacionesTextoNombre">
+                    <p id="alertNombre"></p>
+                </div>
+
+            </div>
+        </div>
+        <!--BOTÓN-->
+        <div class="row">
+            <div class="col">
+                <div style="text-align: center">
+                    <div id="alertValidacionesEnviar">
+                        <p id="alertEnviar"></p>
+                    </div>
+                    <button class="btn btn-primary btn-formProds" type="submit" id="btnAgregar"
+                        value="Send Email">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer>
+
+    </app-footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
