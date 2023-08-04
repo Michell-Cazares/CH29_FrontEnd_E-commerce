@@ -2,23 +2,25 @@
 let txtNombreProducto = document.getElementById("txtNombreProducto");
 let txtDescriptionProducto = document.getElementById("txtDescriptionProducto");
 let txtPrecioProducto = document.getElementById("txtPrecioProducto"); // se declara variables
-let btnAgregar = document.getElementById("btnAgregar")
-let btnImg = document.getElementById("btnImg")
+let btnAgregar = document.getElementById("btnAgregar");
+let btnImg = document.getElementById("btnImg");
+let product_img = document.getElementById("product_img");
 let index = [];
 
-let productos = new Array();
+let productos = [];
 
 
 //parrafos de las alertas
 let alertNombre = document.getElementById("alertNombre");
 let alertDescrip = document.getElementById("alertDescrip");
 let alertPrecio = document.getElementById("alertPrecio");
+let alertImg = document.getElementById("alertImg");
 
 //div para alertas
 let alertValidaNombre = document.getElementById("alertValidaNombre");
 let alertValidaDescription = document.getElementById("alertValidaDescription");
 let alertValidaPrecioProducto = document.getElementById("alertValidaPrecioProducto");
-let alertValida = document.getElementById(""); //pendiente la validacion de imagen
+let alertValidaImg = document.getElementById("alertValidaImg");
 
 //se declaran funciones para las validaciones
 function validarNombre(nombre) {
@@ -45,7 +47,7 @@ function validarPrecio(precio) {
 
 btnAgregar.addEventListener("click", function (event) {
     event.preventDefault();
-    if (!validarNombre(txtNombreProducto.value)) {
+    if (!validarNombre(txtNombreProducto.value.trim())) {
         if (!index.includes("nombre")) {
             alertValidaNombre.insertAdjacentHTML(
                 "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
@@ -54,7 +56,7 @@ btnAgregar.addEventListener("click", function (event) {
             index.push("nombre");
         }
     }
-    if (!validarDescription(txtDescriptionProducto.value)) {
+    if (!validarDescription(txtDescriptionProducto.value.trim())) {
         if (!index.includes("description")) {
             alertValidaDescription.insertAdjacentHTML(
                 "afterbegin", ` La <strong> Descripción </strong> no es correcta. <br/> `);
@@ -63,7 +65,7 @@ btnAgregar.addEventListener("click", function (event) {
             index.push("description");
         }
     }
-    if (!validarPrecio(txtPrecioProducto.value)) {
+    if (!validarPrecio(txtPrecioProducto.value.trim())) {
         if (!index.includes("precio")) {
             alertValidaPrecioProducto.insertAdjacentHTML(
                 "afterbegin", ` El <strong> Precio </strong> no es correcto. <br/> `);
@@ -73,26 +75,41 @@ btnAgregar.addEventListener("click", function (event) {
         }
     }
 
-    if (validarNombre(txtNombreProducto.value) && validarDescription(txtDescriptionProducto.value) && validarPrecio(txtPrecioProducto.value)) {
-        guardarProducto(txtNombreProducto.value, txtDescriptionProducto.value, txtPrecioProducto.value);
+    if (!product_img.src || !product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
+        alertValidaImg.insertAdjacentHTML(
+            "afterbegin", ` La <strong> imágen </strong> no es correcta. <br/> `);
+        alertValidaImg.style.color = "red";
+        alertImg.style.border = "solid thin red";
+        index.push("imagen");
+    }
+
+    if (!index.includes("nombre") && !index.includes("description") && !index.includes("price") && !index.includes("imagen")) {
+        guardarProducto(txtNombreProducto.value, product_img.src, txtDescriptionProducto.value, txtPrecioProducto.value);
         Toast.fire({
             icon: 'success',
             title: '¡El producto se registró con éxito!'
         });
         index = [];
+
+        alertValidaNombre.innerHTML = "";
+        alertNombre.style.display = "none";
+        txtNombreProducto.style.border = "";
+        removeAllInstances(index, "nombre");
+
     }
 
 });
 
-function guardarProducto(name, description, price) {
+function guardarProducto(name, src, description, price) {
     let producto = `{
         "name": "${name}",
-        "img": "../src/img/fotosProductos/elotePreparadoTehuacan.jpg",
+        "img": "${src}",
         "description": "${description}",
         "price": "${price}"
-    }`
+    }`;
+
     productos.push(JSON.parse(producto));
-    localStorage.setItem("producto", JSON.stringify(productos));
+    this.localStorage.setItem("producto", JSON.stringify(productos));
 }
 
 const Toast = Swal.mixin({
@@ -104,26 +121,36 @@ const Toast = Swal.mixin({
 });
 
 
+window.addEventListener("load", function (event) {
+    event.preventDefault();
+    console.log(productos);
+    if (this.localStorage.getItem("producto") != null) {
+        JSON.parse(this.localStorage.getItem("producto")).forEach((p) => {
+            productos.push(p);
+        }//foreach
+        );
 
+    }//if
+
+}); // window // load
 
 
 
 btnImg.addEventListener("click", function (event) {
     event.preventDefault();
-    var myWidget = cloudinary.createUploadWidget({
-        cloudName: 'my_cloud_name',
-        uploadPreset: 'my_preset',
+    // Cloudinary ================================================
+    let myWidget = cloudinary.createUploadWidget({
+        cloudName: 'dpgloi0zv',
+        uploadPreset: 'ml_default',
         multiple: false
     }, (error, result) => {
         if (!error && result && result.event === "success") {
             console.log('Done! Here is the image info: ', result.info);
-            document
-                .getElementById("uploadedimage")
-                .setAttribute("src", result.info.secure_url);
+            product_img.src = result.info.secure_url;
         }
-    }
-    );
+    });
     myWidget.open();
+
 }, false);
 
 
@@ -133,7 +160,7 @@ btnImg.addEventListener("click", function (event) {
 //Listener para validar el nombre cada vez que el usuario teclee algo en el campo nombre
 txtNombreProducto.addEventListener("keyup", function (event) {
     event.preventDefault();
-    if (!validarNombre(txtNombreProducto.value)) {
+    if (!validarNombre(txtNombreProducto.value.trim())) {
         if (!index.includes("nombre")) {
             alertValidaNombre.insertAdjacentHTML(
                 "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
@@ -155,7 +182,7 @@ txtNombreProducto.addEventListener("keyup", function (event) {
 
 txtDescriptionProducto.addEventListener("keyup", function (event) {
     event.preventDefault();
-    if (!validarDescription(txtDescriptionProducto.value)) {
+    if (!validarDescription(txtDescriptionProducto.value.trim())) {
         if (!index.includes("description")) {
             alertValidaDescription.insertAdjacentHTML(
                 "afterbegin", ` La <strong> Descripción </strong> no es correcta. <br/> `);
@@ -176,7 +203,7 @@ txtDescriptionProducto.addEventListener("keyup", function (event) {
 
 txtPrecioProducto.addEventListener("keyup", function (event) {
     event.preventDefault();
-    if (!validarPrecio(txtPrecioProducto.value)) {
+    if (!validarPrecio(txtPrecioProducto.value.trim())) {
         if (!index.includes("precio")) {
             alertValidaPrecioProducto.insertAdjacentHTML(
                 "afterbegin", ` El <strong> Precio </strong> no es correcto. <br/> `);
@@ -197,7 +224,7 @@ txtPrecioProducto.addEventListener("keyup", function (event) {
 
 txtPrecioProducto.addEventListener("change", function (event) {
     event.preventDefault();
-    if (!validarPrecio(txtPrecioProducto.value)) {
+    if (!validarPrecio(txtPrecioProducto.value.trim())) {
         if (!index.includes("precio")) {
             alertValidaPrecioProducto.insertAdjacentHTML(
                 "afterbegin", ` El <strong> Precio </strong> no es correcto. <br/> `);
