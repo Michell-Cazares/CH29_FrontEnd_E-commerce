@@ -27,6 +27,50 @@ body {
     background-size: cover;
 }
 
+/*Telefono */
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-areas: "sidebar";
+}
+
+/* Para tablet */
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas:
+            "sidebar sidebar";
+    }
+}
+
+/* Escritorio */
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas:
+            "sidebar sidebar sidebar";
+    }
+}
+
+
+/* CONTENEDOR DE LAS PÁGINAS */
+.container {
+    background-color: #ffffff;
+    padding: 100px 0 100px 0;
+}
+
+/* TÍTULO DE LOS CONTENEDORES */
+.container .title {
+    margin-bottom: 75px;
+    text-align: center;
+}
+
+
+
+/* ========================================== NAVBAR ==========================================*/
+
 .logo {
     width: 150px;
     height: 150px;
@@ -73,26 +117,10 @@ body {
 }
 
 
-/*Texto de Nosotros*/
-.aboutUs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-    font-size: small;
 
-}
 
-.aboutUs p {
-    padding: 3% 8% 3% 8%;
-    font-size: 30px;
-    background: linear-gradient(to left, rgba(132, 191, 104, .8), rgba(251, 224, 83, .8)), url(../src/img/fondoElotesGrisBot.jpg);
-    background-size: cover;
-    border-radius: 20px;
-    font-weight: 500;
-}
 
-/* FOOTER */
+/* ========================================== FOOTER ==========================================*/
 .pieDePagina i {
     font-size: 30px;
 }
@@ -107,160 +135,10 @@ body {
     margin: 3px;
 }
 
-/* CARDS  */
-
-.card-container {
-    padding: 8%;
-}
-
-
-.card-title {
-    display: flex;
-    font-weight: bold;
-    font-size: 25px;
-    justify-content: center;
-    align-content: center;
-}
-
-.card-body .card-text {
-    display: flex;
-    justify-content: justify;
-    align-items: justify;
-    font-size: 20px;
-}
-
-.card-socials {
-    background: #84BF68;
-    border-radius: 0 0 5px 5px;
-    padding: 10px;
-    text-align: center;
-
-}
-
-.card-socials a {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #FBE053, #84BF68);
-    border-radius: 50%;
-    font-size: 40px;
-    color: #fff;
-    text-decoration: none;
-    margin: 20px 0;
-    z-index: 1;
-}
-
-.card-socials a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #FBE053, #84BF68);
-    border-radius: 50%;
-    z-index: -1;
-    transform: .5s ease;
-}
-
-.card-socials a:hover::before {
-    filter: blur(3px);
-}
-
-.card-socials a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #84BF68;
-    border-radius: 50%;
-    transform: scale(0.88);
-    z-index: -1;
-    transition: .5s ease;
-}
-
-.card-socials a:hover::after {
-    transform: scale(0);
-}
 
 .color1 {
     background: linear-gradient(45deg, #FBE053, #84BF68);
     padding-left: 60px;
     padding-top: 60px;
 
-}
-
-
-/*Telefono */
-.grid-container {
-    display: grid;
-    gap: 10px;
-    grid-template-areas: "sidebar";
-}
-
-/* Para tablet */
-@media (min-width: 600px) {
-    .grid-container {
-        grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template-areas:
-            "sidebar sidebar";
-    }
-}
-
-/* Escritorio */
-@media (min-width: 900px) {
-    .grid-container {
-        grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template-areas:
-            "sidebar sidebar sidebar";
-    }
-}
-
-
-/* CONTENEDOR DE LAS PÁGINAS */
-.container {
-    background-color: #fff;
-    padding: 100px 0 100px 0;
-}
-
-/* TÍTULO DE LOS CONTENEDORES */
-.container .title {
-    margin-bottom: 75px;
-    text-align: center;
-}
-
-
-
-
-/*CONTACTO*/
-.form-control {
-    border-color: #84BF68;
-}
-
-.btn-primary {
-    background-color: #FBE053;
-    border: #FBE053;
-    color: black;
-}
-
-
-
-/*Tamaño y color de los iconos de la información de Contacto*/
-.contacto-info i {
-    font-size: 50px;
-    color: #84BF68;
-}
-
-/*Alineación de las checkbox de contacto */
-.checkouts {
-    text-align: left;
-}
-/*Tamaño de fotos de participantes */
-.card-img-top{
-    width: 400px;
-	height: 400px;
-	object-fit: cover;
 }

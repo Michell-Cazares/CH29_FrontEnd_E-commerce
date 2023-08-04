@@ -1,0 +1,34 @@
+/*CONTACTO*/
+.form-control {
+    border-color: #84BF68;
+}
+
+/*Tamaño y color de los iconos de la información de Contacto*/
+.contacto-info i {
+    font-size: 50px;
+    color: #84BF68;
+}
+
+/*Alineación de las checkbox de contacto */
+.checkouts {
+    text-align: left;
+}
+
+.form label{
+    text-align: center;
+    justify-content: center;
+}
+
+.btn-contacto button{
+    background-color: #FBE053;
+    border: #FBE053;
+    color: black;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.form-label {
+    border-color: #84BF68;
+}
