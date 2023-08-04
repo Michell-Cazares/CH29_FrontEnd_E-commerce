@@ -1,0 +1,35 @@
+.container{
+    text-align: center;
+    background-color: white;
+    align-items: center;
+    padding: 10px;
+    margin: 30px;
+}
+
+* {
+    font-family: 'Montserrat', 'sans-serif';
+    
+}
+
+.input{
+    margin: 30px;
+    font-size: medium;
+    font-weight:500;
+}
+.title{
+    padding: 20px;
+    margin: 20px;
+    font-weight: 300;
+}
+
+.form-control {
+    border-color: #84BF68;
+}
+
+.btn-primary {
+    background-color: #FBE053;
+    border: #FBE053;
+    color: black;
+}
+
+
