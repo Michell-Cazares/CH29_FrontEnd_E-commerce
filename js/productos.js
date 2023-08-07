@@ -28,14 +28,14 @@ addItem({
     'name': 'Elote preparado',
     'img': '../src/img/fotosProductos/elotePreparadoTehuacan.jpg',
     'description': 'Elote preparado con mayonesa, queso, chile, limón y sal. Elote de grano pequeño (Tehuacán), por temporada.',
-    'price': '25.00'
+    'price': '25'
 });
 
 addItem({
     'name': 'Elote preparado',
     'img': 'https://www.gs1india.org/media/Juice_pack.jpg',
     'description': 'Elote preparado con mayonesa, queso, chile, limón y sal. Elote de grano grande (Cacahuazintle), por temporada.',
-    'price': '35.00'
+    'price': '35'
 });
 
 //Elote enchilado =============================================================
@@ -44,14 +44,14 @@ addItem({
     'name': 'Elote enchilado',
     'img': 'https://www.gs1india.org/media/Juice_pack.jpg',
     'description': 'Elote con chile de la casa (jugo de limón con chilito). Elote de grano pequeño (Tehuacán), por temporada.',
-    'price': '25.00'
+    'price': '25'
 });
 
 addItem({
     'name': 'Elote enchilado',
     'img': '../src/img/fotosProductos/eloteEnchiladoCacahuazintle.jpg',
     'description': 'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (Cacahuazintle), por temporada.',
-    'price': '35.00'
+    'price': '35'
 });
 
 //Esquite natural =============================================================
@@ -60,14 +60,14 @@ addItem({
     'name': 'Esquite natural preparado chico',
     'img': '../src/img/fotosProductos/esquiteNaturalPreparado.jpg',
     'description': 'Esquite hervido preparado con mayonesa, queso, chile, limón y sal. Vaso chico.',
-    'price': '25.00'
+    'price': '25'
 });
 
 addItem({
     'name': 'Esquite natural preparado grande',
     'img': '../src/img/fotosProductos/esquiteNaturalPreparado.jpg',
     'description': 'Esquite hervido preparado con mayonesa, queso, chile, limón y sal. Vaso grande.',
-    'price': '30.00'
+    'price': '30'
 });
 
 //Esquite asado =============================================================
@@ -76,14 +76,14 @@ addItem({
     'name': 'Esquite asado preparado chico',
     'img': '../src/img/fotosProductos/esquiteAsadoPreparado.JPG',
     'description': 'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (cacahuazintle), por temporada.',
-    'price': '25.00'
+    'price': '25'
 });
 
 addItem({
     'name': 'Esquite asado preparado grande',
     'img': '../src/img/fotosProductos/esquiteAsadoPreparado.JPG',
     'description': 'Esquite asado con chile de arbol, epazote y jalapeño,  preparado con mayonesa, queso, chile, limón y sal.',
-    'price': '30.00'
+    'price': '30'
 });
 
 //DoriEsquites =============================================================
@@ -92,7 +92,7 @@ addItem({
     'name': 'DoriEsquites',
     'img': '../src/img/fotosProductos/doriEsquite.JPG',
     'description': 'Las papitas de su gusto, con esquite mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste.',
-    'price': '50.00'
+    'price': '50'
 });
 
 //Maruchan =============================================================
@@ -101,7 +101,7 @@ addItem({
     'name': 'Maruchan Esquites',
     'img': '../src/img/fotosProductos/maruchanEsquites.JPG',
     'description': 'Las papitas de su gusto con Maruchan y con esquite, mayonesa, queso de nachos, queso blanco, sal, limón, y la salsa que guste.',
-    'price': '70.00'
+    'price': '70'
 });
 
 window.addEventListener("load", function (event) {
