@@ -173,7 +173,7 @@ btnEnviar.addEventListener("click", function (event) {
   }
 });
 
-
+// Animation del botoncito
 const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
