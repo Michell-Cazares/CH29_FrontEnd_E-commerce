@@ -108,11 +108,10 @@
                             <div id="alertValidacionesListAsunto">
                                 <p id="listAsunto"></p>
                             </div>
-                            <br>
                             <div class="col-md-12 ">
                                 <label for="txtMensaje" class="input">Mensaje</label>
                                 <textarea type="text" class="form-control" id="txtMensaje" placeholder="Mensaje"
-                                    name="txtMensaje" required></textarea>
+                                    name="txtMensaje" rows="4" required></textarea>
                                 <div id="alertValidacionesTextoMensaje">
                                     <p id="alertMensaje"></p>
                                 </div>
@@ -140,7 +139,8 @@
                                     <input class="form-check-input " type="checkbox" value="" id="checkPoliticasPriv"
                                         name="checkPoliticasPriv" required>
                                     <label class="form-check-label" for="invalidCheck">
-                                        Acepto políticas de privacidad.
+                                        Acepto <a href="../pages/avisoPrivacidad.html" target="_blank"
+                                            rel="noopener noreferrer">políticas de privacidad.</a>
                                     </label>
                                     <div id="alertValidacionesCheckPriv">
                                         <p id="alertCheckPriv"></p>
@@ -150,9 +150,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="btn-contacto">
-                        <button class="btn" type="submit" id="btnEnviar" value="Send Email">Enviar</button>
+
+
+                    <!-- BOTÓN -->
+                    <div class="row">
+                        <div class="col">
+                            <div style="text-align: center">
+                                <button id="btnEnviar" class="btn btn-lg btn-block" style="background-color: #FBE053;"
+                                    type="submit"><strong>Enviar</strong></button>
+                            </div>
+                        </div>
                     </div>
+
+
                 </div>
             </form>
     </section>

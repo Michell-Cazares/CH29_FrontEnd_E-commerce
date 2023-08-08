@@ -32,8 +32,8 @@ class Footer extends HTMLElement {
                 <div class="col-4 col-mb-4 legales">
                   <h5>Legales</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="./avisoPrivacidad.html" class="nav-link p-0 text-body-secondary">Aviso de privacidad</a></li>
-                    <li class="nav-item mb-2"><a href="./terminosCondiciones.html" class="nav-link p-0 text-body-secondary">Términos y condiciones</a></li>
+                    <li class="nav-item mb-2"><a href="./avisoPrivacidad.html" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener noreferrer">Aviso de privacidad</a></li>
+                    <li class="nav-item mb-2"><a href="./terminosCondiciones.html" class="nav-link p-0 text-body-secondary" target="_blank" rel="noopener noreferrer">Términos y condiciones</a></li>
                     <li class="nav-item mb-2"><a href="./login.html" class="nav-link p-0 text-body-secondary">Mi cuenta</a></li>
                   </ul>
                 </div>
