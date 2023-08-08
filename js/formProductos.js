@@ -38,7 +38,7 @@ function validarDescription(description) {
     }
 }
 function validarPrecio(precio) {
-    if (precio > 0 || precio != "") {
+    if (precio > 0 && precio != "") {
         return true;
     } else {
         return false;
@@ -75,15 +75,26 @@ btnAgregar.addEventListener("click", function (event) {
         }
     }
 
-    if (!product_img.src || !product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
+    if (!product_img.src)  {
         if (!index.includes("imagen")) {
             alertValidaImg.insertAdjacentHTML(
-                "afterbegin", ` La <strong> imagen </strong> no es correcta. <br/> `);
+                "afterbegin", ` Debe seleccionar una <strong>imagen</strong>.<br/> `);
             alertValidaImg.style.color = "red";
             alertImg.style.border = "solid thin red";
             index.push("imagen");
         }
     }
+    if (!product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
+        if (!index.includes("imagen")) {
+            alertValidaImg.insertAdjacentHTML(
+                "afterbegin", ` El formato de la <strong>imagen</strong> es incorrecto.<br/> `);
+            alertValidaImg.style.color = "red";
+            alertImg.style.border = "solid thin red";
+            index.push("imagen");
+        }
+    }
+    
+
     if (!index.includes("nombre") && !index.includes("description") && !index.includes("price") && !index.includes("imagen")) {
         guardarProducto(txtNombreProducto.value, product_img.src, txtDescriptionProducto.value, txtPrecioProducto.value);
         Toast.fire({
@@ -240,13 +251,31 @@ txtPrecioProducto.addEventListener("change", function (event) {
 
 product_img.addEventListener("load", function (event) {
     event.preventDefault();
-    if (!product_img.src || !product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
-        alertValidaImg.insertAdjacentHTML(
-            "afterbegin", ` La <strong> imagen </strong> no es correcta. <br/> `);
-        alertValidaImg.style.color = "red";
-        alertImg.style.border = "solid thin red";
-        index.push("imagen");
-    }//if precio producto no cumple las validaciones 
+    if (!product_img.src)  {
+        if (!index.includes("imagen")) {
+            alertValidaImg.insertAdjacentHTML(
+                "afterbegin", ` Debe seleccionar una <strong>imagen</strong>.<br/> `);
+            alertValidaImg.style.color = "red";
+            alertImg.style.border = "solid thin red";
+            index.push("imagen");
+        } 
+    } //if la imagen no se selecciona 
+    else {
+        //quitar alertas
+        alertValidaImg.innerHTML = "";
+        alertImg.style.display = "none";
+        product_img.style.border = "";
+        removeAllInstances(index, "imagen");
+    }
+    if (!product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) { 
+        if (!index.includes("imagen")) {
+            alertValidaImg.insertAdjacentHTML(
+                "afterbegin", ` El formato de la <strong>imagen</strong> es incorrecto.<br/> `);
+            alertValidaImg.style.color = "red";
+            alertImg.style.border = "solid thin red";
+            index.push("imagen");
+        }
+    }//else if la imagen (formato) no cumple las validaciones  
     else {
         //quitar alertas
         alertValidaImg.innerHTML = "";
