@@ -21,7 +21,7 @@ let alertMensaje = document.getElementById("alertMensaje");
 let alertCheckPriv = document.getElementById("alertCheckPriv");
 
 
-//Div de la alerta
+//Div de la alerta-
 let alertValidacionesTextoNombre = document.getElementById("alertValidacionesTextoNombre");
 let alertValidacionesTextoEmail = document.getElementById("alertValidacionesTextoEmail");
 let alertValidacionesTextoPhone = document.getElementById("alertValidacionesTextoPhone");
@@ -162,7 +162,7 @@ btnEnviar.addEventListener("click", function (event) {
       index.push("checkPriv");
     }
   }
-  if (validarEmail(txtEmail.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked()) {
+  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked()) {
     if (recibirInfoIsChecked()) {
       checkrecibirInfo.value = "Si";
     } else {
