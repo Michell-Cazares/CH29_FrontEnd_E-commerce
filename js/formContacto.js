@@ -58,7 +58,7 @@ function validarEmail(email) {
 }
 
 function validarMensaje(mensaje) {
-  if (mensaje.length >= 20 && mensaje.length <= 200) {
+  if (mensaje.length >= 3 && mensaje.length <= 200) {
     return true;
   } else {
     return false;

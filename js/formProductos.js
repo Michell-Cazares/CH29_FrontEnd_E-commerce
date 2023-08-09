@@ -31,7 +31,7 @@ function validarNombre(nombre) {
     }
 }
 function validarDescription(description) {
-    if (description.length >= 50 && description.length < 201) {
+    if (description.length >= 3 && description.length < 201) {
         return true;
     } else {
         return false;
@@ -75,7 +75,7 @@ btnAgregar.addEventListener("click", function (event) {
         }
     }
 
-    if (!product_img.src)  {
+    if (!product_img.src) {
         if (!index.includes("imagen")) {
             alertValidaImg.insertAdjacentHTML(
                 "afterbegin", ` Debe seleccionar una <strong>imagen</strong>.<br/> `);
@@ -93,19 +93,19 @@ btnAgregar.addEventListener("click", function (event) {
             index.push("imagen");
         }
     }
-    
+
 
     if (!index.includes("nombre") && !index.includes("description") && !index.includes("price") && !index.includes("imagen")) {
+        btnAgregar.disabled = true;
+        btnAgregar.textContent = "Agregando...";
+        btnAgregar.style.fontWeight = "bold";
         guardarProducto(txtNombreProducto.value, product_img.src, txtDescriptionProducto.value, txtPrecioProducto.value);
         Toast.fire({
             icon: 'success',
             title: '¡El producto se registró con éxito!'
         });
-
         limpiarTodo();
-
     }
-
 });
 
 function guardarProducto(name, src, description, price) {
@@ -251,14 +251,14 @@ txtPrecioProducto.addEventListener("change", function (event) {
 
 product_img.addEventListener("load", function (event) {
     event.preventDefault();
-    if (!product_img.src)  {
+    if (!product_img.src) {
         if (!index.includes("imagen")) {
             alertValidaImg.insertAdjacentHTML(
                 "afterbegin", ` Debe seleccionar una <strong>imagen</strong>.<br/> `);
             alertValidaImg.style.color = "red";
             alertImg.style.border = "solid thin red";
             index.push("imagen");
-        } 
+        }
     } //if la imagen no se selecciona 
     else {
         //quitar alertas
@@ -267,7 +267,7 @@ product_img.addEventListener("load", function (event) {
         product_img.style.border = "";
         removeAllInstances(index, "imagen");
     }
-    if (!product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) { 
+    if (!product_img.src.match(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
         if (!index.includes("imagen")) {
             alertValidaImg.insertAdjacentHTML(
                 "afterbegin", ` El formato de la <strong>imagen</strong> es incorrecto.<br/> `);
@@ -302,5 +302,8 @@ function limpiarTodo() {
     removeAllInstances(index, "price");
     removeAllInstances(index, "imagen");
     product_img.src = "";
+    btnAgregar.disabled = false;
+    btnAgregar.textContent = "Agregar";
+    btnAgregar.style.fontWeight = "bold";
 }
 
