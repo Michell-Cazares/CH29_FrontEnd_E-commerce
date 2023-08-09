@@ -1,21 +1,16 @@
-/*Tamaño de fotos de productos */
+/* Tamaño de fotos de productos */
 .card-img-top{
-	width: 200px;
-	height: 200px;
-	object-fit: cover;
-}
+    width: 200px;
+    height: 200px;
+    object-fit: cover;}
 
-.card {
-	margin: 30px;
+
+ 
+ .card-title {
+    font-weight: bold;
+    margin-bottom: 30px;
   }
 
-  .btn_productos {
-	color: white;
-	background-color: #84BF68;
-	border-color: #84BF68;
-	margin-left: 100px;
-  }
-
-  .card-title {
-	margin-bottom: 30px;
+  .card-text{
+    text-align: justify;
   }

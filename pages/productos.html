@@ -17,19 +17,24 @@
   <style>
     .card {
       margin: 30px;
+      border-color: #84BF68;
+      border-width: 2px;
     }
 
-    .btn_productos {
+    .btn {
+      background-color: #FBE053;
+      color: black;
+    }
+
+    .btn:hover {
       color: white;
       background-color: #84BF68;
       border-color: #84BF68;
-      margin-left: 100px;
     }
 
-    .card-title {
-      font-weight: bold;
-      margin-bottom: 30px;
-    }
+    /* .card-img-top {
+      margin-bottom: 20px;
+    } */
   </style>
 
 </head>
@@ -42,12 +47,8 @@
 
   <section>
     <main>
-      <div class="container text-center ">
-        <div class="row text-center title">
-          <h1>
-            <strong>Conoce nuestros productos</strong>
-          </h1>
-        </div>
+      <div class="container">
+        <h1 class="text-center"><strong>Conoce nuestros productos</strong></h1>
         <div class="row" id="listaProductos">
 
         </div>
