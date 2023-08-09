@@ -19,16 +19,6 @@
     justify-content: center;
 }
 
-.btn-contacto button{
-    background-color: #FBE053;
-    border: #FBE053;
-    color: black;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-}
-
-
 .form-label {
     border-color: #84BF68;
 }

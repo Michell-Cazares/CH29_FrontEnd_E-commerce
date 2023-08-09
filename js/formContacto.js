@@ -21,7 +21,7 @@ let alertMensaje = document.getElementById("alertMensaje");
 let alertCheckPriv = document.getElementById("alertCheckPriv");
 
 
-//Div de la alerta
+//Div de la alerta-
 let alertValidacionesTextoNombre = document.getElementById("alertValidacionesTextoNombre");
 let alertValidacionesTextoEmail = document.getElementById("alertValidacionesTextoEmail");
 let alertValidacionesTextoPhone = document.getElementById("alertValidacionesTextoPhone");
@@ -98,6 +98,7 @@ function politicasPrivIsChecked() {
 
 function recibirInfoIsChecked() {
   if (checkrecibirInfo.checked) {
+    checkrecibirInfo.value = "Si";
     return true;
   } else {
     return false;
@@ -162,18 +163,15 @@ btnEnviar.addEventListener("click", function (event) {
       index.push("checkPriv");
     }
   }
-  if (validarEmail(txtEmail.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked()) {
-    if (recibirInfoIsChecked()) {
-      checkrecibirInfo.value = "Si";
-    } else {
-      checkrecibirInfo.value = "No";
-    }
+  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked() && recibirInfoIsChecked()) {
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = "Enviando...";
+    btnEnviar.style.fontWeight = "bold";
     enviarEmail();
-    limpiarTodo();
   }
 });
 
-
+// Animation del botoncito
 const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
@@ -193,6 +191,7 @@ function enviarEmail() {
         icon: 'success',
         title: '¡Gracias por comunicarte con nosotros!'
       });
+      limpiarTodo();
     }, (err) => {
       alert(JSON.stringify(err));
     });
@@ -324,4 +323,7 @@ function limpiarTodo() {
   removeAllInstances(index, "mensaje");
   removeAllInstances(index, "listAsunto");
   removeAllInstances(index, "checkPriv");
+  btnEnviar.disabled = false;
+  btnEnviar.textContent = "Enviar";
+  btnEnviar.style.fontWeight = "bold";
 }

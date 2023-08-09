@@ -12,7 +12,7 @@ function addItem(item) {
             <img src="${item.img}" class="card-img-top" alt="Foto elote">
             <div class="card-body">
                 <h5 class="card-title">${item.name}</h5>
-                <p class= "card-text"> ${item.description} </p>
+                <p class= "card-text"> ${item.description } </p>
                 <p class="text-center"><strong>$${item.price}</strong></p>
                 <!-- BOTÓN -->
                 <div class="row">
