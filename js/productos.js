@@ -7,8 +7,8 @@ let price = 0.0;
 //FUNCIÓN PARA AÑADIR UN PRODUCTO CON CARD A LISTA PRODUCTOS
 function addItem(item) {
     listaProductos.insertAdjacentHTML("beforeend", `            
-    <div class="col">
-        <div class="card" style="width: 18rem;">
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-90">
             <img src="${item.img}" class="card-img-top" alt="Foto elote">
             <div class="card-body">
                 <h5 class="card-title">${item.name}</h5>

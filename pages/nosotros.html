@@ -5,21 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nosotros</title>
-  <!-- CSS-->
-  <link rel="stylesheet" href="../css/style.css">
   <!-- CSS para NOSOTROS-->
   <link rel="stylesheet" href="../css/nosotros.css">
+  <!-- CSS-->
+  <link rel="stylesheet" href="../css/style.css">
 
   <link rel="icon" type="image/x-icon" href="../src/img/logo.png">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <style>
+  <!-- <style>
     .cards {
       border-radius: 01%;
       border-color: rgb(132 191 104);
     }
-  </style>
+  </style> -->
 
 </head>
 
@@ -39,19 +39,16 @@
   </div>
 
   <div class="container">
-    <div class="row text-center title">
-      <h1>
-        <strong>Equipo</strong>
-      </h1>
-    </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <h1 class="text-center"><strong>Equipo</strong></h1>
+    <div class="row">
       <!--TARJETA DE ITZEL-->
-      <div class="col tarjeta">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
         <div class="card h-100">
           <img src="../src/img/itzel-guadalupe.png" class="card-img-top" alt="Integrante Itzel Guadalupe">
           <div class="card-body">
-            <h5 class="card-title">Itzel Guadalupe Péres Soto</h5>
-            <p class="card-text">Desarrolladora Java FullStack Java - Team member</p>
+            <h5 class="card-title">Itzel Guadalupe Pérez Soto</h5>
+            <p class="card-text">Desarrolladora Java FullStack Java, está en constante crecimiento y buscando nuevos
+              retos.</p>
           </div>
 
           <div class="card-socials">
@@ -64,11 +61,11 @@
       </div>
 
       <!--TARJETA DE ELENA-->
-      <div class="col">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
         <div class="card h-100">
           <img src="../src/img/fotoelena.jpeg" class="card-img-top" alt="Integrante Elena">
           <div class="card-body">
-            <h1 class="card-title">Elena Romero </h1>
+            <h5 class="card-title">Elena Romero </h5>
             <p class="card-text">Desarrolladora Java Jr.</p>
           </div>
           <div class="pie card-socials">
@@ -82,11 +79,11 @@
       </div>
 
       <!--TARJETA DE PAMELA-->
-      <div class="col">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
         <div class="card h-100">
           <img src="../src/img/fotobren.jpg" class="card-img-top" alt="Integrante Pamela">
           <div class="card-body">
-            <h1 class="card-title">Pamela Juárez Santiago</h1>
+            <h5 class="card-title">Pamela Juárez Santiago</h5>
             <p class="card-text">Desarrolladora web Jr. Soluciones proactivas para problemas de desarrollo en
               programación.</p>
           </div>
@@ -99,9 +96,8 @@
           </div>
         </div>
       </div>
-
       <!--TARJETA DE CRIS-->
-      <div class="col">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
         <div class="card h-100">
           <img src="../src/img/CrisC.jpeg" class="card-img-top" alt="Integrante Cristopher">
           <div class="card-body">
@@ -119,7 +115,7 @@
       </div>
 
       <!--TARJETA DE MICHELL-->
-      <div class="col">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
         <div class="card h-100">
           <img src="../src/img/fotomich.jpg" class="card-img-top" alt="Integrante Michell">
           <div class="card-body">
@@ -135,9 +131,9 @@
           </div>
         </div>
       </div>
-      
+
       <!--TARJETA DE SUSANA-->
-      <div class="col">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
         <div class="card h-100">
           <img src="../src/img/fotosu.jpg" class="card-img-top" alt="Integrante Susana">
           <div class="card-body">
@@ -153,9 +149,8 @@
           </div>
         </div>
       </div>
-
       <!--TARJETA DE GINA-->
-      <div class="col">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
         <div class="card h-100">
           <img src="../src/img/fotogina.jpg" class="card-img-top" alt="Integrante Gina">
           <div class="card-body">
@@ -164,25 +159,24 @@
               a realizar en software.</p>
           </div>
           <div class="card-socials">
-            <a href="https://www.linkedin.com/in/gina-molina-developer/" target="_blank"
-              rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.linkedin.com/in/gina-molina-developer/" target="_blank" rel="noopener noreferrer"><i
+                class='bx bxl-linkedin'></i></a>
             <a href="https://github.com/ginaGBMG" target="_blank" rel="noopener noreferrer"><i
                 class='bx bxl-github'></i></a>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <app-footer>
-  </app-footer>
+    <app-footer>
+    </app-footer>
 
-  <!-- SCRIPT PARA INTEGRAR NAVBAR Y FOOTER -->
-  <script src="../js/components.js"></script>
+    <!-- SCRIPT PARA INTEGRAR NAVBAR Y FOOTER -->
+    <script src="../js/components.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"></script>
 
 </body>
 

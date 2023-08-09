@@ -27,34 +27,67 @@ body {
     background-size: cover;
 }
 
-/*Telefono */
-.grid-container {
-    display: grid;
-    gap: 10px;
-    grid-template-areas: "sidebar";
+/* X-Small devices (portrait phones, less than 576px) */
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) { 
+
 }
 
-/* Para tablet */
-@media (min-width: 600px) {
-    .grid-container {
-        grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template-areas:
-            "sidebar sidebar";
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (max-width: 1400px) { 
+
+}
+
+
+/* Large devices (desktops, 992px and up) */
+ @media (max-width: 992px) { 
+   .aboutUs p {
+     font-size: 20px;
     }
-}
-
-/* Escritorio */
-@media (min-width: 900px) {
-    .grid-container {
-        grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template-areas:
-            "sidebar sidebar sidebar";
+    #offcanvasNavbar {
+      width: 100%;
+      top: 0;
+      min-height: 100vh;
     }
-}
-
-
+    
+    .offcanvas-header a {
+      /* display: none; */
+      width: 80px;
+      height: 80px;
+      pointer-events: none;
+    }
+    
+    .col {
+      display: block;
+    }
+    
+  }
+  
+  /*  Medium devices (tablets, 768px and up) */
+  @media (max-width: 768px) { 
+      .aboutUs p {
+      font-size: 15px;
+    }
+    .footer-center > *{
+      display:flex;
+      justify-content: center;
+    }
+  
+    .legales li{
+      text-align: center;
+    }
+  }
+  
+  /*  Small devices (landscape phones, 576px and up) */
+  @media (max-width: 576px) { 
+     .aboutUs p {
+      font-size: 12px;
+    }
+  }
+  
+  
+  
 /* CONTENEDOR DE LAS PÁGINAS */
 .container {
     background-color: #ffffff;
@@ -72,8 +105,8 @@ body {
 /* ========================================== NAVBAR ==========================================*/
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     pointer-events: none;
 }
 
@@ -83,7 +116,7 @@ body {
     color: black;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    /* margin-left: 35px; */
 }
 
 .navbar .nav-link.active,
