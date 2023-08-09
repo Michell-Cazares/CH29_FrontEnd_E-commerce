@@ -24,6 +24,9 @@ let alertValidacionesConfirContraseña = document.getElementById("alertValidacio
 //Bandera para evitar repetir la alerta de cada campo
 let index = [];
 
+//Arreglo para guardar los usuarios en el local storage
+let users = [];
+
 //Función para validar que la contraseña contenga de 8-15caracteres, 1mays y 1min, 1número, no espacios en blanco 1carac especial.
 //let regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 //let regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,15})/;
@@ -147,13 +150,39 @@ btnRegistrar.addEventListener("click", function (event) {
 
 
   if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txt.txtContraseña.value)) {
-
-
+    registrarUsuario();
   }
 });
 
 
+function registrarUsuario(name, email, phone, contraseña) {
+  let user = `{
+      "name": "${name}",
+      "phone": "${phone}",
+      "email": "${email}",
+      "contraseña": "${contraseña}"
+  }`;
 
+  users.push(JSON.parse(producto));
+  this.localStorage.setItem("user", JSON.stringify(users));
+}
+
+window.addEventListener("load", function (event) {
+  event.preventDefault();
+  if (this.localStorage.getItem("user") != null) {
+    JSON.parse(this.localStorage.getItem("user")).forEach((u) => {
+      addItem({
+        "name": u.name,
+        "phone": u.phone,
+        "email": u.email,
+        "contraseña": u.contraseña
+      });
+    }//foreach
+    );
+
+  }//if resumen
+
+}); // window // load
 
 //Listener para validar el nombre cada vez que el usuario teclee algo en el campo nombre
 txtNombre.addEventListener("keyup", function (event) {
