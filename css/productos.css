@@ -2,20 +2,15 @@
 .card-img-top{
 	width: 200px;
 	height: 200px;
-	object-fit: cover;
-}
+	object-fit: cover;}
 
-.card {
-	margin: 30px;
-  }
-
-  .btn_productos {
-	color: white;
-	background-color: #84BF68;
-	border-color: #84BF68;
-	margin-left: 100px;
-  }
-
-  .card-title {
+  
+ 
+ .card-title {
+	font-weight: bold;
 	margin-bottom: 30px;
+  }
+
+  .card-text{
+	text-align: justify;
   }
