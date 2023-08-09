@@ -16,6 +16,18 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <title>Login</title>
 
+  <style>
+    .btn {
+        background-color: #FBE053;
+        color: black;
+    }
+
+    .btn:hover {
+        color: white;
+        background-color: #84BF68;
+        border-color: #84BF68;
+    }
+</style>
 </head>
 
 <body>
@@ -29,14 +41,14 @@
         </h1>
       </div>
       <form class="form-signin">
-        <input type="email" id="txtEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-        <input type="password" id="txtPassword" class="form-control" placeholder="Password" required="">
+        <input type="email" id="txtEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus="">
+        <input type="password" id="txtPassword" class="form-control" placeholder="Contraseña" required="">
         <div class="checkbox mb-3">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-block" style="background-color: #FBE053;"
+        <button class="btn btn-lg btn-block"
           type="submit"><strong>Ingresar</strong></button>
         <p class="mt-5 mb-3 text-muted">¿Aún no tienes cuenta?</p>
         <a href="./signup.html" class="colreg">Registrate </a>

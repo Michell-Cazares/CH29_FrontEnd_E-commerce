@@ -68,11 +68,17 @@ function validarMensaje(mensaje) {
 let regextel = /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/;
 function validarNumTel(numTel) {
   if (numTel != "") {
-    if (regextel.test(numTel)) {
-      return true;
+    if (numTel.substr(0, 3) != "000") {
+      if (regextel.test(numTel)) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }
+
+
   } else {
     return false;
   }
@@ -88,7 +94,8 @@ function validarListAsunto(asunto) {
 }
 
 function politicasPrivIsChecked() {
-  if (checkPoliticasPriv.checked) {
+  console.log("Políticas"+checkPoliticasPriv.checked)
+  if (checkPoliticasPriv.checked == true) {
     checkPoliticasPriv.value = "Si";
     return true;
   } else {
@@ -97,17 +104,19 @@ function politicasPrivIsChecked() {
 }
 
 function recibirInfoIsChecked() {
-  if (checkrecibirInfo.checked) {
+  console.log("Recibir Info"+checkrecibirInfo.checked)
+  if (checkrecibirInfo.checked == true) {
     checkrecibirInfo.value = "Si";
     return true;
   } else {
+    checkrecibirInfo.value = "No";
     return false;
   }
 }
 
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
-  if (!validarNombre(txtNombre.value)) {
+  if (!validarNombre(txtNombre.value.trim())) {
     if (!index.includes("nombre")) {
       alertValidacionesTextoNombre.insertAdjacentHTML(
         "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
@@ -116,7 +125,7 @@ btnEnviar.addEventListener("click", function (event) {
       index.push("nombre");
     }
   }
-  if (!validarEmail(txtEmail.value)) {
+  if (!validarEmail(txtEmail.value.trim())) {
     if (!index.includes("email")) {
       alertValidacionesTextoEmail.insertAdjacentHTML("afterbegin", `El <strong> Correo </strong> no es correcto. <br/> `);
       alertValidacionesTextoEmail.style.color = "red";
@@ -126,7 +135,7 @@ btnEnviar.addEventListener("click", function (event) {
 
   }
 
-  if (!validarNumTel(txtPhone.value)) {
+  if (!validarNumTel(txtPhone.value.trim())) {
     if (!index.includes("phone")) {
       alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
       alertValidacionesTextoPhone.style.color = "red";
@@ -146,7 +155,7 @@ btnEnviar.addEventListener("click", function (event) {
 
   }
 
-  if (!validarMensaje(txtMensaje.value)) {
+  if (!validarMensaje(txtMensaje.value.trim())) {
     if (!index.includes("mensaje")) {
       alertValidacionesTextoMensaje.insertAdjacentHTML("afterbegin", `El <strong> Mensaje</strong> no es correcto. <br/> `);
       alertValidacionesTextoMensaje.style.color = "red";
@@ -163,7 +172,8 @@ btnEnviar.addEventListener("click", function (event) {
       index.push("checkPriv");
     }
   }
-  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked() && recibirInfoIsChecked()) {
+  recibirInfoIsChecked();
+  if (validarNombre(txtNombre.value.trim()) && validarEmail(txtEmail.value.trim()) && validarNumTel(txtPhone.value.trim()) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked()) {
     btnEnviar.disabled = true;
     btnEnviar.textContent = "Enviando...";
     btnEnviar.style.fontWeight = "bold";
@@ -202,7 +212,7 @@ function enviarEmail() {
 //Listener para validar el nombre cada vez que el usuario teclee algo en el campo nombre
 txtNombre.addEventListener("keyup", function (event) {
   event.preventDefault();
-  if (!validarNombre(txtNombre.value)) {
+  if (!validarNombre(txtNombre.value.trim())) {
     if (!index.includes("nombre")) {
       alertValidacionesTextoNombre.insertAdjacentHTML(
         "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
@@ -224,7 +234,7 @@ txtNombre.addEventListener("keyup", function (event) {
 
 txtEmail.addEventListener("keyup", function (event) {
   event.preventDefault();
-  if (!validarEmail(txtEmail.value)) {
+  if (!validarEmail(txtEmail.value.trim())) {
     if (!index.includes("email")) {
       alertValidacionesTextoEmail.insertAdjacentHTML("afterbegin", `El <strong> Correo </strong> no es correcto. <br/> `);
       alertValidacionesTextoEmail.style.color = "red";
@@ -244,7 +254,7 @@ txtEmail.addEventListener("keyup", function (event) {
 
 txtPhone.addEventListener("keyup", function (event) {
   event.preventDefault();
-  if (!validarNumTel(txtPhone.value)) {
+  if (!validarNumTel(txtPhone.value.trim())) {
     if (!index.includes("phone")) {
       alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
       alertValidacionesTextoPhone.style.color = "red";
@@ -265,7 +275,7 @@ txtPhone.addEventListener("keyup", function (event) {
 
 txtMensaje.addEventListener("keyup", function (event) {
   event.preventDefault();
-  if (!validarMensaje(txtMensaje.value)) {
+  if (!validarMensaje(txtMensaje.value.trim())) {
     if (!index.includes("mensaje")) {
       alertValidacionesTextoMensaje.insertAdjacentHTML("afterbegin", `El <strong> Mensaje</strong> no es correcto. <br/> `);
       alertValidacionesTextoMensaje.style.color = "red";

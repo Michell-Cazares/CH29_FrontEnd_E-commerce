@@ -71,11 +71,16 @@ function validarNombre(nombre) {
 let regextel = /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/;
 function validarNumTel(numTel) {
   if (numTel != "") {
-    if (regextel.test(numTel)) {
-      return true;
+    if (numTel.substr(0, 3) != "000") {
+      if (regextel.test(numTel)) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
-      return false;
+      return false
     }
+
   } else {
     return false;
   }
@@ -149,11 +154,27 @@ btnRegistrar.addEventListener("click", function (event) {
   }
 
 
-  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txt.txtContraseña.value)) {
-    registrarUsuario();
+  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
+    btnRegistrar.disabled = true;
+    btnRegistrar.textContent = "Registrando...";
+    btnRegistrar.style.fontWeight = "bold";
+    registrarUsuario(txtNombre.value, txtEmail.value, txtPhone.value, txtContraseña.value);
+    Toast.fire({
+      icon: 'success',
+      title: '¡Se registró con éxito!'
+    });
+    limpiarTodo();
   }
 });
 
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 5000,
+  timerProgressBar: true
+});
 
 function registrarUsuario(name, email, phone, contraseña) {
   let user = `{
@@ -163,24 +184,21 @@ function registrarUsuario(name, email, phone, contraseña) {
       "contraseña": "${contraseña}"
   }`;
 
-  users.push(JSON.parse(producto));
+  users.push(JSON.parse(user));
   this.localStorage.setItem("user", JSON.stringify(users));
 }
 
+
 window.addEventListener("load", function (event) {
   event.preventDefault();
+  console.log(users);
   if (this.localStorage.getItem("user") != null) {
     JSON.parse(this.localStorage.getItem("user")).forEach((u) => {
-      addItem({
-        "name": u.name,
-        "phone": u.phone,
-        "email": u.email,
-        "contraseña": u.contraseña
-      });
+      users.push(u);
     }//foreach
     );
 
-  }//if resumen
+  }//if
 
 }); // window // load
 
@@ -294,13 +312,17 @@ function removeAllInstances(arr, item) {
 function limpiarTodo() {
   index = [];
   txtNombre.value = "";
+  txtPhone.value = "";
   txtEmail.value = "";
   txtContraseña.value = "";
-  txtMensaje.value = "";
   txtConfirContraseña.value = "";
   removeAllInstances(index, "nombre");
   removeAllInstances(index, "email");
   removeAllInstances(index, "phone");
   removeAllInstances(index, "contraseña");
   removeAllInstances(index, "contraConfirm");
+
+  btnRegistrar.disabled = false;
+  btnRegistrar.textContent = "Registrarse";
+  btnRegistrar.style.fontWeight = "bold";
 }
