@@ -85,7 +85,7 @@ class NavBar extends HTMLElement {
     this.innerHTML =
       `
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg bg-white">
               <div class="container-fluid">
                 <!-- Logo -->
                 <a href="../index.html"><img src="../src/img/logo.png" class="navbar-brand fs-4 logo"
@@ -102,12 +102,14 @@ class NavBar extends HTMLElement {
                   <div class="offcanvas-header">
                     <a href="../index.html"><img src="../src/img/logo.png" class="navbar-brand fs-4 logo"
                         alt="logo de Elotes Gutierrez"></a>
-                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                        class='bx bx-x'></i></button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class='bx bx-x' style="font-size:40px"></i>
+                      </button>
                   </div>
                   <!-- Sidebar Body -->
                   <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-                    <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
+                  <ul class="navbarUl navbar-nav pe-3">
                       <li class="nav-item mx-2">
                         <a class="nav-link" href="../index.html">Inicio</a>
                       </li>
@@ -121,10 +123,10 @@ class NavBar extends HTMLElement {
                         <a class="nav-link" href="./productos.html">Productos</a>
                       </li>
                     </ul>
-                    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 navBarButtons">
-                      <a href="./login.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-user'></i></button></a>
-                      <a href="./carrito.html"><button class="btn btn-outline-success" type="button"><i class='bx bx-cart'></i></button></a>
-                    </div>
+                    <div class="d-flex justify-content-center align-items-center navBarButtons">
+                    <a class="nav-link" href="./login.html"><i class='bx bx-user'></i></a>
+                    <a class="nav-link" href="./carrito.html"><i class='bx bx-cart'></i></a>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -134,5 +136,18 @@ class NavBar extends HTMLElement {
   }
 }
 
+
+class Whatsapp extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML =
+      `
+      <a href="https://wa.me/c/5217221953594" class="whatsapp" target="_blank"> <i class='bx bxl-whatsapp whatsapp-icon'></i></a>
+        `
+  }
+}
+
+
+
 customElements.define('app-footer', Footer);
 customElements.define('app-navbar', NavBar);
+customElements.define('app-whatsapp', Whatsapp);
