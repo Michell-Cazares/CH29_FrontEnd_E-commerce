@@ -94,7 +94,7 @@ function validarListAsunto(asunto) {
 }
 
 function politicasPrivIsChecked() {
-  console.log("Políticas"+checkPoliticasPriv.checked)
+  console.log("Políticas" + checkPoliticasPriv.checked)
   if (checkPoliticasPriv.checked == true) {
     checkPoliticasPriv.value = "Si";
     return true;
@@ -104,7 +104,7 @@ function politicasPrivIsChecked() {
 }
 
 function recibirInfoIsChecked() {
-  console.log("Recibir Info"+checkrecibirInfo.checked)
+  console.log("Recibir Info" + checkrecibirInfo.checked)
   if (checkrecibirInfo.checked == true) {
     checkrecibirInfo.value = "Si";
     return true;

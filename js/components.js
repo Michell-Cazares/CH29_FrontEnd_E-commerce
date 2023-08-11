@@ -85,7 +85,7 @@ class NavBar extends HTMLElement {
     this.innerHTML =
       `
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg bg-white">
+            <nav class="navbar sticky-top navbar-expand-lg bg-white">
               <div class="container-fluid">
                 <!-- Logo -->
                 <a href="../index.html"><img src="../src/img/logo.png" class="navbar-brand fs-4 logo"

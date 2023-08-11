@@ -101,3 +101,11 @@
     height: 400px;
     object-fit: cover;
 }
+
+.card-box {
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.09);
+}
+
+.card-box:hover {
+    box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.2);
+}

@@ -4,137 +4,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.104.2">
-  <title>Lista de Compras</title>
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
-  <link rel="icon" type="image/x-icon" href="../src/img/logo.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <!-- Favicons -->
+  <title>Carrito</title>
+  <!-- CSS PARA CARRITO-->
   <link rel="stylesheet" href="../css/carrito.css">
-  <meta name="theme-color" content="#712cf9">
-
-  <!-- Custom styles for this template -->
-  <link href="https://getbootstrap.com/docs/5.2/examples/checkout/form-validation.css" rel="stylesheet">
+  <!-- CSS-->
+  <link rel="stylesheet" href="../css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" type="image/x-icon" href="../src/img/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
-<body class="bg-light">
+<body>
 
-  <div class="container">
-    <main>
-      <div class="py-5 text-center">
-        <h2>Lista de Compras</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Resumen</span>
-            <span class="badge rounded-pill text-bg-danger" id="contadorProductos">0</span>
-          </h4>
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h5 class="my-0" id="totalProductos">Total en Productos</h5>
-              </div>
-              <span class="text-muted" id="productosTotal">0</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h5 class="my-0" id="totalPrecio">Total</h5>
-              </div>
-              <span class="text-muted" id="precioTotal">$0</span>
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Tabla - Gina ---->
-        <div class="col-md-1 order-md-1">
-          <h4 class="mb-3">Agregar Productos</h4>
-          <div class="alert alert-danger fade show" style="display:none;" role="alert" id="alertValidaciones">
-            <p id="alertValidacionesTexto"></p>
-          </div>
-          <form class="needs-validation" novalidate>
-            <div class="row">
-              <div class="col-md-18 mb-3">
-                <label for="Name">Nombre</label>
-                <div class="col-md-6">
-                  <label for="listAsunto" class="form-label input "></label>
-                  <select class="form-select form-control" required id="Name">
-                    <option value="Elote Cacahuazintle">Elote Cacahuazintle</option>
-                    <option value="Elote Tehuacan">Elote Tehuacan</option>
-                    <option value="Esquite Chico">Esquite Chico</option>
-                    <option value="Esquite Grande">Esquite Grande</option>
-                    <option value="Doriesquites">Doriesquites</option>
-                    <option value="Maruchan Esquites">Maruchan Esquites</option>
-                    <option value="Doriesquites con Maruchan">Doriesquites con Maruchan</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    <div class="invalid-feedback">
-                      Nombre inválido
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-12">
-                    <label for="Number">Cantidad</label>
-                    <select class="form-select form-control" required id="Number">
-                      <option value="1">1</option>
-                      <option value="3">3</option>
-                      <option value="6">6</option>
-                      <option value="9">9</option>
-                      <option value="12">12</option>
-                      <option value="15">15</option>
-                      <option value="18">18</option>
-                      <option value="21">21</option>
-                      <option value="25">25</option>
-                      <option value="30">30</option>
-                    </select>
-                    <div class="invalid-feedback">
-                      Cantidad inválida
-                    </div>
-                  </div>
-                </div>
-                <button id="btnAgregar" class="btn btn-primary btn-lg btn-block" type="button">Agregar</button>
-                <button id="btnClear" class="btn btn-primary btn-lg btn-block" type="button">Limpiar todo</button>
-                <hr class="mb-4">
-
-                <!-- Insertar tabla aquí -->
-                <table class="table" id="tablaListaCompras">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Cantidad</th>
-                      <th scope="col">Precio</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table>
-
-          </form>
-        </div>
-      </div>
-
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2023 Elotes Gutiérrez Inc.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
-      
-  </div>
+    <!--NAVBAR -->
+    <app-navbar>
+    </app-navbar>
+  <!-- TERMINE NAVBAR -->
 
 
-  <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+
+
+
+<h1>carrito</h1>
+
+
+
+
+
+
+
+
+  <!-- WHATSAPP -->
+  <app-whatsapp>
+  </app-whatsapp>
+
+  <!--FOOTER-->
+  <app-footer>
+  </app-footer>
+  <!-- SCRIPT PARA INTEGRAR NAVBAR Y FOOTER -->
+  <script src="../js/components.js"></script>
+
+  <!-- SCRIPT PARA IMPLEMENTAR SWEET ALERT-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <!-- SCRIPT PARA INTEGRAR LAS VALIDACIONES-->
+  <script src="../js/formContacto.js"></script>
+
+  <!-- SCRIPT BOOTSTRAP-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
 
-  <script src="https://getbootstrap.com/docs/5.2/examples/checkout/form-validation.js"></script>
-  <script src="../js/carrito.js"></script>
-
-</body>
 </html>
