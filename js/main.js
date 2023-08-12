@@ -23,9 +23,9 @@ var TrandingSlider = new Swiper('.tranding-slider', {
 
   // Auto Type
 const typed = new Typed('.homeMultipleText', {
-    strings: ['BIENVENIDX A <p style="color:#FBE053; font-size:60px;">ELOTES GUTIÉRREZ</p>', 'ACOMPÁÑANOS Y DESCUBRE LA ESCENCIA DE <p style="color:#84BF68; font-size:70px;">MÉXICO</p>'],
+    strings: ['BIENVENIDX A </br><span style="color:#FBE053; font-size:60px;">ELOTES GUTIÉRREZ</span>', 'ACOMPÁÑANOS Y DESCUBRE LA ESENCIA DE </br><span style="color:#84BF68; font-size:70px;">MÉXICO</span>'],
     typeSpeed: 50,
-    backSpeed: 50,
+    backSpeed: 30,
     backDelay: 1000,
-    loop: true
+    loop: Infinity
 });

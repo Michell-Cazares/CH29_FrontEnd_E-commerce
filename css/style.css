@@ -39,7 +39,7 @@ a {
 }
 
 .contenedor {
-  width: 100%;
+  width: 99.39%;
   padding: 5% 0;
 }
 
@@ -47,6 +47,11 @@ a {
 .container .title {
   margin-bottom: 75px;
   text-align: center;
+}
+
+.contenedor .titleHome {
+  height: 200px;
+  padding-bottom: 250px;
 }
 
 
