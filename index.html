@@ -5,16 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inicio</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="icon" type="image/x-icon" href="./src/img/logo.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <!-- CSS del Carusel-->
+  <link rel="stylesheet" href="./css/homeCarousel.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar sticky-top navbar-expand-lg">
     <div class="container-fluid">
       <!-- Logo -->
       <a href="./index.html"><img src="./src/img/logo.png" class="navbar-brand fs-4 logo"
@@ -29,7 +34,7 @@
         aria-labelledby="offcanvasNavbarLabel">
         <!-- Side Header -->
         <div class="offcanvas-header">
-          <a href="./index.html"><img src="./src/img/logo.png" class="navbar-brand fs-4 logo"
+          <a href="./index.html"><img src="./src/img/logo.png" class="navbar-brand fs-4 logo-sidebar"
               alt="logo de Elotes Gutierrez"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -62,11 +67,151 @@
   </nav>
   <!-- Termina Navbar -->
 
-  
-  <h1>Index</h1>
+  <section id="tranding">
+    <div class="contenedor">
+      <div class="row text-center title">
+        <h1><strong><span class="homeMultipleText"></span></strong></h1>
+      </div>
+
+      <div class="swiper tranding-slider">
+        <div class="swiper-wrapper">
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/homeCarousel/1.jpg" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price"></h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/menu.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price"></h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/homeCarousel/borrar.jpg" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price"></h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/homeCarousel/tamaños.jpg" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <a class="food-price" style="font-weight:bold; font-size: 20px;" href="./pages/productos.html">Ver
+                más...</i></i></a>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/homeCarousel/InicioPresentación.jpg" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price"></h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/homeCarousel/doriEsquites.jpeg" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <a class="food-price" href="./pages/productos.html">Ver más...</i></i></a>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/homeCarousel/niñoElote.jpeg" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price"></h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="./src/img/homeCarousel/paraDeleitar.jpeg" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price"></h1>
+              <div class="tranding-slide-content-bottom">
+                <a class="food-name" style="font-weight:bold; font-size: 20px; color: grey;"
+                  href="./pages/productos.html">Ver más...</i></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+
+        </div>
+
+        <div class="tranding-slider-control">
+          <div class="swiper-button-prev slider-arrow">
+            <i class='bx bx-chevron-left'></i>
+          </div>
+          <div class="swiper-button-next slider-arrow">
+            <i class='bx bx-chevron-right'></i>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- WHATSAPP -->
-  <app-whatsapp></app-whatsapp>
+  <app-whatsapp>
+  </app-whatsapp>
+
+
   <!--Inicia footer-->
   <footer>
     <div class="container-fluid pieDePagina">
@@ -143,7 +288,10 @@
   </footer>
   <!--Termina footer-->
 
-
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/components.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>

@@ -1,24 +1,20 @@
-.container {
-    text-align: center;
-    background-color: white;
-    align-items: center;
-    padding: 30px;
-}
-
-
-
 .title {
     padding: 20px;
     margin: 20px;
     font-weight: 300;
 }
 
-.form-control {
-    border-color: #84BF68;
+.form-productos {
+    width: 100%;
+    max-width: 700px;
+    padding: 15px;
+    margin: 0 auto;
 }
 
-.btn-primary {
-    background-color: #FBE053;
-    border: #FBE053;
-    color: black;
+.form-control {
+    border-color: #84BF68;
+    position: flex;
+    box-sizing: border-box;
+    height: auto;
+    font-size: 16px;
 }

@@ -23,17 +23,24 @@ Blanco: #fff o white
 }
 
 body {
-  background: url(../src/img/fondoElotesAmarillos.jpg);
+  background: white;
   background-size: cover;
 }
 
-
+a {
+  text-decoration: none;
+}
 
 
 /* CONTENEDOR DE LAS PÁGINAS */
 .container {
-  background-color: #ffffff;
-  padding: 100px 0 100px 0;
+  width: 100%;
+  padding: 5% 0;
+}
+
+.contenedor {
+  width: 100%;
+  padding: 5% 0;
 }
 
 /* TÍTULO DE LOS CONTENEDORES */
@@ -50,6 +57,11 @@ body {
   width: 140px;
   height: 140px;
   pointer-events: none;
+}
+
+.logo-sidebar {
+  width: 100px;
+  height: 110px;
 }
 
 .navbar {
@@ -78,7 +90,7 @@ body {
 
 .navbar .navBarButtons {
   display: flex;
-  margin-right: 5%;
+  margin-right: 5% 5% 0 0;
 }
 
 .navbar .navBarButtons a {
@@ -124,6 +136,8 @@ body {
 }
 
 
+
+/* ICONO DE WHATSAPP */
 .whatsapp {
   position: fixed;
   width: 60px;
@@ -144,6 +158,29 @@ body {
   margin-top: 10px;
   font-size: 40px;
 }
+
+
+.form-control {
+  border-color: #84BF68;
+}
+
+.btn {
+  background-color: #FBE053;
+  color: black;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #84BF68;
+  border-color: #84BF68;
+}
+
+
+
+
+
+
+
 
 /*  IMPORTANTE: Esta parte siempre tiene que quedar al final, si agregan algo más que sea a partir de la línea anterior a esta*/
 
@@ -243,6 +280,10 @@ body {
 
 /*  Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
+  .navbar {
+    padding: 15px 50px;
+  }
+
   .aboutUs p {
     font-size: 12px;
   }

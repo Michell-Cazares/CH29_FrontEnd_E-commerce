@@ -4,11 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS-->
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- CSS para formProductos -->
-    <link rel="stylesheet" href="../css/formProductos.css">
     <!-- Icono para la pestaña del navegador -->
     <link rel="icon" type="image/x-icon" href="../src/img/logo.png">
     <!-- Boxicons -->
@@ -16,33 +11,10 @@
     <title>Productos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <style>
-        .form-productos {
-            width: 100%;
-            max-width: 700px;
-            padding: 15px;
-            margin: 0 auto;
-        }
-
-        .form-control {
-            border-color: #84BF68;
-            position: flex;
-            box-sizing: border-box;
-            height: auto;
-            font-size: 16px;
-        }
-
-        .btn {
-            background-color: #FBE053;
-            color: black;
-        }
-
-        .btn:hover {
-            color: white;
-            background-color: #84BF68;
-            border-color: #84BF68;
-        }
-    </style>
+    <!-- CSS para formProductos -->
+    <link rel="stylesheet" href="../css/formProductos.css">
+    <!-- CSS-->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -50,7 +22,7 @@
     <!--NAVBAR -->
     <app-navbar>
     </app-navbar>
-  <!-- TERMINE NAVBAR -->
+    <!-- TERMINA NAVBAR -->
 
 
     <section>
@@ -89,7 +61,7 @@
 
                         <div>
                             <img id="product_img" class="img-fluid">
-                            <button id="btnImg" class="btn btnImg btn-primary  form-control">Sube la imagen</button>
+                            <button id="btnImg" class="btn btnImg btn-warning  form-control">Sube la imagen</button>
                         </div>
                         <div id="alertValidaImg">
                             <p id="alertImg"></p>
@@ -104,7 +76,7 @@
                             <div id="alertValidacionesEnviar">
                                 <p id="alertEnviar"></p>
                             </div>
-                            <button id="btnAgregar" class="btn btn-lg btn-block"
+                            <button id="btnAgregar" class="btn btn-warning  btn-lg btn-block"
                                 type="submit"><strong>Agregar</strong></button>
 
                         </div>
