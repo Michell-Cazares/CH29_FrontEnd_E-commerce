@@ -83,7 +83,7 @@ btnLogin.addEventListener("click", function (event) {
         text: `¡Bienvenidx ${user.name}!`,
         type: 'success'
       }).then(function () {
-        location.replace("/index.html");
+        location.replace("../index.html");
       });
     } else {
       if (!index.includes("email") || !index.includes("contraseña")) {
