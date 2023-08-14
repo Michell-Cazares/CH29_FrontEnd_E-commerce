@@ -174,6 +174,8 @@ btnRegistrar.addEventListener("click", function (event) {
         title: '¡Error!',
         text: '¡El correo que ha ingresado, ya se encuentra registrado!'
       });
+      txtContraseña.value = "";
+      txtConfirContraseña.value = "";
     }
   }
 
