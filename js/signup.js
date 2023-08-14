@@ -153,27 +153,29 @@ btnRegistrar.addEventListener("click", function (event) {
     }
   }
 
-
-  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
-    btnRegistrar.disabled = true;
-    btnRegistrar.textContent = "Registrando...";
-    btnRegistrar.style.fontWeight = "bold";
-    registrarUsuario(txtNombre.value, txtEmail.value, txtPhone.value, txtContraseña.value);
-    Toast.fire({
-      icon: 'success',
-      title: '¡Se registró con éxito!'
+  if (!isRegistered(txtEmail.value)) {
+    if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
+      btnRegistrar.disabled = true;
+      btnRegistrar.textContent = "Registrando...";
+      btnRegistrar.style.fontWeight = "bold";
+      registrarUsuario(txtNombre.value, txtEmail.value, txtPhone.value, txtContraseña.value);
+      limpiarTodo();
+      Swal.fire({
+        icon: 'success',
+        title: '¡Correcto!',
+        text: '¡Se ha registrado con éxito!'
+      }).then(function () {
+        location.replace("/pages/login.html");
+      });
+    }
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: '¡Error!',
+      text: '¡El correo que ha ingresado, ya se encuentra registrado!'
     });
-    limpiarTodo();
   }
-});
 
-
-const Toast = Swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 5000,
-  timerProgressBar: true
 });
 
 function registrarUsuario(name, email, phone, contraseña) {
@@ -188,6 +190,21 @@ function registrarUsuario(name, email, phone, contraseña) {
   this.localStorage.setItem("user", JSON.stringify(users));
 }
 
+function isRegistered(email) {
+  if (users.length > 0) {
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email == email) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }//if
+  else {
+    return false;
+  }
+
+}
 
 window.addEventListener("load", function (event) {
   event.preventDefault();
