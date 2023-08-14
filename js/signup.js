@@ -165,7 +165,7 @@ btnRegistrar.addEventListener("click", function (event) {
         title: '¡Correcto!',
         text: '¡Se ha registrado con éxito!'
       }).then(function () {
-        location.replace("./pages/login.html");
+        location.replace("./login.html");
       });
     }
   } else {
