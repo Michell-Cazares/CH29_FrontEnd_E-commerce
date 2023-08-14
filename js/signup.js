@@ -153,8 +153,9 @@ btnRegistrar.addEventListener("click", function (event) {
     }
   }
 
-  if (!isRegistered(txtEmail.value)) {
-    if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
+
+  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
+    if (!isRegistered(txtEmail.value)) {
       btnRegistrar.disabled = true;
       btnRegistrar.textContent = "Registrando...";
       btnRegistrar.style.fontWeight = "bold";
@@ -167,13 +168,13 @@ btnRegistrar.addEventListener("click", function (event) {
       }).then(function () {
         location.replace("./login.html");
       });
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: '¡Error!',
+        text: '¡El correo que ha ingresado, ya se encuentra registrado!'
+      });
     }
-  } else {
-    Swal.fire({
-      icon: 'error',
-      title: '¡Error!',
-      text: '¡El correo que ha ingresado, ya se encuentra registrado!'
-    });
   }
 
 });
