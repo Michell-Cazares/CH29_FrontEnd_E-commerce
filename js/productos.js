@@ -82,7 +82,7 @@ addItem({
 
 addItem({
     'name': 'Esquite asado preparado chico',
-    'img': '../src/img/fotosProductos/esquiteAsadoChico.jpg',
+    'img': '../src/img/fotosProductos/esquiteAsadoChico.png',
     'description': 'Elote con chile de la casa (jugo de limón con chilito). Elote de grano grande (cacahuazintle), por temporada.',
     'price': '25'
 });
