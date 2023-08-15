@@ -98,8 +98,15 @@ a {
   margin-right: 5% 5% 0 0;
 }
 
-.navbar .navBarButtons a {
-  margin: 30%;
+.navbar .navBarButtons .dropdown {
+  margin-right: 25px;
+  list-style: none;
+}
+
+.navbar .navBarButtons .dropdown .dropdown-menu a:hover {
+  background: linear-gradient(45deg, #FBE053, #84BF68);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .navbar .navBarButtons i {
@@ -118,6 +125,7 @@ a {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 /* ========================================== FOOTER ==========================================*/
@@ -248,6 +256,12 @@ a {
     margin-top: 6px;
     font-size: 35px;
   }
+
+  .navbar .navBarButtons .dropdown {
+    margin-left: 50px;
+    list-style: none;
+  }
+
 
 }
 

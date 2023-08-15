@@ -102,12 +102,11 @@ btnLogin.addEventListener("click", function (event) {
 function validarSesion(email, contraseña) {
   if (users.length > 0) {
     for (let i = 0; i < users.length; i++) {
+      console.log(users[i]);
       if (users[i].email == email && users[i].contraseña == contraseña) {
         return users[i];
-      } else {
-        return null;
       }
-    }
+    }//for
   }//if
   else {
     return null;

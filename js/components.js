@@ -124,7 +124,16 @@ class NavBar extends HTMLElement {
                       </li>
                     </ul>
                     <div class="d-flex justify-content-center align-items-center navBarButtons">
-                    <a class="nav-link" href="./login.html"><i class='bx bx-user'></i></a>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class='bx bx-user'></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="./login.html">Iniciar Sesión</a></li>
+                      <li><a class="dropdown-item" href="./signup.html">Regístrate</a></li>
+                    </ul>
+                  </li>
                     <a class="nav-link" href="./carrito.html"><i class='bx bx-cart'></i></a>
                   </div>
                   </div>
