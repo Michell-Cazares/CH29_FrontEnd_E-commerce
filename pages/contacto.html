@@ -31,27 +31,21 @@
                 <h1>
                     <strong>Contacto</strong>
                 </h1>
-                <div>
-                    <div>
-                        <p>
-                            Hecho por manos mexicanas; un sabor tradicional de la 4ta <br>
-                            generación a su servicio. Un antojito Mexicano con el mejor sabor.
-                        </p>
-                    </div>
-                </div>
+                <p>
+                    Hecho por manos mexicanas; un sabor tradicional de la 4ta <br>
+                    generación a su servicio. Un antojito Mexicano con el mejor sabor.
+                </p>
             </div>
             <div class="row text-center contacto-info">
-                <div class="col">
+                <div class="col-12 col-md-4">
                     <i class='bx bx-envelope'></i>
                     <p>elotestoluca@gmail.com</p>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-4">
                     <i class='bx bx-phone'></i>
                     <p>722 - 195 - 35 - 94</p>
                 </div>
-            </div>
-            <div class="row text-center contacto-info">
-                <div class="col">
+                <div class="col-12 col-md-4">
                     <a href="https://goo.gl/maps/QDwU8vmmeFEQV6eA6" target="_blank" rel="noopener noreferrer"><i
                             class='bx bx-map'></i></a>
                     <p>Av. Miguel Hidalgo Ote. 100, <br>
@@ -59,20 +53,18 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <p>No dudes en ponerte en contacto con <br>
                         nosotros si tienes dudas o sugerencias.</p>
                 </div>
-                <div class="col"></div>
             </div>
 
 
             <!-- CONTENIDO DEL FORMULARIO -->
             <form id="formContacto">
-                <div style="text-align: center;">
+                <div class="text-center">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-12 col-md-6 mb-3">
                             <label for="txtNombre" class="input"></label>
                             <input type="text" class="form-control" id="txtNombre" placeholder="Nombre" name="txtNombre"
                                 required>
@@ -80,8 +72,8 @@
                                 <p id="alertNombre"></p>
                             </div>
                             <label for="txtEmail" class="input"></label>
-                            <input type="text" class="form-control" id="txtEmail" placeholder="Correo electrónico (tucorreo@dominio.com)"
-                                name="txtEmail" required>
+                            <input type="text" class="form-control" id="txtEmail"
+                                placeholder="Correo electrónico (tucorreo@dominio.com)" name="txtEmail" required>
                             <div id="alertValidacionesTextoEmail">
                                 <p id="alertEmail"></p>
                             </div>
@@ -93,7 +85,7 @@
                             </div>
                         </div>
                         <!--Dropdown-->
-                        <div class="col-md-6">
+                        <div class="col-12 col-md-6 mb-3">
                             <label for="listAsunto" class="form-label input "></label>
                             <select class="form-select form-control" id="listAsunto" name="listAsunto" required>
                                 <option selected disabled value="Asunto">Asunto</option>
@@ -118,14 +110,17 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="checkouts">
                         <div class="row ">
-                            <p>
-                                Debe aceptar las políticas de privacidad antes de enviar.
-                            </p>
+                            <div class="col-12 col-md-12 mb-3">
+                                <p>
+                                    Debe aceptar las políticas de privacidad antes de enviar.
+                                </p>
+                            </div>
                         </div>
                         <div class="row ">
-                            <div class="col-12">
+                            <div class="col-12 col-md-12 mb-3">
                                 <!--Checkouts-->
                                 <div class="form-check ">
                                     <input class="form-check-input " type="checkbox" id="checkrecibirInfo"
@@ -154,17 +149,16 @@
 
                     <!-- BOTÓN -->
                     <div class="row">
-                        <div class="col">
+                        <div class="col-12 col-md-12 mb-3">
                             <div style="text-align: center">
                                 <button id="btnEnviar" class="btn btn-warning  btn-lg btn-block"
                                     type="submit"><strong>Enviar</strong></button>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </form>
+        </div>
     </section>
 
 

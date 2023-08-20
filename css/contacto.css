@@ -14,11 +14,15 @@
     text-align: left;
 }
 
-.form label{
+.form label {
     text-align: center;
     justify-content: center;
 }
 
 .form-label {
     border-color: #84BF68;
+}
+
+#formContacto{
+    margin: 30px;
 }
