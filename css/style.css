@@ -32,26 +32,28 @@ a {
 }
 
 
-/* CONTENEDOR DE LAS PÁGINAS */
-.container {
-  width: 100%;
-  padding: 5% 0;
-}
-
-.contenedor {
-  width: 99%;
-  padding: 5% 0;
-}
 
 /* TÍTULO DE LOS CONTENEDORES */
-.container .title {
-  margin-bottom: 75px;
+.container .titleTyped {
+  height: 150px;
+  padding-bottom: 250px;
+  margin-top: 70px;
+  margin-bottom: 70px;
   text-align: center;
 }
 
-.contenedor .titleHome {
-  height: 200px;
+.container .title {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.contenedor .titleTypedHome {
+  height: 150px;
   padding-bottom: 250px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: center;
 }
 
 
@@ -326,5 +328,4 @@ a {
     width: 110px;
     height: 120px;
   }
-
 }
