@@ -34,9 +34,14 @@ let index = [];
 
 
 // Validación para que el campo nombre solo permita nombres de longitud (3 - 99) caracteres.
+let regexName = /^[a-zA-Z]|[à-ü]|[À-Ü]$/;
 function validarNombre(nombre) {
   if (nombre.length >= 3 && nombre.length < 100) {
-    return true;
+    if (regexName.test(nombre)) {
+      return true;
+    } else {
+      return false;
+    }
   } else {
     return false;
   }

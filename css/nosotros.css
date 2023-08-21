@@ -5,6 +5,10 @@
 } */
 
 
+.card {
+    margin: 30px;
+}
+
 .card-title {
     display: flex;
     font-weight: bold;

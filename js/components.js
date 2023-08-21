@@ -40,31 +40,12 @@ class Footer extends HTMLElement {
           </ul>
         </div>
         <div class="footer-center col-sm-12 col-md-4 col-lg-4">
-          <p class="h4 mb-3">Patrocinadores</p>
+          <p class="h4 mb-3">Patrocinador Oficial</p>
           <!--Link de patrocinadores-->
           <ul class="list-unstyled d-flex m-0">
             <li>
-              <a href="http://www.salesdelistmo.com.mx/" target="_blank" rel="noopener noreferrer">
-                <img src="../src/img/la-fina.png" width="70px" alt="logo-la-fina" /></a>
-              <a href="https://www.lacostena.com.mx/es/" target="_blank" rel="noopener noreferrer"><img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Isologo_de_La_Coste%C3%B1a%C2%AE.svg/2560px-Isologo_de_La_Coste%C3%B1a%C2%AE.svg.png"
-                  width="70px" alt="logo-la-costena" /></a>
-              <a href="https://www.mccormick.mx/" target="_blank" rel="noopener noreferrer"><img
-                  src="https://seeklogo.com/images/M/McCormick-logo-144428A8DB-seeklogo.com.png" width="70px"
-                  alt="logo-mccormick" /></a>
-            </li>
-          </ul>
-          <!--Link de patrocinadores-->
-          <ul class="list-unstyled d-flex m-0">
-            <li>
-              <a href="https://www.labotanera.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://www.labotanera.com/wp-content/uploads/2022/05/part-3.png" width="70px"
-                  alt="logo-botanera" alt="logo-la-fina" /></a>
-              <a href="https://www.salsavalentina.mx/" target="_blank" rel="noopener noreferrer"><img
-                  src="https://seeklogo.com/images/S/salsa-valentina-logo-660854C893-seeklogo.com.png" width="70px"
-                  alt="logo-valentina" /></a>
               <a href="https://sabritas.com.mx/promocion/" target="_blank" rel="noopener noreferrer"><img
-                  src="../src/img/sabritas.webp" width="70px" alt="logo-sabritas" /></a>
+                  src="../src/img/sabritas.png" width="70px" alt="logo-sabritas" /></a>
             </li>
           </ul>
         </div>

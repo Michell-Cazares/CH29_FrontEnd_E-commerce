@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 /* COLORES
 Amarillo: #FBE053
 Verde: #84BF68
@@ -33,7 +33,11 @@ a {
 
 
 
-/* TÍTULO DE LOS CONTENEDORES */
+/* TÍTULO DE LAS PÁGINAS */
+.container {
+  margin-bottom: 50px;
+}
+
 .container .titleTyped {
   height: 150px;
   padding-bottom: 250px;
@@ -55,8 +59,6 @@ a {
   margin-bottom: 70px;
   text-align: center;
 }
-
-
 
 /* ========================================== NAVBAR ==========================================*/
 
@@ -194,6 +196,20 @@ a {
 
 
 
+/* INICIO */
+.pedidosHorarios img {
+  width: 340px;
+  height: 600px;
+  border-radius: 5%;
+  margin: 50px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.09);
+}
+
+.pedidosHorarios img:hover {
+  box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.2);
+  transform: scale(110%);
+  transition: .5s;
+}
 
 
 
@@ -214,6 +230,13 @@ a {
   .navbarUl {
     flex-grow: 1;
   }
+
+  .pedidosHorarios img {
+    width: 300px;
+    height: 560px;
+    margin: 20px;
+  }
+  
 }
 
 
@@ -269,7 +292,11 @@ a {
     height: 140px;
   }
 
-
+  .pedidosHorarios img {
+    width: 260px;
+    height: 520px;
+    margin: 15px;
+  }
 }
 
 /*  Medium devices (tablets, 768px and up) */
@@ -306,6 +333,12 @@ a {
     width: 120px;
     height: 130px;
   }
+
+.pedidosHorarios img {
+  width: 220px;
+  height: 400px;
+  margin: 10px;
+}
 
 }
 
