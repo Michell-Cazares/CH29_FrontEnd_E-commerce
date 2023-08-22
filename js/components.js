@@ -421,7 +421,7 @@ window.addEventListener("load", function (event) {
   event.preventDefault();
   let ruta = this.location.pathname;
   if (this.localStorage.getItem("user-logged") != null) {
-    if (ruta.includes("/index.html") || this.location.pathname == "/CH29_FrontEnd_E-commerce/") {
+    if (ruta.includes("/index.html")) { // <- ESTO HAY QUE MODIFICARLO
       customElements.define('app-indexnavbar', IndexNavBarLogged);
     } else {
       customElements.define('app-navbar', NavBarLogged);
@@ -450,7 +450,7 @@ window.addEventListener("load", function (event) {
           })
           localStorage.removeItem("user-logged");
           setTimeout(function () {
-            if (ruta.includes("/index.html") || this.location.pathname == "/CH29_FrontEnd_E-commerce/") {
+            if (ruta.includes("/index.html")) { // <- ESTO HAY QUE MODIFICARLO
               window.location.href = './pages/login.html';
             } else {
               window.location.href = './login.html';
@@ -462,7 +462,7 @@ window.addEventListener("load", function (event) {
     });
   }//if
   else {
-    if (ruta.includes("/index.html") || this.location.pathname == "/CH29_FrontEnd_E-commerce/") {
+    if (ruta.includes("/index.html")) { // <- ESTO HAY QUE MODIFICARLO
       customElements.define('app-indexnavbar', IndexNavBarUnlogged);
     } else {
       customElements.define('app-navbar', NavBarUnlogged);
