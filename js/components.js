@@ -420,7 +420,7 @@ class Whatsapp extends HTMLElement {
 window.addEventListener("load", function (event) {
   event.preventDefault();
   if (this.localStorage.getItem("user-logged") != null) {
-    if (document.URL == window.location.protocol + '//' + window.location.host + "/index.html") {
+    if (document.URL.includes("/index.html")) {
       customElements.define('app-indexnavbar', IndexNavBarLogged);
     } else {
       customElements.define('app-navbar', NavBarLogged);
@@ -449,7 +449,7 @@ window.addEventListener("load", function (event) {
           })
           localStorage.removeItem("user-logged");
           setTimeout(function () {
-            if (document.URL == window.location.protocol + '//' + window.location.host + "/index.html") {
+            if (document.URL.includes("/index.html")) {
               window.location.href = './pages/login.html';
             } else {
               window.location.href = './login.html';
@@ -461,7 +461,7 @@ window.addEventListener("load", function (event) {
     });
   }//if
   else {
-    if (document.URL == window.location.protocol + '//' + window.location.host + "/index.html") {
+    if (document.URL.includes("/index.html")) {
       customElements.define('app-indexnavbar', IndexNavBarUnlogged);
     } else {
       customElements.define('app-navbar', NavBarUnlogged);
