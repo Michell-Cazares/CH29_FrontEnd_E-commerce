@@ -118,8 +118,8 @@ function validarSesion(email, contraseña) {
 function iniciarSesion(email, contraseña) {
   if (this.localStorage.getItem("user") != null) {
     JSON.parse(this.localStorage.getItem("user")).forEach((u) => {
-      if(u.email == email && u.contraseña == contraseña){
-        this.localStorage.setItem("user-logged",JSON.stringify(u));
+      if (u.email == email && u.contraseña == contraseña) {
+        this.localStorage.setItem("user-logged", JSON.stringify(u));
       }
     }//foreach
     );
@@ -148,22 +148,26 @@ function removeAllInstances(arr, item) {
 
 txtEmail.addEventListener("keyup", function (event) {
   event.preventDefault();
-  alertValidaciones.innerHTML = "";
-  alerta.style.display = "none";
-  txtEmail.style.border = "";
-  txtContraseña.style.border = "";
-  removeAllInstances(index, "email");
-  removeAllInstances(index, "contrasña");
+  if (!index.includes("email")) {
+    alertValidaciones.innerHTML = "";
+    alerta.style.display = "none";
+    txtEmail.style.border = "";
+    txtContraseña.style.border = "";
+    removeAllInstances(index, "email");
+    removeAllInstances(index, "contrasña");
+  }
 });
 
 txtContraseña.addEventListener("keyup", function (event) {
   event.preventDefault();
-  alertValidaciones.innerHTML = "";
-  alerta.style.display = "none";
-  txtEmail.style.border = "";
-  txtContraseña.style.border = "";
-  removeAllInstances(index, "email");
-  removeAllInstances(index, "contrasña");
+  if (!index.includes("contraseña")) {
+    alertValidaciones.innerHTML = "";
+    alerta.style.display = "none";
+    txtEmail.style.border = "";
+    txtContraseña.style.border = "";
+    removeAllInstances(index, "email");
+    removeAllInstances(index, "contrasña");
+  }
 });
 
 
