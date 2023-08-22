@@ -73,6 +73,7 @@ btnLogin.addEventListener("click", function (event) {
     let user = validarSesion(txtEmail.value, txtContraseña.value);
     console.log(user);
     if (user != null) {
+      iniciarSesion(txtEmail.value, txtContraseña.value);
       limpiarTodo();
       btnLogin.disabled = true;
       btnLogin.textContent = "Iniciando Sesión...";
@@ -114,6 +115,16 @@ function validarSesion(email, contraseña) {
 
 }
 
+function iniciarSesion(email, contraseña) {
+  if (this.localStorage.getItem("user") != null) {
+    JSON.parse(this.localStorage.getItem("user")).forEach((u) => {
+      if(u.email == email && u.contraseña == contraseña){
+        this.localStorage.setItem("user-logged",JSON.stringify(u));
+      }
+    }//foreach
+    );
+  }//if
+}
 
 window.addEventListener("load", function (event) {
   event.preventDefault();
