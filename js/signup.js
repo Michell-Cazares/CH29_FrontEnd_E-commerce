@@ -1,3 +1,7 @@
+if (this.localStorage.getItem("user-logged") != null) {
+  location.replace("../index.html");
+}//if
+
 let txtNombre = document.getElementById("txtNombre");
 let txtEmail = document.getElementById("txtEmail");
 let txtPhone = document.getElementById("txtPhone");
