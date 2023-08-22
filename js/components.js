@@ -419,8 +419,9 @@ class Whatsapp extends HTMLElement {
 
 window.addEventListener("load", function (event) {
   event.preventDefault();
+  let ruta = this.location.pathname;
   if (this.localStorage.getItem("user-logged") != null) {
-    if (this.location.pathname == "/index.html" || this.location.pathname == "/") {
+    if (ruta.includes("/index.html") || this.location.pathname == "/CH29_FrontEnd_E-commerce/") {
       customElements.define('app-indexnavbar', IndexNavBarLogged);
     } else {
       customElements.define('app-navbar', NavBarLogged);
@@ -449,7 +450,7 @@ window.addEventListener("load", function (event) {
           })
           localStorage.removeItem("user-logged");
           setTimeout(function () {
-            if (this.location.pathname == "/index.html" || this.location.pathname == "/") {
+            if (ruta.includes("/index.html") || this.location.pathname == "/CH29_FrontEnd_E-commerce/") {
               window.location.href = './pages/login.html';
             } else {
               window.location.href = './login.html';
@@ -461,7 +462,7 @@ window.addEventListener("load", function (event) {
     });
   }//if
   else {
-    if (this.location.pathname == "/index.html" || this.location.pathname == "/") {
+    if (ruta.includes("/index.html") || this.location.pathname == "/CH29_FrontEnd_E-commerce/") {
       customElements.define('app-indexnavbar', IndexNavBarUnlogged);
     } else {
       customElements.define('app-navbar', NavBarUnlogged);
