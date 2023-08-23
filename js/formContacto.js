@@ -34,9 +34,10 @@ let index = [];
 
 
 // Validación para que el campo nombre solo permita nombres de longitud (3 - 99) caracteres.
-let regexName = /^[a-zA-Z]|[à-ü]|[À-Ü]$/;
+let regexName = /^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ' ']{6,100}[\d]{0}$/;
+//let regexName = /^[a-zA-Z]|[à-üÀ-Ü][\d]{0}$/;
 function validarNombre(nombre) {
-  if (nombre.length >= 3 && nombre.length < 100) {
+  if (nombre.length >= 6 && nombre.length < 100) {
     if (regexName.test(nombre)) {
       return true;
     } else {
@@ -63,11 +64,19 @@ function validarEmail(email) {
 }
 
 function validarMensaje(mensaje) {
-  if (mensaje.length >= 3 && mensaje.length <= 200) {
-    return true;
+  if (!isNumeric(mensaje)) {
+    if (mensaje.length >= 3 && mensaje.length <= 200) {
+      return true;
+    } else {
+      return false;
+    }
   } else {
     return false;
   }
+}
+
+function isNumeric(str) {
+  return /^\d+$/.test(str);
 }
 
 let regextel = /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/;
@@ -124,7 +133,7 @@ btnEnviar.addEventListener("click", function (event) {
   if (!validarNombre(txtNombre.value.trim())) {
     if (!index.includes("nombre")) {
       alertValidacionesTextoNombre.insertAdjacentHTML(
-        "afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
+        "afterbegin", ` El <strong> Nombre Completo </strong> no es correcto. <br/> `);
       alertValidacionesTextoNombre.style.color = "red";
       txtNombre.style.border = "solid thin red";
       index.push("nombre");
@@ -142,7 +151,7 @@ btnEnviar.addEventListener("click", function (event) {
 
   if (!validarNumTel(txtPhone.value.trim())) {
     if (!index.includes("phone")) {
-      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
+      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Teléfono </strong> no es correcto. <br/> `);
       alertValidacionesTextoPhone.style.color = "red";
       txtPhone.style.border = "solid thin red";
       index.push("phone");
@@ -261,7 +270,7 @@ txtPhone.addEventListener("keyup", function (event) {
   event.preventDefault();
   if (!validarNumTel(txtPhone.value.trim())) {
     if (!index.includes("phone")) {
-      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
+      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Teléfono </strong> no es correcto. <br/> `);
       alertValidacionesTextoPhone.style.color = "red";
       txtPhone.style.border = "solid thin red";
       index.push("phone");
