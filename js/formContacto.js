@@ -187,7 +187,7 @@ btnEnviar.addEventListener("click", function (event) {
     }
   }
   recibirInfoIsChecked();
-  if (validarNombre(txtNombre.value.trim()) && validarEmail(txtEmail.value.trim()) && validarNumTel(txtPhone.value.trim()) && validarListAsunto(listAsunto.value) && politicasPrivIsChecked()) {
+  if (!index.includes("nombre") && !index.includes("email") && !index.includes("phone") && !index.includes("listAsunto") && !index.includes("mensaje") && !index.includes("checkPriv")) {
     btnEnviar.disabled = true;
     btnEnviar.textContent = "Enviando...";
     btnEnviar.style.fontWeight = "bold";

@@ -164,7 +164,7 @@ btnRegistrar.addEventListener("click", function (event) {
   }
 
 
-  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
+  if (!index.includes("nombre") && !index.includes("email") && !index.includes("phone") && !index.includes("contraseña")   && !index.includes("contraConfirm")) {
     if (!isRegistered(txtEmail.value)) {
       btnRegistrar.disabled = true;
       btnRegistrar.textContent = "Registrando...";
