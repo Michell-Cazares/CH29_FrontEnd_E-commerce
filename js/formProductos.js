@@ -1,3 +1,7 @@
+if (this.localStorage.getItem("user-logged") == null || JSON.parse(this.localStorage.getItem("user-logged")).userType != "admin") {
+    location.replace("../index.html");
+}//if
+
 //elementos del html
 let txtNombreProducto = document.getElementById("txtNombreProducto");
 let txtDescriptionProducto = document.getElementById("txtDescriptionProducto");

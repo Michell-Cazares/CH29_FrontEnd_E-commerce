@@ -176,6 +176,28 @@ a {
   font-size: 40px;
 }
 
+/*ICONO PARA CREAR PRODUCTOS*/
+.btnCrearProducto {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 130px;
+  right: 40px;
+  background-color: #FBE053;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  z-index: 100;
+}
+
+.btnCrearProducto-icon {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 60px;
+  color: #84BF68 ;
+}
 
 .form-control {
   border-color: #84BF68;
@@ -272,7 +294,6 @@ a {
   }
 
   .whatsapp {
-    position: fixed;
     width: 50px;
     height: 50px;
   }
@@ -282,6 +303,15 @@ a {
     font-size: 35px;
   }
 
+  .btnCrearProducto {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .btnCrearProducto-icon {
+    margin-top: 6px;
+    font-size: 40px;
+  }
   .navbar .navBarButtons .dropdown {
     margin-left: 50px;
     list-style: none;
@@ -315,14 +345,25 @@ a {
   }
 
   .whatsapp {
-    position: fixed;
     width: 40px;
     height: 40px;
+    right: 20px;
   }
 
   .whatsapp-icon {
     margin-top: 4px;
     font-size: 30px;
+  }
+
+  .btnCrearProducto {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+  }
+  
+  .btnCrearProducto-icon {
+    margin-top: 3px;
+    font-size: 35px;
   }
 
   .card {

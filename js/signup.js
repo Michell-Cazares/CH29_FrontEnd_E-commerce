@@ -197,7 +197,7 @@ function registrarUsuario(name, email, phone, contraseña) {
       "phone": "${phone}",
       "email": "${email}",
       "contraseña": "${contraseña}",
-      "administrador":"cliente"
+      "userType":"cliente"
   }`;
 
   users.push(JSON.parse(user));

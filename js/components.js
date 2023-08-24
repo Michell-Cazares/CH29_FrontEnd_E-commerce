@@ -1,6 +1,6 @@
 //Arreglo para guardar los usuarios en el local storage
-let userlogged = this.localStorage.getItem("user-logged");
-let ruta = "";
+let userlogged = JSON.parse(this.localStorage.getItem("user-logged"));;
+
 
 class Footer extends HTMLElement {
   constructor() {
@@ -191,7 +191,7 @@ class IndexNavbar extends HTMLElement {
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a class="dropdown-item" id="btnIniciarSesion" href="./pages/login.html">Iniciar Sesión</a></li>
                     <li><a class="dropdown-item" id="btnRegistrate" href="./pages/signup.html">Regístrate</a></li>
-                    <li><a id="btnLogout" class="dropdown-item" href="">Cerrar Sesión</a></li>
+                    <li><a id="btnLogout" class="dropdown-item" href="" style="display:none;">Cerrar Sesión</a></li>
                   </ul>
                 </li>
     
@@ -262,7 +262,7 @@ class Navbar extends HTMLElement {
                     <ul class="dropdown-menu">
                     <li><a class="dropdown-item" id="btnIniciarSesion" href="./login.html">Iniciar Sesión</a></li>
                     <li><a class="dropdown-item" id="btnRegistrate" href="./signup.html">Regístrate</a></li>
-                    <li><a class="dropdown-item" id="btnLogout" href="">Cerrar Sesión</a></li>
+                    <li><a class="dropdown-item" id="btnLogout" href="" style="display:none;">Cerrar Sesión</a></li>
                     </ul>
                   </li>
                     <a class="nav-link" href="./carrito.html"><i class='bx bx-cart'></i></a>
@@ -282,23 +282,36 @@ class Whatsapp extends HTMLElement {
   connectedCallback() {
     this.innerHTML =
       `
-      <a href="https://wa.me/c/5217221953594" class="whatsapp" target="_blank"> <i class='bx bxl-whatsapp whatsapp-icon'></i></a>
+      <a href="https://wa.me/c/5217221953594" class="whatsapp" target="_blank" title="Whatsapp"> <i class='bx bxl-whatsapp whatsapp-icon'></i></a>
         `
   }
 }
+
+class CrearProducto extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML =
+      `
+      <a href="./formProductos.html" class="btnCrearProducto" id="btnCrearProducto" style="display:none;" title="Crear un nuevo producto"><i class='bx bx-plus btnCrearProducto-icon'></i></a>
+        `
+  }
+}
+
+customElements.define('app-indexnavbar', IndexNavbar);
+customElements.define('app-navbar', Navbar);
+customElements.define('app-footer', Footer);
+customElements.define('app-indexfooter', IndexFooter);
+customElements.define('app-whatsapp', Whatsapp);
+customElements.define('app-crearproducto', CrearProducto);
 
 window.addEventListener("load", function (event) {
   event.preventDefault();
   let btnIniciarSesion = document.getElementById("btnIniciarSesion");
   let btnRegistrate = document.getElementById("btnRegistrate");
   let btnLogout = document.getElementById("btnLogout");
-  btnLogout.style.display = "none";
-  if (this.localStorage.getItem("user-logged") != null) {
+  if (userlogged != null) {
     btnIniciarSesion.style.display = "none";
     btnRegistrate.style.display = "none";
     btnLogout.style.display = "initial";
-    userlogged = JSON.parse(this.localStorage.getItem("user-logged"));
-    console.log(userlogged);
     btnLogout.addEventListener("click", function (event) {
       event.preventDefault();
       Swal.fire({
@@ -320,7 +333,7 @@ window.addEventListener("load", function (event) {
           })
           localStorage.removeItem("user-logged");
           setTimeout(function () {
-            if (this.location.pathname.includes("pages")) { // <- ESTO HAY QUE MODIFICARLO
+            if (this.location.pathname.includes("pages")) {
               window.location.href = './login.html';
             } else {
               window.location.href = './pages/login.html';
@@ -331,8 +344,3 @@ window.addEventListener("load", function (event) {
     });
   }//if
 }); // window // load
-customElements.define('app-indexnavbar', IndexNavbar);
-customElements.define('app-navbar', Navbar);
-customElements.define('app-footer', Footer);
-customElements.define('app-indexfooter', IndexFooter);
-customElements.define('app-whatsapp', Whatsapp);
