@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 /* COLORES
 Amarillo: #FBE053
 Verde: #84BF68
@@ -32,35 +32,39 @@ a {
 }
 
 
-/* CONTENEDOR DE LAS PÁGINAS */
+
+/* TÍTULO DE LAS PÁGINAS */
 .container {
-  width: 100%;
-  padding: 5% 0;
+  margin-bottom: 50px;
 }
 
-.contenedor {
-  width: 99%;
-  padding: 5% 0;
-}
-
-/* TÍTULO DE LOS CONTENEDORES */
-.container .title {
-  margin-bottom: 75px;
+.container .titleTyped {
+  height: 150px;
+  padding-bottom: 250px;
+  margin-top: 70px;
+  margin-bottom: 70px;
   text-align: center;
 }
 
-.contenedor .titleHome {
-  height: 200px;
-  padding-bottom: 250px;
+.container .title {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: center;
 }
 
-
+.contenedor .titleTypedHome {
+  height: 150px;
+  padding-bottom: 250px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: center;
+}
 
 /* ========================================== NAVBAR ==========================================*/
 
 .logo {
   width: 140px;
-  height: 140px;
+  height: 150px;
   pointer-events: none;
 }
 
@@ -98,8 +102,15 @@ a {
   margin-right: 5% 5% 0 0;
 }
 
-.navbar .navBarButtons a {
-  margin: 30%;
+.navbar .navBarButtons .dropdown {
+  margin-right: 25px;
+  list-style: none;
+}
+
+.navbar .navBarButtons .dropdown .dropdown-menu a:hover {
+  background: linear-gradient(45deg, #FBE053, #84BF68);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .navbar .navBarButtons i {
@@ -118,6 +129,7 @@ a {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 /* ========================================== FOOTER ==========================================*/
@@ -164,6 +176,28 @@ a {
   font-size: 40px;
 }
 
+/*ICONO PARA CREAR PRODUCTOS*/
+.btnCrearProducto {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 130px;
+  right: 40px;
+  background-color: #FBE053;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  z-index: 100;
+}
+
+.btnCrearProducto-icon {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 60px;
+  color: #84BF68 ;
+}
 
 .form-control {
   border-color: #84BF68;
@@ -184,6 +218,20 @@ a {
 
 
 
+/* INICIO */
+.pedidosHorarios img {
+  width: 340px;
+  height: 600px;
+  border-radius: 5%;
+  margin: 50px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.09);
+}
+
+.pedidosHorarios img:hover {
+  box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.2);
+  transform: scale(110%);
+  transition: .5s;
+}
 
 
 
@@ -204,6 +252,13 @@ a {
   .navbarUl {
     flex-grow: 1;
   }
+
+  .pedidosHorarios img {
+    width: 300px;
+    height: 560px;
+    margin: 20px;
+  }
+  
 }
 
 
@@ -239,7 +294,6 @@ a {
   }
 
   .whatsapp {
-    position: fixed;
     width: 50px;
     height: 50px;
   }
@@ -249,6 +303,30 @@ a {
     font-size: 35px;
   }
 
+  .btnCrearProducto {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .btnCrearProducto-icon {
+    margin-top: 6px;
+    font-size: 40px;
+  }
+  .navbar .navBarButtons .dropdown {
+    margin-left: 50px;
+    list-style: none;
+  }
+
+  .logo {
+    width: 130px;
+    height: 140px;
+  }
+
+  .pedidosHorarios img {
+    width: 260px;
+    height: 520px;
+    margin: 15px;
+  }
 }
 
 /*  Medium devices (tablets, 768px and up) */
@@ -267,9 +345,9 @@ a {
   }
 
   .whatsapp {
-    position: fixed;
     width: 40px;
     height: 40px;
+    right: 20px;
   }
 
   .whatsapp-icon {
@@ -277,10 +355,32 @@ a {
     font-size: 30px;
   }
 
-  .googleMaps {
-    width: 400px;
-    height: 400px;
+  .btnCrearProducto {
+    width: 40px;
+    height: 40px;
+    right: 20px;
   }
+  
+  .btnCrearProducto-icon {
+    margin-top: 3px;
+    font-size: 35px;
+  }
+
+  .card {
+    margin: 30px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 130px;
+  }
+
+.pedidosHorarios img {
+  width: 220px;
+  height: 400px;
+  margin: 10px;
+}
+
 }
 
 /*  Small devices (landscape phones, 576px and up) */
@@ -296,5 +396,10 @@ a {
   .googleMaps {
     width: 300px;
     height: 300px;
+  }
+
+  .logo {
+    width: 110px;
+    height: 120px;
   }
 }

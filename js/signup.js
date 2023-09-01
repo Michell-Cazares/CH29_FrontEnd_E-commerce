@@ -1,3 +1,7 @@
+if (this.localStorage.getItem("user-logged") != null) {
+  location.replace("../index.html");
+}//if
+
 let txtNombre = document.getElementById("txtNombre");
 let txtEmail = document.getElementById("txtEmail");
 let txtPhone = document.getElementById("txtPhone");
@@ -30,7 +34,7 @@ let users = [];
 //Función para validar que la contraseña contenga de 8-15caracteres, 1mays y 1min, 1número, no espacios en blanco 1carac especial.
 //let regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 //let regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,15})/;
-let regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-@_$!%*?&])[A-Za-z\d-@_$!%*?&]{8,15}$/;
+let regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-@_$!%*?&.])[A-Za-z\d-@_$!%*?&.]{8,15}$/;
 function validarContra(password) {
   if (password != "") {
     if (regexContra.test(password)) {
@@ -57,10 +61,16 @@ function validarContraConfirmar(passwordConfirm, password) {
   }
 }
 
-// Validación para que el campo nombre solo permita nombres de longitud (7 - 99) caracteres.
+// Validación para que el campo nombre solo permita nombres de longitud (3 - 99) caracteres.
+let regexName = /^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ' ']{6,100}[\d]{0}$/;
+//let regexName = /^[a-zA-Z]|[à-üÀ-Ü][\d]{0}$/;
 function validarNombre(nombre) {
-  if (nombre.length >= 7 && nombre.length < 100) {
-    return true;
+  if (nombre.length >= 6 && nombre.length < 100) {
+    if (regexName.test(nombre)) {
+      return true;
+    } else {
+      return false;
+    }
   } else {
     return false;
   }
@@ -108,7 +118,7 @@ btnRegistrar.addEventListener("click", function (event) {
   event.preventDefault();
   if (!validarNombre(txtNombre.value)) {
     if (!index.includes("nombre")) {
-      alertValidacionesTextoNombre.insertAdjacentHTML("afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
+      alertValidacionesTextoNombre.insertAdjacentHTML("afterbegin", ` Escribe tu <strong> Nombre Completo </strong>. <br/> `);
       alertValidacionesTextoNombre.style.color = "red";
       txtNombre.style.border = "solid thin red";
       index.push("nombre");
@@ -117,7 +127,7 @@ btnRegistrar.addEventListener("click", function (event) {
 
   if (!validarNumTel(txtPhone.value)) {
     if (!index.includes("phone")) {
-      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
+      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Teléfono </strong> no es correcto. <br/> `);
       alertValidacionesTextoPhone.style.color = "red";
       txtPhone.style.border = "solid thin red";
       index.push("phone");
@@ -137,7 +147,7 @@ btnRegistrar.addEventListener("click", function (event) {
   if (!validarContra(txtContraseña.value)) {
     if (!index.includes("contraseña")) {
       txtContraseña.style.border = "solid thin red";
-      alertValidacionesTextoContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña </strong> debe contener: <br/> Min 8 caracteres <br/> Una mayúscula <br/> Una minúscula<br/> Un número <br/> Un caracter epecial<br/> <strong>NO</strong> espacios en blanco `);
+      alertValidacionesTextoContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña </strong> debe contener: <br/> Min 8 caracteres <br/> Una mayúscula <br/> Una minúscula<br/> Un número <br/> Un caracter epecial: <strong>-@_$!%*?&.</strong><br/> <strong>NO</strong> espacios en blanco `);
       alertValidacionesTextoContraseña.style.color = "blue";
       index.push("contraseña");
     }
@@ -154,26 +164,31 @@ btnRegistrar.addEventListener("click", function (event) {
   }
 
 
-  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
-    btnRegistrar.disabled = true;
-    btnRegistrar.textContent = "Registrando...";
-    btnRegistrar.style.fontWeight = "bold";
-    registrarUsuario(txtNombre.value, txtEmail.value, txtPhone.value, txtContraseña.value);
-    Toast.fire({
-      icon: 'success',
-      title: '¡Se registró con éxito!'
-    });
-    limpiarTodo();
+  if (!index.includes("nombre") && !index.includes("email") && !index.includes("phone") && !index.includes("contraseña")   && !index.includes("contraConfirm")) {
+    if (!isRegistered(txtEmail.value)) {
+      btnRegistrar.disabled = true;
+      btnRegistrar.textContent = "Registrando...";
+      btnRegistrar.style.fontWeight = "bold";
+      registrarUsuario(txtNombre.value, txtEmail.value, txtPhone.value, txtContraseña.value);
+      limpiarTodo();
+      Swal.fire({
+        icon: 'success',
+        title: '¡Correcto!',
+        text: '¡Se ha registrado con éxito!'
+      }).then(function () {
+        location.replace("./login.html");
+      });
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: '¡Error!',
+        text: '¡El correo que ha ingresado, ya se encuentra registrado!'
+      });
+      txtContraseña.value = "";
+      txtConfirContraseña.value = "";
+    }
   }
-});
 
-
-const Toast = Swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 5000,
-  timerProgressBar: true
 });
 
 function registrarUsuario(name, email, phone, contraseña) {
@@ -181,13 +196,29 @@ function registrarUsuario(name, email, phone, contraseña) {
       "name": "${name}",
       "phone": "${phone}",
       "email": "${email}",
-      "contraseña": "${contraseña}"
+      "contraseña": "${contraseña}",
+      "userType":"cliente"
   }`;
 
   users.push(JSON.parse(user));
   this.localStorage.setItem("user", JSON.stringify(users));
 }
 
+function isRegistered(email) {
+  if (users.length > 0) {
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email == email) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }//if
+  else {
+    return false;
+  }
+
+}
 
 window.addEventListener("load", function (event) {
   event.preventDefault();
@@ -207,7 +238,7 @@ txtNombre.addEventListener("keyup", function (event) {
   event.preventDefault();
   if (!validarNombre(txtNombre.value)) {
     if (!index.includes("nombre")) {
-      alertValidacionesTextoNombre.insertAdjacentHTML("afterbegin", ` Escribe tu <strong> Nombre </strong> completo. <br/> `);
+      alertValidacionesTextoNombre.insertAdjacentHTML("afterbegin", ` Escribe tu <strong> Nombre Completo </strong>. <br/> `);
       alertValidacionesTextoNombre.style.color = "red";
       txtNombre.style.border = "solid thin red";
       index.push("nombre");
@@ -226,7 +257,7 @@ txtPhone.addEventListener("keyup", function (event) {
   event.preventDefault();
   if (!validarNumTel(txtPhone.value)) {
     if (!index.includes("phone")) {
-      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
+      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Teléfono </strong> no es correcto. <br/> `);
       alertValidacionesTextoPhone.style.color = "red";
       txtPhone.style.border = "solid thin red";
       index.push("phone");
@@ -266,7 +297,7 @@ txtContraseña.addEventListener("keyup", function (event) {
   event.preventDefault();
   if (!validarContra(txtContraseña.value)) {
     if (!index.includes("contraseña")) {
-      alertValidacionesTextoContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña </strong> debe contener: <br/> Min 8 caracteres <br/> Una mayúscula <br/> Una minúscula<br/> Un número <br/> Un Caracter epecial<br/> NO espacios en blanco `);
+      alertValidacionesTextoContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña </strong> debe contener: <br/> Min 8 caracteres <br/> Una mayúscula <br/> Una minúscula<br/> Un número <br/> Un caracter epecial: <strong>-@_$!%*?&.</strong><br/> <strong>NO</strong> espacios en blanco `);
       alertValidacionesTextoContraseña.style.color = "blue";
       txtContraseña.style.border = "solid thin red";
       index.push("contraseña");

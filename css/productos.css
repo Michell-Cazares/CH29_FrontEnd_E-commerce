@@ -10,6 +10,7 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
+  background: linear-gradient(45deg, #FBE053, #84BF68);
 }
 
 .card-title {
@@ -28,4 +29,84 @@
 
 .card-box:hover {
   box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.2);
+}
+
+
+.productosBanner {
+  position: relative;
+  margin-top: 55px;
+  margin-bottom: 55px;
+}
+
+.productosBanner .bottom {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+}
+
+.productosBanner .top {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+}
+
+.productosBanner img {
+  width: 100%;
+  opacity: 0;
+  position: relative;
+  -webkit-animation-name: fade;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 6s;
+  animation-name: fade;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  53% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  53% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.bottom {
+  animation-delay: 3s;
 }

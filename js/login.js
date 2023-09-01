@@ -1,3 +1,10 @@
+if (this.localStorage.getItem("user-logged") != null) {
+  location.replace("../index.html");
+}//if
+
+
+
+
 let txtEmail = document.getElementById("txtEmail");
 let txtContraseña = document.getElementById("txtPassword");
 let btnLogin = document.getElementById("btnLogin");
@@ -5,12 +12,9 @@ let btnLogin = document.getElementById("btnLogin");
 /* ALERTAS */
 
 // Párrafos de las alertas
-let alertEmail = document.getElementById("alertEmail");
-let alertContraError = document.getElementById("alertContraError");
-
+let alerta = document.getElementById("alert");
 //Div alertas validaciones
-let alertValidacionesTextoEmail = document.getElementById("alertValidacionesTextoEmail");
-let alertValidacionesTextoContraseña = document.getElementById("alertValidacionesTextoContraseña");
+let alertValidaciones = document.getElementById("alertValidaciones");
 
 //Bandera para evitar repetir la alerta de cada campo
 let index = [];
@@ -34,49 +38,6 @@ function validarContra(password) {
   }
 }
 
-
-
-function validarContraConfirmar(passwordConfirm, password) {
-  if (passwordConfirm != "") {
-    if (passwordConfirm == password) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return false;
-  }
-}
-
-// Validación para que el campo nombre solo permita nombres de longitud (7 - 99) caracteres.
-function validarNombre(nombre) {
-  if (nombre.length >= 7 && nombre.length < 100) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-
-// Function para validar numero de teléfono 
-let regextel = /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/;
-function validarNumTel(numTel) {
-  if (numTel != "") {
-    if (numTel.substr(0, 3) != "000") {
-      if (regextel.test(numTel)) {
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      return false
-    }
-
-  } else {
-    return false;
-  }
-}
-
 //Función para validar que lo que se escribe en el campo email cumpla con la regex definida.
 let regexEmail =
   /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
@@ -95,90 +56,82 @@ function validarEmail(email) {
 
 
 //oreja de botón registrarse.
-btnRegistrar.addEventListener("click", function (event) {
+btnLogin.addEventListener("click", function (event) {
   event.preventDefault();
-  if (!validarNombre(txtNombre.value)) {
-    if (!index.includes("nombre")) {
-      alertValidacionesTextoNombre.insertAdjacentHTML("afterbegin", ` El <strong> Nombre </strong> no es correcto. <br/> `);
-      alertValidacionesTextoNombre.style.color = "red";
-      txtNombre.style.border = "solid thin red";
-      index.push("nombre");
-    }
-  }
-
-  if (!validarNumTel(txtPhone.value)) {
-    if (!index.includes("phone")) {
-      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
-      alertValidacionesTextoPhone.style.color = "red";
-      txtPhone.style.border = "solid thin red";
-      index.push("phone");
-    }
-  }
-
-  if (!validarEmail(txtEmail.value)) {
-    if (!index.includes("email")) {
-      alertValidacionesTextoEmail.insertAdjacentHTML("afterbegin", `El <strong> Correo </strong> no es correcto. <br/> `);
-      alertValidacionesTextoEmail.style.color = "red";
+  if (!validarEmail(txtEmail.value) || !validarContra(txtContraseña.value)) {
+    if (!index.includes("email") || !index.includes("contraseña")) {
+      alertValidaciones.insertAdjacentHTML("afterbegin", `Los <strong> Datos </strong> no son correctos. <br/> `);
+      alertValidaciones.style.color = "red";
       txtEmail.style.border = "solid thin red";
-      index.push("email");
-    }
-
-  }
-
-  if (!validarContra(txtContraseña.value)) {
-    if (!index.includes("contraseña")) {
       txtContraseña.style.border = "solid thin red";
-      alertValidacionesTextoContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña </strong> debe contener: <br/> Min 8 caracteres <br/> Una mayúscula <br/> Una minúscula<br/> Un número <br/> Un caracter epecial<br/> <strong>NO</strong> espacios en blanco `);
-      alertValidacionesTextoContraseña.style.color = "blue";
+      index.push("email");
       index.push("contraseña");
     }
+  } else {
+    alertValidaciones.innerHTML = "";
+    alerta.style.display = "none";
+    txtEmail.style.border = "";
+    txtContraseña.style.border = "";
+    removeAllInstances(index, "email");
+    removeAllInstances(index, "contraseña");
   }
 
-
-  if (!validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
-    if (!index.includes("contraConfirm")) {
-      alertValidacionesConfirContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña  </strong> no coincide. <br/> `);
-      alertValidacionesConfirContraseña.style.color = "red";
-      txtConfirContraseña.style.border = "solid thin red";
-      index.push("contraConfirm");
+  if (validarEmail(txtEmail.value) && validarContra(txtContraseña.value)) {
+    let user = validarSesion(txtEmail.value, txtContraseña.value);
+    console.log(user);
+    if (user != null) {
+      iniciarSesion(txtEmail.value, txtContraseña.value);
+      limpiarTodo();
+      btnLogin.disabled = true;
+      btnLogin.textContent = "Iniciando Sesión...";
+      btnLogin.style.fontWeight = "bold";
+      Swal.fire({
+        icon: 'success',
+        title: '¡Correcto!',
+        text: `¡Bienvenido ${user.name}!`,
+        type: 'success'
+      }).then(function () {
+        location.replace("../index.html");
+      });
+    } else {
+      if (!index.includes("email") || !index.includes("contraseña")) {
+        alertValidaciones.insertAdjacentHTML("afterbegin", `Los <strong> Datos </strong> no son correctos. <br/> `);
+        alertValidaciones.style.color = "red";
+        txtEmail.style.border = "solid thin red";
+        txtContraseña.style.border = "solid thin red";
+        index.push("email");
+        index.push("contraseña");
+      }
     }
   }
+});
 
 
-  if (validarNombre(txtNombre.value) && validarEmail(txtEmail.value) && validarNumTel(txtPhone.value) && validarContra(txtContraseña.value) && validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
-    btnRegistrar.disabled = true;
-    btnRegistrar.textContent = "Registrando...";
-    btnRegistrar.style.fontWeight = "bold";
-    registrarUsuario(txtNombre.value, txtEmail.value, txtPhone.value, txtContraseña.value);
-    Toast.fire({
-      icon: 'success',
-      title: '¡Se registró con éxito!'
-    });
-    limpiarTodo();
+function validarSesion(email, contraseña) {
+  if (users.length > 0) {
+    for (let i = 0; i < users.length; i++) {
+      console.log(users[i]);
+      if (users[i].email == email && users[i].contraseña == contraseña) {
+        return users[i];
+      }
+    }//for
+  }//if
+  else {
+    return null;
   }
-});
 
-
-const Toast = Swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 5000,
-  timerProgressBar: true
-});
-
-function registrarUsuario(name, email, phone, contraseña) {
-  let user = `{
-      "name": "${name}",
-      "phone": "${phone}",
-      "email": "${email}",
-      "contraseña": "${contraseña}"
-  }`;
-
-  users.push(JSON.parse(user));
-  this.localStorage.setItem("user", JSON.stringify(users));
 }
 
+function iniciarSesion(email, contraseña) {
+  if (this.localStorage.getItem("user") != null) {
+    JSON.parse(this.localStorage.getItem("user")).forEach((u) => {
+      if (u.email == email && u.contraseña == contraseña) {
+        this.localStorage.setItem("user-logged", JSON.stringify(u));
+      }
+    }//foreach
+    );
+  }//if
+}
 
 window.addEventListener("load", function (event) {
   event.preventDefault();
@@ -193,105 +146,6 @@ window.addEventListener("load", function (event) {
 
 }); // window // load
 
-//Listener para validar el nombre cada vez que el usuario teclee algo en el campo nombre
-txtNombre.addEventListener("keyup", function (event) {
-  event.preventDefault();
-  if (!validarNombre(txtNombre.value)) {
-    if (!index.includes("nombre")) {
-      alertValidacionesTextoNombre.insertAdjacentHTML("afterbegin", ` Escribe tu <strong> Nombre </strong> completo. <br/> `);
-      alertValidacionesTextoNombre.style.color = "red";
-      txtNombre.style.border = "solid thin red";
-      index.push("nombre");
-    }
-  }
-  else {
-    //quitar alertas
-    alertValidacionesTextoNombre.innerHTML = "";
-    alertNombre.style.display = "none";
-    txtNombre.style.border = "";
-    removeAllInstances(index, "nombre");
-  }
-});
-
-txtPhone.addEventListener("keyup", function (event) {
-  event.preventDefault();
-  if (!validarNumTel(txtPhone.value)) {
-    if (!index.includes("phone")) {
-      alertValidacionesTextoPhone.insertAdjacentHTML("afterbegin", `El <strong> Número telefónico </strong> no es correcto. <br/> `);
-      alertValidacionesTextoPhone.style.color = "red";
-      txtPhone.style.border = "solid thin red";
-      index.push("phone");
-    }
-  }//if phone no cumple las validaciones 
-  else {
-    //quitar alertas
-    alertValidacionesTextoPhone.innerHTML = "";
-    alertPhone.style.display = "none";
-    txtPhone.style.border = "";
-    removeAllInstances(index, "phone");
-  }
-});
-
-txtEmail.addEventListener("keyup", function (event) {
-  event.preventDefault();
-  if (!validarEmail(txtEmail.value)) {
-    if (!index.includes("email")) {
-      alertValidacionesTextoEmail.insertAdjacentHTML("afterbegin", `El <strong> Correo </strong> no es correcto. <br/> `);
-      alertValidacionesTextoEmail.style.color = "red";
-      txtEmail.style.border = "solid thin red";
-      index.push("email");
-    }
-
-  }
-  else {
-    //quitar alertas
-    alertValidacionesTextoEmail.innerHTML = "";
-    alertEmail.style.display = "none";
-    txtEmail.style.border = "";
-    removeAllInstances(index, "email");
-  }
-});
-
-
-txtContraseña.addEventListener("keyup", function (event) {
-  event.preventDefault();
-  if (!validarContra(txtContraseña.value)) {
-    if (!index.includes("contraseña")) {
-      alertValidacionesTextoContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña </strong> debe contener: <br/> Min 8 caracteres <br/> Una mayúscula <br/> Una minúscula<br/> Un número <br/> Un Caracter epecial<br/> NO espacios en blanco `);
-      alertValidacionesTextoContraseña.style.color = "blue";
-      txtContraseña.style.border = "solid thin red";
-      index.push("contraseña");
-    }
-  }
-  else {
-    //quitar alertas
-    alertValidacionesTextoContraseña.innerHTML = "";
-    alertContraError.style.display = "none";
-    txtContraseña.style.border = "";
-    removeAllInstances(index, "contraseña");
-  }
-});
-
-
-txtConfirContraseña.addEventListener("keyup", function (event) {
-  event.preventDefault();
-  if (!validarContraConfirmar(txtConfirContraseña.value, txtContraseña.value)) {
-    if (!index.includes("contraConfirm")) {
-      alertValidacionesConfirContraseña.insertAdjacentHTML("afterbegin", `La <strong> Contraseña  </strong> no coincide. <br/> `);
-      alertValidacionesConfirContraseña.style.color = "red";
-      txtConfirContraseña.style.border = "solid thin red";
-      index.push("contraConfirm");
-    }
-  }
-  else {
-    //quitar alertas
-    alertValidacionesConfirContraseña.innerHTML = "";
-    alertConfirmaCon.style.display = "none";
-    txtConfirContraseña.style.border = "";
-    removeAllInstances(index, "contraConfirm");
-  }
-});
-
 //Remueve todas las instancias de un objeto dado (item) que se encuentre en el arreglo index
 function removeAllInstances(arr, item) {
   for (var i = arr.length; i--;) {
@@ -299,21 +153,40 @@ function removeAllInstances(arr, item) {
   }
 }
 
+txtEmail.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (!index.includes("email")) {
+    alertValidaciones.innerHTML = "";
+    alerta.style.display = "none";
+    txtEmail.style.border = "";
+    txtContraseña.style.border = "";
+    removeAllInstances(index, "email");
+    removeAllInstances(index, "contrasña");
+  }
+});
+
+txtContraseña.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (!index.includes("contraseña")) {
+    alertValidaciones.innerHTML = "";
+    alerta.style.display = "none";
+    txtEmail.style.border = "";
+    txtContraseña.style.border = "";
+    removeAllInstances(index, "email");
+    removeAllInstances(index, "contrasña");
+  }
+});
+
+
 // limpiar Todo
 function limpiarTodo() {
   index = [];
-  txtNombre.value = "";
-  txtPhone.value = "";
   txtEmail.value = "";
   txtContraseña.value = "";
-  txtConfirContraseña.value = "";
-  removeAllInstances(index, "nombre");
   removeAllInstances(index, "email");
-  removeAllInstances(index, "phone");
   removeAllInstances(index, "contraseña");
-  removeAllInstances(index, "contraConfirm");
 
-  btnRegistrar.disabled = false;
-  btnRegistrar.textContent = "Registrarse";
-  btnRegistrar.style.fontWeight = "bold";
+  btnLogin.disabled = false;
+  btnLogin.textContent = "Ingresar";
+  btnLogin.style.fontWeight = "bold";
 }

@@ -3,6 +3,12 @@
 /* .card-container {
     padding: 8%;
 } */
+
+
+.card {
+    margin: 30px;
+}
+
 .card-title {
     display: flex;
     font-weight: bold;
@@ -81,9 +87,6 @@
     justify-content: center;
     align-items: center;
     text-align: justify;
-    font-size: small;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .aboutUs p {
